@@ -8,336 +8,632 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Costura Fácil — Aprenda e Crie</title>
 <style>
-:root{--p:#b5165b;--p2:#e91e63;--vio:#76239b;--pink:#fde7f0;--bg:#fff8fb;--card:#fff;--ink:#29232d;--mut:#716875;--line:#eadce5;--ok:#2e9b57;--gold:#f5b900;--blue:#3b82d0}
-*{box-sizing:border-box}body{margin:0;background:#eadde5;font-family:Arial,sans-serif;color:var(--ink)}
-button,input,select{font:inherit}button{cursor:pointer}.app{max-width:680px;min-height:100vh;margin:auto;background:var(--bg);box-shadow:0 0 35px #0002}
+:root{--p:#b5165b;--p2:#e91e63;--vio:#76239b;--pink:#fde7f0;--bg:#fff8fb;--card:#fff;--ink:#29232d;--mut:#716875;--line:#eadce5;--ok:#2e9b57;--gold:#f5b900;--blue:#3b82d0;--red:#c53b45}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eadde5;font-family:Arial,sans-serif;color:var(--ink)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:680px;min-height:100vh;margin:auto;background:var(--bg);box-shadow:0 0 35px #0002}
 header{background:linear-gradient(135deg,#7d1649,#c4145b 55%,#79209d);color:#fff;padding:17px 16px 20px;border-radius:0 0 28px 28px;box-shadow:0 6px 18px #7d164933}
 .top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:27px;font-weight:900;font-style:italic}.sub{font-size:12px;margin-top:4px}.hamb{border:0;background:#ffffff25;color:#fff;border-radius:13px;width:45px;height:45px;font-size:23px}
 main{padding:15px 15px 94px}.screen{display:none}.screen.on{display:block}
-.hero,.box,.item,.lesson,.tech,.project,.measure,.pattern,.quiz,.about{background:var(--card);border:1px solid var(--line);border-radius:19px;box-shadow:0 3px 13px #7d16450b}
+.hero,.box,.item,.lesson,.tech,.project,.measure,.pattern,.quiz,.about,.courseIntro{background:var(--card);border:1px solid var(--line);border-radius:19px;box-shadow:0 3px 13px #7d16450b}
 .hero{padding:18px;margin-top:4px}.hero h1{margin:0 0 7px;font-size:23px}.hero p,.desc{color:var(--mut);line-height:1.45}.primary{width:100%;border:0;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-weight:900;border-radius:13px;padding:13px;box-shadow:0 5px 13px #b5165b35}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:13px}.card{border:1px solid var(--line);background:#fff;border-radius:17px;padding:14px;text-align:left;min-height:100px}.card b{font-size:15px}.ico{font-size:28px;display:block;margin-bottom:7px}.card small{display:block;color:var(--mut);margin-top:4px}
-.tip{background:#fff5c9;border-radius:14px;padding:12px;margin:13px 0;line-height:1.42;color:#5e4d00}.back{border:0;background:none;color:var(--p);font-weight:900;padding:5px 0;font-size:16px}h2{margin:8px 0 4px}h3{margin:7px 0}.list{display:grid;gap:10px}.lesson,.tech,.project,.item{padding:14px}.lesson{display:flex;gap:11px;align-items:center}.num{min-width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--pink);color:var(--p);font-weight:900}.lesson button,.mini{margin-left:auto;border:0;background:#f8e2ec;color:var(--p);font-weight:900;border-radius:10px;padding:9px 11px}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#eee5f3;color:var(--vio);font-size:11px;font-weight:bold}
+.tip{background:#fff5c9;border-radius:14px;padding:12px;margin:13px 0;line-height:1.48;color:#5e4d00}.tip.red{background:#fff0f0;color:#75272c}.tip.blue{background:#edf5ff;color:#24547e}.tip.green{background:#eaf8ef;color:#1d6b3a}
+.back{border:0;background:none;color:var(--p);font-weight:900;padding:5px 0;font-size:16px}h2{margin:8px 0 4px}h3{margin:7px 0}.list{display:grid;gap:10px}
+.lesson,.tech,.project,.item{padding:14px}.lesson{display:flex;gap:11px;align-items:center}.num{min-width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--pink);color:var(--p);font-weight:900}.lesson button,.mini{margin-left:auto;border:0;background:#f8e2ec;color:var(--p);font-weight:900;border-radius:10px;padding:9px 11px}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#eee5f3;color:var(--vio);font-size:11px;font-weight:bold}
 .patterns{display:grid;grid-template-columns:1fr 1fr;gap:11px}.pattern{padding:14px;text-align:center}.pattern .emoji{font-size:55px}.pattern button{border:0;background:var(--p);color:#fff;border-radius:10px;padding:9px 12px;font-weight:900;margin-top:7px}
-.measure{padding:15px;margin-top:11px}.measure label{display:block;font-weight:800;font-size:13px;margin:11px 0 5px}.measure input{width:100%;padding:12px;border:1px solid #d9cbd5;border-radius:10px;background:#fff}.save{margin-top:13px}
-.steps{counter-reset:s}.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 14px 14px 52px;margin:9px 0;line-height:1.45}.step:before{counter-increment:s;content:counter(s);position:absolute;left:13px;top:13px;width:28px;height:28px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-weight:bold}
-.search{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;margin:9px 0 11px}.progress{height:9px;background:#eee;border-radius:20px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--vio));width:0}
+.measure{padding:15px;margin-top:11px}.measure label{display:block;font-weight:800;font-size:13px;margin:11px 0 5px}.measure input,.measure select,.measure textarea{width:100%;padding:12px;border:1px solid #d9cbd5;border-radius:10px;background:#fff}.save{margin-top:13px}
+.steps{counter-reset:s}.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 14px 14px 52px;margin:9px 0;line-height:1.5}.step:before{counter-increment:s;content:counter(s);position:absolute;left:13px;top:13px;width:28px;height:28px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-weight:bold}
+.step b{color:#3b2733}.progress{height:9px;background:#eee;border-radius:20px;overflow:hidden;margin:10px 0 12px}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--vio));width:0;transition:.25s}
 .tabs{display:flex;gap:7px;overflow:auto;margin:10px 0}.tab{white-space:nowrap;border:0;background:#f2e9ef;color:#655b64;padding:9px 12px;border-radius:20px;font-weight:800}.tab.sel{background:var(--p);color:#fff}
 .moldbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px;text-align:center;margin-top:12px}.moldbox svg{width:100%;max-width:390px;height:285px}.moldbox .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.outline{border:1px solid var(--p);color:var(--p);background:#fff;border-radius:11px;padding:10px;font-weight:900}
 .quiz{padding:15px;margin-top:10px}.option{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;padding:11px;border-radius:10px;margin:7px 0}.option.correct{border-color:var(--ok);background:#eaf8ef}.option.wrong{border-color:#d34c4c;background:#fff0f0}
 .about{padding:16px;line-height:1.5}.sources{font-size:12px;color:var(--mut)}footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680px,100%);background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:6px 8px calc(6px + env(safe-area-inset-bottom));z-index:20}footer button{border:0;background:none;color:#777;font-size:11px;padding:4px}.nav{font-size:20px;display:block}footer .active{color:var(--p);font-weight:900}
 .drawer{position:fixed;inset:0;background:#0007;z-index:50;display:none}.drawer.open{display:block}.drawerbox{height:100%;width:84%;max-width:370px;background:#fff;padding:20px 15px;overflow:auto}.drawerbox h2{color:var(--p)}.drawerbox button{width:100%;text-align:left;border:0;background:#fff;padding:13px;border-bottom:1px solid #eee;font-weight:800;color:var(--ink)}
 .toast{position:fixed;bottom:78px;left:50%;transform:translateX(-50%);background:#29232d;color:#fff;border-radius:12px;padding:11px 15px;z-index:80;display:none;font-size:14px;max-width:90%;text-align:center}
-.small{font-size:12px;color:var(--mut)}.center{text-align:center}.heart{color:var(--p);font-size:23px}.done{color:var(--ok);font-weight:900}
+.small{font-size:12px;color:var(--mut)}.center{text-align:center}.heart{color:var(--p);font-size:23px}.done{color:var(--ok);font-weight:900}.lesson.doneLesson{border-color:#9dd5b2;background:#f4fcf6}
+.detailHead{background:linear-gradient(135deg,#fff,#fff3f8);border:1px solid var(--line);border-radius:19px;padding:16px;margin:10px 0}.detailHead .kicker{color:var(--p);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.5px}.detailHead h2{font-size:22px;margin:4px 0}.infoGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.infoChip{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px}.infoChip b{display:block;font-size:13px;margin-bottom:3px}
+.lessonBody{line-height:1.55}.lessonBody h3{color:var(--p);margin-top:18px}.lessonBody ul,.lessonBody ol{padding-left:22px}.lessonBody li{margin:7px 0}.checklist{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0}.checkline{display:flex;gap:9px;align-items:flex-start;padding:7px 0}.checkline input{margin-top:3px;accent-color:var(--p)}
+.lessonNav{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.lessonNav button{border:0;border-radius:12px;padding:11px;font-weight:900;background:#f4e7ef;color:var(--p)}.lessonNav button.primaryNav{background:var(--p);color:#fff}
+.filterRow{display:flex;gap:7px;overflow:auto;margin:9px 0}.filterRow button{white-space:nowrap;border:0;border-radius:18px;padding:8px 11px;background:#f1e8ee;color:#665c64;font-weight:800}.filterRow button.sel{background:var(--p);color:#fff}
+.sectionTitle{display:flex;justify-content:space-between;align-items:center;margin-top:15px}.sectionTitle span{font-size:12px;color:var(--mut)}
+.progressText{font-size:12px;color:var(--mut);margin-top:5px}.statusBadge{font-size:10px;border-radius:20px;padding:4px 7px;background:#eaf8ef;color:#217443;font-weight:900}
+@media(max-width:390px){.grid,.patterns{grid-template-columns:1fr}.brand{font-size:24px}.infoGrid{grid-template-columns:1fr}}
 @media(min-width:681px){body{padding:0 20px}}
+@media print{header,footer,.drawer,.back,.primary,.outline,.hamb{display:none!important}.app{box-shadow:none}body{background:#fff}main{padding-bottom:10px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header><div class="top"><div><div class="brand">🧵 Costura Fácil</div><div class="sub">Aprenda • Pratique • Crie seus próprios moldes</div></div><button class="hamb" onclick="menu()">☰</button></div></header>
+<header><div class="top"><div><div class="brand">🧵 Costura Fácil</div><div class="sub">Aprenda • Pratique • Crie seus próprios projetos</div></div><button class="hamb" onclick="menu()">☰</button></div></header>
 <main>
 
 <section id="home" class="screen on">
-<div class="hero"><h1>Bem-vindo(a)! 💕</h1><p>Um guia de costura para aprender do zero, praticar técnicas, tirar medidas e entender moldes passo a passo.</p><button class="primary" onclick="go('cursos')">▶ COMEÇAR A APRENDER</button></div>
+<div class="hero"><h1>Bem-vindo(a)! 💕</h1><p>Um curso de costura pensado para quem quer aprender com calma, praticar e evoluir passo a passo. Comece do zero e avance somente quando se sentir seguro.</p><button class="primary" onclick="go('cursos')">▶ COMEÇAR A APRENDER</button></div>
 <div class="grid">
-<button class="card" onclick="go('cursos')"><span class="ico">📚</span><b>Cursos</b><small>Aulas organizadas por nível</small></button>
-<button class="card" onclick="go('moldes')"><span class="ico">📐</span><b>Moldes</b><small>Guias e construções</small></button>
+<button class="card" onclick="go('cursos')"><span class="ico">📚</span><b>Cursos</b><small>Aulas detalhadas do básico ao projeto</small></button>
+<button class="card" onclick="go('moldes')"><span class="ico">📐</span><b>Moldes</b><small>Guias de construção e interpretação</small></button>
 <button class="card" onclick="go('medidas')"><span class="ico">📏</span><b>Minhas medidas</b><small>Salve e consulte</small></button>
 <button class="card" onclick="go('tecnicas')"><span class="ico">✂️</span><b>Técnicas</b><small>Consulta rápida</small></button>
-<button class="card" onclick="go('projetos')"><span class="ico">👗</span><b>Projetos</b><small>Aprenda fazendo</small></button>
+<button class="card" onclick="go('projetos')"><span class="ico">👗</span><b>Projetos</b><small>Faça junto com o app</small></button>
 <button class="card" onclick="go('glossario')"><span class="ico">📖</span><b>Glossário</b><small>Termos explicados</small></button>
-<button class="card" onclick="go('pratica')"><span class="ico">🎯</span><b>Prática</b><small>Desafios e revisão</small></button>
+<button class="card" onclick="go('pratica')"><span class="ico">🎯</span><b>Prática</b><small>Exercícios e revisão</small></button>
+<button class="card" onclick="go('videos')"><span class="ico">🎥</span><b>Vídeos</b><small>Demonstrações complementares</small></button>
 <button class="card" onclick="go('sobre')"><span class="ico">ℹ️</span><b>Sobre</b><small>Como usar o app</small></button>
-<button class="card" onclick="go('videos')"><span class="ico">🎥</span><b>Vídeos</b><small>Demonstrações no YouTube</small></button>
-<button class="card" onclick="openTrash()"><span class="ico">🗑️</span><b>Lixeira</b><small>Excluir dados salvos</small></button>
+<button class="card" onclick="openTrash()"><span class="ico">🗑️</span><b>Lixeira</b><small>Dados salvos no aparelho</small></button>
 </div>
 <div class="box" style="padding:13px;margin-top:12px">
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
-    <button class="outline" onclick="saveAppProgress()">💾 Salvar</button>
-    <button class="outline" onclick="shareApp()">📤 Compartilhar</button>
-    <button class="outline" onclick="openTrash()">🗑️ Lixeira</button>
-  </div>
-</div>
-<div class="tip">💡 <b>Comece pelo Nível 1.</b> Não pule a prática em retalhos. Ela ajuda a ganhar controle da máquina antes de cortar uma peça.</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+<button class="outline" onclick="saveAppProgress()">💾 Salvar</button><button class="outline" onclick="shareApp()">📤 Compartilhar</button><button class="outline" onclick="openTrash()">🗑️ Lixeira</button>
+</div></div>
+<div class="tip">💡 <b>Como aprender melhor:</b> leia uma aula, pratique em retalho, confira o resultado e só então avance. Costura melhora muito mais com repetição do que com pressa.</div>
+<div class="courseIntro" style="padding:15px"><b>📈 Seu progresso</b><div class="progress"><i id="homeProgress"></i></div><div id="homeProgressText" class="progressText"></div></div>
 </section>
 
 <section id="cursos" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>📚 Curso completo</h2><p class="desc">Siga na ordem ou escolha uma aula para consultar.</p>
-<div class="lesson"><div class="num">1</div><div><b>Nível 1 — Primeiros passos</b><br><span class="small">Máquina, materiais, linha, bobina e segurança.</span></div><button onclick="go('nivel1')">Ver</button></div>
-<div class="lesson"><div class="num">2</div><div><b>Nível 2 — Costura prática</b><br><span class="small">Reta, curva, cantos, bainha, franzido e acabamentos.</span></div><button onclick="go('nivel2')">Ver</button></div>
-<div class="lesson"><div class="num">3</div><div><b>Nível 3 — Medidas e moldes</b><br><span class="small">Medidas, símbolos, fio, dobra, piques e margem.</span></div><button onclick="go('nivel3')">Ver</button></div>
-<div class="lesson"><div class="num">4</div><div><b>Nível 4 — Confecção</b><br><span class="small">Projetos guiados para transformar tecido em peça.</span></div><button onclick="go('nivel4')">Ver</button></div>
+<button class="back" onclick="go('home')">← Início</button><h2>📚 Curso completo</h2><p class="desc">Aulas longas e guiadas para quem está começando. Você pode seguir a ordem ou abrir qualquer aula para consulta.</p>
+<div class="lesson"><div class="num">1</div><div><b>Nível 1 — Primeiros passos</b><br><span class="small">Máquina, segurança, linha, agulha, bobina e primeiros pontos.</span></div><button onclick="go('nivel1')">Ver</button></div>
+<div class="lesson"><div class="num">2</div><div><b>Nível 2 — Costura prática</b><br><span class="small">Reta, zigue-zague, cantos, curvas, bainha, franzido, viés, zíper e acabamento.</span></div><button onclick="go('nivel2')">Ver</button></div>
+<div class="lesson"><div class="num">3</div><div><b>Nível 3 — Medidas e moldes</b><br><span class="small">Medidas, direito e avesso, fio, dobra, piques, margens, corte e prova.</span></div><button onclick="go('nivel3')">Ver</button></div>
+<div class="lesson"><div class="num">4</div><div><b>Nível 4 — Confecção</b><br><span class="small">Planejamento, tecido, corte, montagem, ajustes e acabamento final.</span></div><button onclick="go('nivel4')">Ver</button></div>
+<div class="tip blue">📌 <b>Não precisa correr.</b> Se uma aula parecer difícil, abra novamente, faça o exercício em um retalho e só depois avance.</div>
 </section>
 
 <section id="nivel1" class="screen">
-<button class="back" onclick="go('cursos')">← Cursos</button><h2>🧵 Nível 1 — Primeiros passos</h2><div class="progress"><i id="p1"></i></div>
-<div class="list" id="n1"></div>
+<button class="back" onclick="go('cursos')">← Cursos</button><h2>🧵 Nível 1 — Primeiros passos</h2><p class="desc">Começamos literalmente do zero. Você vai conhecer a máquina, aprender os cuidados básicos e fazer seus primeiros pontos.</p><div class="progress"><i id="p1"></i></div><div id="n1" class="list"></div>
 </section>
 <section id="nivel2" class="screen">
-<button class="back" onclick="go('cursos')">← Cursos</button><h2>✂️ Nível 2 — Costura prática</h2><div class="list" id="n2"></div>
+<button class="back" onclick="go('cursos')">← Cursos</button><h2>✂️ Nível 2 — Costura prática</h2><p class="desc">Agora você vai repetir movimentos até ganhar controle e aprender acabamentos importantes.</p><div id="n2" class="list"></div>
 </section>
 <section id="nivel3" class="screen">
-<button class="back" onclick="go('cursos')">← Cursos</button><h2>📐 Nível 3 — Medidas e moldes</h2><div class="list" id="n3"></div>
+<button class="back" onclick="go('cursos')">← Cursos</button><h2>📐 Nível 3 — Medidas e moldes</h2><p class="desc">Aprenda a entender o molde antes de cortar o tecido.</p><div id="n3" class="list"></div>
 </section>
 <section id="nivel4" class="screen">
-<button class="back" onclick="go('cursos')">← Cursos</button><h2>👗 Nível 4 — Confecção</h2><div class="list" id="n4"></div>
+<button class="back" onclick="go('cursos')">← Cursos</button><h2>👗 Nível 4 — Confecção</h2><p class="desc">Organize materiais, corte, monte e faça a revisão final de uma peça.</p><div id="n4" class="list"></div>
 </section>
 
 <section id="aula" class="screen">
-<button class="back" onclick="go('nivel1')">← Voltar</button><h2 id="aulaTitulo"></h2><div id="aulaTexto"></div><button class="primary" onclick="concluirAula()">✓ MARCAR AULA COMO CONCLUÍDA</button>
+<button class="back" id="aulaBack" onclick="go('nivel1')">← Voltar</button>
+<div id="aulaHead"></div><div id="aulaTexto" class="lessonBody"></div>
+<div class="checklist"><b>✅ Checklist desta aula</b><div id="aulaChecklist"></div></div>
+<button class="primary" onclick="concluirAula()">✓ MARCAR AULA COMO CONCLUÍDA</button>
+<div class="lessonNav"><button onclick="previousLesson()">← Aula anterior</button><button class="primaryNav" onclick="nextLesson()">Próxima aula →</button></div>
 </section>
 
 <section id="moldes" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>📐 Central de moldes</h2><p class="desc">Guias didáticos para entender medidas, construção, corte e montagem.</p>
+<button class="back" onclick="go('home')">← Início</button><h2>📐 Central de moldes</h2><p class="desc">Guias didáticos para entender medidas, construção, corte e montagem. Sempre faça uma prova antes de cortar tecido definitivo.</p>
 <div class="patterns">
-<div class="pattern"><div class="emoji">👗</div><b>Saia básica</b><br><span class="small">Molde didático com cálculo</span><br><button onclick="go('moldeSaia')">Abrir</button></div>
-<div class="pattern"><div class="emoji">🧑‍🍳</div><b>Avental</b><br><span class="small">Molde simples para iniciantes</span><br><button onclick="go('moldeAvental')">Abrir</button></div>
-<div class="pattern"><div class="emoji">👜</div><b>Bolsa tote</b><br><span class="small">Retângulos e alças</span><br><button onclick="go('moldeBolsa')">Abrir</button></div>
-<div class="pattern"><div class="emoji">👚</div><b>Blusa básica</b><br><span class="small">Guia de construção e interpretação</span><br><button onclick="go('blusa')">Abrir</button></div>
+<div class="pattern"><div class="emoji">👗</div><b>Saia básica</b><br><span class="small">Medidas e cálculo didático</span><br><button onclick="go('moldeSaia')">Abrir</button></div>
+<div class="pattern"><div class="emoji">🧑‍🍳</div><b>Avental</b><br><span class="small">Molde simples para praticar</span><br><button onclick="go('moldeAvental')">Abrir</button></div>
+<div class="pattern"><div class="emoji">👜</div><b>Bolsa tote</b><br><span class="small">Corpo, alças e reforço</span><br><button onclick="go('moldeBolsa')">Abrir</button></div>
+<div class="pattern"><div class="emoji">👚</div><b>Blusa básica</b><br><span class="small">Interpretação e preparação</span><br><button onclick="go('blusa')">Abrir</button></div>
 </div>
-<div class="tip">📌 Os moldes desta primeira versão são educativos. Sempre faça uma amostra em tecido barato e confira o caimento antes de cortar tecido definitivo.</div>
+<div class="tip">📌 Estes moldes são educativos. Medidas corporais, tecido, modelagem e método de montagem podem exigir alterações. Faça uma amostra e confira o caimento.</div>
 </section>
 
 <section id="moldeSaia" class="screen">
-<button class="back" onclick="go('moldes')">← Moldes</button><h2>👗 Saia básica — construção</h2><p class="desc">Informe as medidas para visualizar um quarto de molde. O cálculo usa folga didática de 1 cm e deve ser validado em amostra.</p>
-<div class="measure"><label>Cintura (cm)</label><input id="sc" type="number" inputmode="decimal" placeholder="Ex.: 76"><label>Quadril (cm)</label><input id="sq" type="number" inputmode="decimal" placeholder="Ex.: 100"><label>Comprimento (cm)</label><input id="sl" type="number" inputmode="decimal" placeholder="Ex.: 60"><button class="primary save" onclick="calcSaia()">📐 CALCULAR E MOSTRAR</button></div>
+<button class="back" onclick="go('moldes')">← Moldes</button><h2>👗 Saia básica — construção</h2><p class="desc">Vamos calcular uma base didática e entender de onde cada medida vem.</p>
+<div class="measure">
+<label>Cintura (cm)</label><input id="sc" type="number" inputmode="decimal" placeholder="Ex.: 76">
+<label>Quadril (cm)</label><input id="sq" type="number" inputmode="decimal" placeholder="Ex.: 100">
+<label>Comprimento (cm)</label><input id="sl" type="number" inputmode="decimal" placeholder="Ex.: 60">
+<button class="primary save" onclick="calcSaia()">📐 CALCULAR E MOSTRAR</button>
+</div>
 <div id="saiaResultado" class="moldbox" style="display:none"></div>
+<div class="steps">
+<div class="step"><b>Entenda a medida da cintura</b><br>É a medida usada para controlar a região superior da saia. Meça sem apertar a fita e mantenha-a nivelada.</div>
+<div class="step"><b>Entenda o quadril</b><br>É usado para determinar a largura necessária na região mais larga do corpo. Uma medida correta evita uma base apertada ou excessivamente folgada.</div>
+<div class="step"><b>Entenda o comprimento</b><br>Meça a partir do ponto escolhido para o início da saia até a altura desejada. A forma de medir depende do modelo.</div>
+<div class="step"><b>Faça uma prova</b><br>Mesmo com cálculo correto, o caimento pode variar. Faça uma versão de teste antes do tecido definitivo.</div>
+</div>
 </section>
 
 <section id="moldeAvental" class="screen">
-<button class="back" onclick="go('moldes')">← Moldes</button><h2>🧑‍🍳 Avental simples</h2><p class="desc">Molde base em formato simples, ótimo para praticar medidas, corte, bainha e tiras.</p>
-<div class="moldbox"><b>Peça principal</b><p>Desenhe um retângulo com a largura e comprimento desejados. Arredonde os cantos superiores para formar a área do peito. Acrescente margem de costura ao redor.</p>
-<svg viewBox="0 0 300 280"><path d="M95 35 Q150 10 205 35 L225 250 L75 250 Z" fill="#fde7f0" stroke="#b5165b" stroke-width="3"/><path d="M95 35 Q105 80 125 90 M205 35 Q195 80 175 90" fill="none" stroke="#76239b" stroke-width="3"/><text x="150" y="155" text-anchor="middle" font-size="18" fill="#76239b">PEÇA PRINCIPAL</text></svg>
-<p><b>Tiras:</b> corte duas tiras para a cintura e duas para o pescoço, considerando largura dobrada e margem de costura.</p></div>
-<div class="steps"><div class="step"><b>Preparar o molde</b><br>Marque centro, laterais, linha da cintura e pontos das tiras.</div><div class="step"><b>Cortar</b><br>Posicione respeitando o fio do tecido e corte com cuidado.</div><div class="step"><b>Acabamento</b><br>Faça bainha ou outro acabamento nas bordas.</div><div class="step"><b>Colocar tiras</b><br>Prenda, confira simetria e faça costura de reforço.</div></div>
+<button class="back" onclick="go('moldes')">← Moldes</button><h2>🧑‍🍳 Avental simples — guia detalhado</h2><p class="desc">Projeto excelente para treinar corte, costura reta, bainha e tiras.</p>
+<div class="moldbox"><b>Peça principal</b><p>Comece com um retângulo e adapte largura e comprimento. Arredonde os cantos superiores se desejar uma cava/peito mais confortável.</p>
+<svg viewBox="0 0 300 280"><path d="M95 35 Q150 10 205 35 L225 250 L75 250 Z" fill="#fde7f0" stroke="#b5165b" stroke-width="3"/><path d="M95 35 Q105 80 125 90 M205 35 Q195 80 175 90" fill="none" stroke="#76239b" stroke-width="3"/><text x="150" y="155" text-anchor="middle" font-size="18" fill="#76239b">PEÇA PRINCIPAL</text></svg></div>
+<div class="steps">
+<div class="step"><b>1 — Defina o tamanho</b><br>Decida onde o avental deve começar e terminar. Meça a largura desejada na frente do corpo e acrescente espaço suficiente para movimentação.</div>
+<div class="step"><b>2 — Prepare o molde</b><br>Desenhe o centro da peça, as laterais e a área superior. Se for arredondar os cantos, faça uma curva suave em vez de um ângulo brusco.</div>
+<div class="step"><b>3 — Acrescente a margem</b><br>Não confunda a linha do molde com a borda final de corte. Acrescente a margem necessária conforme o acabamento escolhido.</div>
+<div class="step"><b>4 — Posicione no tecido</b><br>Confira direito, avesso e fio do tecido. Prenda o molde e confira se ele está estável antes de cortar.</div>
+<div class="step"><b>5 — Corte</b><br>Corte devagar, mantendo a tesoura apoiada e acompanhando a linha. Evite levantar o tecido enquanto corta.</div>
+<div class="step"><b>6 — Prepare as bordas</b><br>Marque e passe as dobras. A passadoria antes da costura facilita muito o acabamento.</div>
+<div class="step"><b>7 — Faça as tiras</b><br>Meça as tiras de cintura e pescoço, dobre o tecido, passe e costure mantendo a largura uniforme.</div>
+<div class="step"><b>8 — Monte e reforce</b><br>Posicione as tiras simetricamente. Prenda primeiro, confira no corpo ou no molde e depois faça a costura definitiva com reforço nos pontos de tensão.</div>
+</div>
+<div class="tip">💡 Faça a primeira versão com tecido de teste. O objetivo é aprender o processo, não economizar cada centímetro de tecido.</div>
 </section>
 
 <section id="moldeBolsa" class="screen">
-<button class="back" onclick="go('moldes')">← Moldes</button><h2>👜 Bolsa tote — molde</h2><p class="desc">Projeto retangular para praticar costura reta, margem e alças.</p>
+<button class="back" onclick="go('moldes')">← Moldes</button><h2>👜 Bolsa tote — molde detalhado</h2><p class="desc">Um projeto simples para aprender retângulos, margem, alças, montagem e reforço.</p>
 <div class="moldbox"><svg viewBox="0 0 300 230"><rect x="65" y="45" width="170" height="150" rx="4" fill="#fde7f0" stroke="#b5165b" stroke-width="3"/><path d="M95 70 Q95 25 125 25 Q150 25 150 70 M150 70 Q150 25 175 25 Q205 25 205 70" fill="none" stroke="#76239b" stroke-width="8"/><text x="150" y="135" text-anchor="middle" font-size="18" fill="#76239b">CORPO</text></svg></div>
-<div class="steps"><div class="step"><b>Corpo</b><br>Corte dois retângulos iguais. Escolha o tamanho de acordo com o uso.</div><div class="step"><b>Alças</b><br>Corte duas tiras iguais, dobre, passe e costure.</div><div class="step"><b>Montagem</b><br>Una os lados e o fundo, depois faça o acabamento da abertura.</div><div class="step"><b>Reforço</b><br>Costure as alças com reforço em caixa e cruz para maior resistência.</div></div>
+<div class="steps">
+<div class="step"><b>1 — Escolha o tamanho</b><br>Defina altura e largura. Pense no que será colocado dentro da bolsa antes de escolher as dimensões.</div>
+<div class="step"><b>2 — Corte o corpo</b><br>Corte dois retângulos iguais e confira se os quatro cantos estão realmente esquadrejados.</div>
+<div class="step"><b>3 — Corte as alças</b><br>Faça duas tiras do mesmo comprimento e largura. Antes de costurar, coloque-as lado a lado para conferir se estão iguais.</div>
+<div class="step"><b>4 — Prepare as alças</b><br>Dobre, passe e costure. Uma passadoria cuidadosa ajuda a manter a tira reta.</div>
+<div class="step"><b>5 — Una o corpo</b><br>Coloque os lados direitos juntos, alinhe as bordas, prenda e costure as laterais e o fundo. Faça retrocesso no início e no final quando apropriado.</div>
+<div class="step"><b>6 — Faça o acabamento superior</b><br>Dobre a abertura conforme o acabamento escolhido, passe e costure mantendo uma distância uniforme da borda.</div>
+<div class="step"><b>7 — Posicione as alças</b><br>Meça a distância entre elas usando o centro da bolsa como referência. Confira a simetria antes de costurar.</div>
+<div class="step"><b>8 — Reforce</b><br>Nos pontos onde as alças encontram o corpo, faça reforço em caixa e cruz ou outro método adequado ao tecido e ao uso.</div>
+</div>
+<div class="tip green">✅ Antes de virar a bolsa, pare e confira todas as costuras. É muito mais fácil corrigir enquanto a peça está aberta.</div>
 </section>
 
 <section id="blusa" class="screen">
-<button class="back" onclick="go('moldes')">← Moldes</button><h2>👚 Blusa básica — guia de molde</h2><p class="desc">Aqui o objetivo é ensinar a leitura e preparação. Para uma blusa vestível, use um molde-base adequado ao corpo e faça uma prova.</p>
-<div class="steps"><div class="step"><b>Medidas principais</b><br>Busto, cintura, quadril quando necessário, largura de ombro, comprimento e contorno de braço.</div><div class="step"><b>Molde-base</b><br>Trabalhe com linha central, linha de ombro, busto e cintura. Identifique frente e costas.</div><div class="step"><b>Fio do tecido</b><br>Marque a linha de fio paralela à direção estrutural do tecido.</div><div class="step"><b>Margens</b><br>Acrescente a margem conforme a técnica e o projeto, sem confundir linha de costura com borda de corte.</div><div class="step"><b>Prova</b><br>Faça uma peça de teste antes do tecido definitivo e ajuste o molde conforme o caimento.</div></div>
+<button class="back" onclick="go('moldes')">← Moldes</button><h2>👚 Blusa básica — guia de interpretação</h2><p class="desc">Esta parte ensina a entender um molde-base. Uma blusa vestível precisa ser testada e ajustada ao corpo.</p>
+<div class="steps">
+<div class="step"><b>1 — Separe as medidas</b><br>Busto, cintura, quadril quando necessário, ombro, comprimento, cava e contorno de braço são exemplos de medidas que podem ser necessárias.</div>
+<div class="step"><b>2 — Identifique frente e costas</b><br>Não corte antes de saber qual parte corresponde à frente e qual corresponde às costas.</div>
+<div class="step"><b>3 — Localize as linhas importantes</b><br>Procure centro, ombro, busto, cintura, lateral, cava e outras linhas indicadas no molde.</div>
+<div class="step"><b>4 — Confira o fio</b><br>A seta do fio deve ser posicionada de acordo com a orientação do molde e a estrutura do tecido.</div>
+<div class="step"><b>5 — Confira a dobra</b><br>Quando a peça indicar “na dobra”, a borda indicada deve encostar na dobra do tecido para produzir uma peça espelhada.</div>
+<div class="step"><b>6 — Confira piques</b><br>Transfira as marcações necessárias para saber onde uma peça encontra a outra durante a montagem.</div>
+<div class="step"><b>7 — Acrescente margens</b><br>Veja se o molde já inclui margem. Se não incluir, acrescente a margem prevista para a construção.</div>
+<div class="step"><b>8 — Faça uma prova</b><br>Uma peça de teste permite descobrir problemas de comprimento, folga, ombro, cava ou outros pontos antes do tecido definitivo.</div>
+</div>
 </section>
 
 <section id="medidas" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>📏 Minhas medidas</h2><p class="desc">Salve no aparelho. Para maior precisão, tire as medidas com fita métrica sem apertar o corpo.</p>
+<button class="back" onclick="go('home')">← Início</button><h2>📏 Minhas medidas</h2><p class="desc">Registre suas medidas para consultar durante os exercícios. Tire cada medida com fita métrica sem apertar.</p>
 <div class="measure">
-<label>Busto</label><input id="m_busto" type="number">
-<label>Cintura</label><input id="m_cintura" type="number">
-<label>Quadril</label><input id="m_quadril" type="number">
-<label>Ombro</label><input id="m_ombro" type="number">
-<label>Contorno do braço</label><input id="m_braco" type="number">
-<label>Comprimento do braço</label><input id="m_compbraco" type="number">
-<label>Altura</label><input id="m_altura" type="number">
-<label>Comprimento desejado da saia/peça</label><input id="m_comp" type="number">
+<label>Busto</label><input id="m_busto" type="number" step="0.1">
+<label>Cintura</label><input id="m_cintura" type="number" step="0.1">
+<label>Quadril</label><input id="m_quadril" type="number" step="0.1">
+<label>Ombro</label><input id="m_ombro" type="number" step="0.1">
+<label>Contorno do braço</label><input id="m_braco" type="number" step="0.1">
+<label>Comprimento do braço</label><input id="m_compbraco" type="number" step="0.1">
+<label>Altura</label><input id="m_altura" type="number" step="0.1">
+<label>Comprimento desejado da saia/peça</label><input id="m_comp" type="number" step="0.1">
 <button class="primary save" onclick="saveMeasures()">💾 SALVAR MEDIDAS</button>
 </div>
-<div class="tip">📏 Para tirar medidas de roupas, mantenha a fita nivelada. Registre a unidade usada e repita a medição se houver dúvida.</div>
+<div class="tip">📏 <b>Dica:</b> faça cada medição duas vezes. Se os valores forem muito diferentes, repita até entender onde a fita está sendo posicionada.</div>
 </section>
 
 <section id="tecnicas" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>✂️ Técnicas</h2><input class="search" id="techSearch" oninput="renderTech()" placeholder="🔎 Buscar técnica..."><div id="techList"></div>
+<button class="back" onclick="go('home')">← Início</button><h2>✂️ Técnicas</h2><p class="desc">Consulta rápida para rever movimentos que você já estudou.</p><input class="search" id="techSearch" oninput="renderTech()" placeholder="🔎 Buscar técnica..."><div id="techList"></div>
 </section>
 
 <section id="projetos" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>👗 Projetos guiados</h2><p class="desc">Escolha um projeto e siga materiais → molde → corte → costura → acabamento.</p>
+<button class="back" onclick="go('home')">← Início</button><h2>👗 Projetos guiados</h2><p class="desc">Faça os projetos na ordem que quiser. Cada um tem materiais, preparação, corte, montagem, acabamento e conferência.</p>
 <div class="list">
-<div class="project"><span class="tag">INICIANTE</span><h3>🧑‍🍳 Avental simples</h3><p class="small">Pratica costura reta, bainha e tiras.</p><button class="mini" onclick="go('projetoAvental')">Abrir projeto</button></div>
-<div class="project"><span class="tag">INICIANTE</span><h3>👜 Bolsa tote</h3><p class="small">Pratica retângulos, alças e reforço.</p><button class="mini" onclick="go('projetoBolsa')">Abrir projeto</button></div>
-<div class="project"><span class="tag">INICIANTE</span><h3>🛏️ Fronha simples</h3><p class="small">Pratica medidas, bainha e montagem.</p><button class="mini" onclick="go('projetoFronha')">Abrir projeto</button></div>
-<div class="project"><span class="tag">INTERMEDIÁRIO</span><h3>👗 Saia básica</h3><p class="small">Pratica medidas, molde, cós e fechamento.</p><button class="mini" onclick="go('moldeSaia')">Abrir guia</button></div>
+<div class="project"><span class="tag">INICIANTE</span><h3>🧑‍🍳 Avental simples</h3><p class="small">Pratica medida, corte, costura reta, bainha e tiras.</p><button class="mini" onclick="go('projetoAvental')">Abrir projeto</button></div>
+<div class="project"><span class="tag">INICIANTE</span><h3>👜 Bolsa tote</h3><p class="small">Pratica retângulos, alças, montagem e reforço.</p><button class="mini" onclick="go('projetoBolsa')">Abrir projeto</button></div>
+<div class="project"><span class="tag">INICIANTE</span><h3>🛏️ Fronha simples</h3><p class="small">Pratica medida, bainha, envelope e montagem.</p><button class="mini" onclick="go('projetoFronha')">Abrir projeto</button></div>
+<div class="project"><span class="tag">INTERMEDIÁRIO</span><h3>👗 Saia básica</h3><p class="small">Pratica medidas, molde, cintura e fechamento.</p><button class="mini" onclick="go('moldeSaia')">Abrir guia</button></div>
 </div></section>
 
-<section id="projetoAvental" class="screen"><button class="back" onclick="go('projetos')">← Projetos</button><h2>🧑‍🍳 Avental — passo a passo</h2><div class="steps"><div class="step"><b>Separe os materiais</b><br>Tecido, linha, tesoura, fita métrica, régua, alfinetes e máquina.</div><div class="step"><b>Faça o molde</b><br>Use o guia de avental e adapte largura e comprimento.</div><div class="step"><b>Corte</b><br>Confira fio, dobra e margens antes de cortar.</div><div class="step"><b>Acabamentos</b><br>Prepare as bordas e depois faça as tiras.</div><div class="step"><b>Monte</b><br>Prenda as tiras, costure e reforce os pontos de tensão.</div><div class="step"><b>Finalização</b><br>Passe a peça e confira se as costuras estão firmes.</div></div><button class="primary" onclick="markProject('Avental')">✓ MARCAR COMO CONCLUÍDO</button></section>
+<section id="projetoAvental" class="screen">
+<button class="back" onclick="go('projetos')">← Projetos</button>
+<div class="detailHead"><div class="kicker">Projeto iniciante</div><h2>🧑‍🍳 Avental simples</h2><p class="desc">Um projeto completo para praticar o que você aprendeu nas primeiras aulas.</p></div>
+<div class="lessonBody">
+<h3>🧰 Materiais</h3><ul><li>Tecido adequado ao projeto</li><li>Linha compatível com o tecido</li><li>Tesoura</li><li>Fita métrica e régua</li><li>Alfinetes ou método de fixação seguro</li><li>Ferro de passar</li><li>Máquina de costura</li></ul>
+<div class="tip blue">Antes de cortar, leia todo o projeto. Separe tudo sobre a mesa e só depois comece.</div>
+<div class="steps">
+<div class="step"><b>1 — Planeje o avental</b><br>Defina largura, comprimento e onde a parte superior ficará no corpo. Faça uma anotação das medidas escolhidas.</div>
+<div class="step"><b>2 — Prepare o tecido</b><br>Confira o direito e o avesso. Passe o tecido se estiver amassado. Verifique se há defeitos ou manchas na área que será usada.</div>
+<div class="step"><b>3 — Faça o molde</b><br>Use o guia de avental. Marque centro, laterais e formato superior. Acrescente as margens necessárias.</div>
+<div class="step"><b>4 — Corte</b><br>Prenda o molde, confira o fio e corte seguindo a linha. Não tenha pressa nos cantos e curvas.</div>
+<div class="step"><b>5 — Marque as bordas</b><br>Marque as dobras de acabamento e passe o ferro. A dobra bem marcada facilita muito a costura.</div>
+<div class="step"><b>6 — Faça as bainhas</b><br>Costure as bordas preparadas mantendo a largura uniforme. Pare sempre que perceber que a dobra saiu do lugar.</div>
+<div class="step"><b>7 — Prepare as tiras</b><br>Dobre as tiras, passe e costure. Confira comprimento e largura antes de fixá-las.</div>
+<div class="step"><b>8 — Posicione as tiras</b><br>Use o centro da peça como referência para deixar os dois lados simétricos. Prenda provisoriamente e confira.</div>
+<div class="step"><b>9 — Faça os reforços</b><br>Nos pontos de tensão, faça uma costura de reforço adequada. Não dependa apenas de um pequeno trecho de costura.</div>
+<div class="step"><b>10 — Revisão final</b><br>Corte sobras de linha, confira todas as costuras, passe a peça e examine os pontos de fixação das tiras.</div>
+</div>
+<div class="tip green"><b>🏁 Resultado esperado:</b> uma peça simples, bem acabada e principalmente uma experiência completa de cortar → preparar → costurar → revisar.</div>
+</div>
+<button class="primary" onclick="markProject('Avental')">✓ MARCAR COMO CONCLUÍDO</button>
+</section>
 
-<section id="projetoBolsa" class="screen"><button class="back" onclick="go('projetos')">← Projetos</button><h2>👜 Bolsa tote — passo a passo</h2><div class="steps"><div class="step"><b>Materiais</b><br>Tecido, linha, tesoura, fita métrica e alfinetes.</div><div class="step"><b>Corte</b><br>Dois retângulos para o corpo e duas tiras para as alças.</div><div class="step"><b>Una o corpo</b><br>Costure laterais e fundo, deixando a abertura livre.</div><div class="step"><b>Faça o acabamento</b><br>Finalize a borda superior.</div><div class="step"><b>Alças</b><br>Marque simetricamente e costure com reforço.</div></div><button class="primary" onclick="markProject('Bolsa')">✓ MARCAR COMO CONCLUÍDO</button></section>
+<section id="projetoBolsa" class="screen">
+<button class="back" onclick="go('projetos')">← Projetos</button>
+<div class="detailHead"><div class="kicker">Projeto iniciante</div><h2>👜 Bolsa tote</h2><p class="desc">Projeto para praticar linhas retas, montagem, alças e reforços.</p></div>
+<div class="lessonBody">
+<h3>🧰 Materiais</h3><ul><li>Tecido</li><li>Linha</li><li>Tesoura</li><li>Fita métrica</li><li>Régua</li><li>Alfinetes</li><li>Ferro de passar</li></ul>
+<div class="steps">
+<div class="step"><b>1 — Escolha o tamanho</b><br>Defina largura e altura pensando no uso. Faça um desenho simples com as medidas anotadas.</div>
+<div class="step"><b>2 — Corte os dois corpos</b><br>Corte dois retângulos iguais. Confira se os cantos estão esquadrejados e se as peças têm exatamente o mesmo tamanho.</div>
+<div class="step"><b>3 — Corte as alças</b><br>Corte duas tiras iguais. Coloque uma sobre a outra para comparar comprimento e largura.</div>
+<div class="step"><b>4 — Prepare as alças</b><br>Dobre as bordas conforme o método escolhido, passe e costure. Tente manter a mesma largura em toda a extensão.</div>
+<div class="step"><b>5 — Una os corpos</b><br>Coloque direito com direito. Alinhe as laterais e o fundo. Prenda antes de levar à máquina.</div>
+<div class="step"><b>6 — Costure</b><br>Faça as costuras mantendo uma margem constante. Faça reforço no início e no final conforme a necessidade do projeto.</div>
+<div class="step"><b>7 — Prepare a abertura</b><br>Faça a dobra superior, passe e costure. Trabalhe devagar para manter a borda uniforme.</div>
+<div class="step"><b>8 — Marque as alças</b><br>Meça a distância de cada alça a partir do centro. Confira as duas medidas antes de costurar.</div>
+<div class="step"><b>9 — Costure e reforce</b><br>Prenda cada alça com uma costura firme e faça reforço na região de maior esforço.</div>
+<div class="step"><b>10 — Inspecione</b><br>Vire a bolsa, abra todas as costuras, corte fios e confira se as alças estão na mesma altura.</div>
+</div>
+</div>
+<button class="primary" onclick="markProject('Bolsa')">✓ MARCAR COMO CONCLUÍDO</button>
+</section>
 
-<section id="projetoFronha" class="screen"><button class="back" onclick="go('projetos')">← Projetos</button><h2>🛏️ Fronha simples — passo a passo</h2><div class="steps"><div class="step"><b>Meça o travesseiro</b><br>Registre largura e comprimento e decida a folga desejada.</div><div class="step"><b>Planeje o tecido</b><br>Inclua a extensão necessária para o fechamento/envelope e margens.</div><div class="step"><b>Faça as bainhas</b><br>Prepare primeiro as bordas que ficarão aparentes.</div><div class="step"><b>Feche</b><br>Una as laterais com os lados direitos conforme o método escolhido.</div><div class="step"><b>Vire e passe</b><br>Confira cantos e acabamento.</div></div><button class="primary" onclick="markProject('Fronha')">✓ MARCAR COMO CONCLUÍDO</button></section>
+<section id="projetoFronha" class="screen">
+<button class="back" onclick="go('projetos')">← Projetos</button>
+<div class="detailHead"><div class="kicker">Projeto iniciante</div><h2>🛏️ Fronha simples</h2><p class="desc">Um exercício ótimo para aprender medida, bainha e montagem sem muitas curvas.</p></div>
+<div class="lessonBody">
+<div class="steps">
+<div class="step"><b>1 — Meça o travesseiro</b><br>Meça largura e comprimento. Faça a medição duas vezes para evitar erro.</div>
+<div class="step"><b>2 — Defina a folga</b><br>Decida quanto espaço adicional será necessário para o tipo de tecido e o acabamento desejado.</div>
+<div class="step"><b>3 — Planeje o envelope</b><br>Desenhe a peça aberta e marque qual parte ficará sobreposta para formar o fechamento.</div>
+<div class="step"><b>4 — Corte</b><br>Confira direito, avesso e fio. Corte o retângulo com cantos bem definidos.</div>
+<div class="step"><b>5 — Faça as bainhas aparentes</b><br>Prepare primeiro as bordas que ficarão visíveis. Passe antes de costurar.</div>
+<div class="step"><b>6 — Monte o envelope</b><br>Dobre as partes na ordem planejada, mantendo o direito e o avesso corretamente posicionados.</div>
+<div class="step"><b>7 — Feche as laterais</b><br>Alinhe as bordas, prenda e costure. Confira se a largura da margem está uniforme.</div>
+<div class="step"><b>8 — Vire</b><br>Vire a peça para o lado direito e empurre os cantos com cuidado. Evite ferramentas que possam perfurar o tecido.</div>
+<div class="step"><b>9 — Passe</b><br>Assente as costuras com ferro adequado ao tecido.</div>
+<div class="step"><b>10 — Teste</b><br>Coloque o travesseiro e confira tamanho, fechamento e acabamento.</div>
+</div>
+</div>
+<button class="primary" onclick="markProject('Fronha')">✓ MARCAR COMO CONCLUÍDO</button>
+</section>
 
 <section id="pratica" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>🎯 Prática e revisão</h2><p class="desc">Teste seus conhecimentos. O resultado fica salvo apenas no aparelho.</p><div id="quizArea"></div>
+<button class="back" onclick="go('home')">← Início</button><h2>🎯 Prática e revisão</h2><p class="desc">Responda, veja a explicação e use os exercícios para revisar o conteúdo.</p><div id="quizArea"></div>
 </section>
 
 <section id="glossario" class="screen">
 <button class="back" onclick="go('home')">← Início</button><h2>📖 Glossário</h2><input class="search" id="glossSearch" oninput="renderGloss()" placeholder="🔎 Buscar termo..."><div id="glossList"></div>
 </section>
 
-
 <section id="videos" class="screen">
-<button class="back" onclick="go('home')">← Início</button>
-<h2>🎥 Vídeos de apoio</h2>
-<p class="desc">Vídeos externos entram apenas como complemento. O conteúdo principal do curso continua dentro do aplicativo.</p>
-<div class="tech"><b>▶️ Como usar</b><p class="small">Toque no botão para abrir a busca do YouTube. Assim o vídeo continua hospedado no YouTube e você não precisa baixar ou copiar o conteúdo para o aplicativo.</p></div>
+<button class="back" onclick="go('home')">← Início</button><h2>🎥 Vídeos de apoio</h2><p class="desc">Vídeos externos são complementares. O curso e as explicações principais continuam dentro do aplicativo.</p>
+<div class="tech"><b>▶️ Como usar</b><p class="small">Toque em uma categoria para abrir uma busca no YouTube. Você escolhe o vídeo e pode comparar diferentes demonstrações.</p></div>
 <div class="list">
-<div class="project"><span class="tag">MÁQUINA</span><h3>🧵 Primeiros passos</h3><p class="small">Procure uma demonstração de passagem de linha e preparação da máquina.</p><button class="mini" onclick="youtubeSearch('costura para iniciantes máquina de costura passagem de linha bobina português')">▶️ Buscar no YouTube</button></div>
-<div class="project"><span class="tag">MEDIDAS</span><h3>📏 Como tirar medidas</h3><p class="small">Demonstração visual para praticar a medição corporal.</p><button class="mini" onclick="youtubeSearch('como tirar medidas para costura busto cintura quadril português')">▶️ Buscar no YouTube</button></div>
-<div class="project"><span class="tag">MOLDES</span><h3>📐 Entendendo moldes</h3><p class="small">Vídeos para reconhecer fio, dobra, piques e margem de costura.</p><button class="mini" onclick="youtubeSearch('como interpretar molde de costura fio do tecido margem piques português')">▶️ Buscar no YouTube</button></div>
-<div class="project"><span class="tag">TÉCNICA</span><h3>✂️ Costura reta e acabamento</h3><p class="small">Demonstrações de costura reta, bainha e acabamento.</p><button class="mini" onclick="youtubeSearch('costura reta bainha acabamento iniciantes português')">▶️ Buscar no YouTube</button></div>
+<div class="project"><span class="tag">MÁQUINA</span><h3>🧵 Primeiros passos</h3><p class="small">Passagem de linha, bobina e preparação.</p><button class="mini" onclick="youtubeSearch('costura para iniciantes máquina de costura passagem de linha bobina português')">▶️ Buscar no YouTube</button></div>
+<div class="project"><span class="tag">MEDIDAS</span><h3>📏 Como tirar medidas</h3><p class="small">Demonstrações de medição corporal.</p><button class="mini" onclick="youtubeSearch('como tirar medidas para costura busto cintura quadril português')">▶️ Buscar no YouTube</button></div>
+<div class="project"><span class="tag">MOLDES</span><h3>📐 Entendendo moldes</h3><p class="small">Fio, dobra, piques e margem.</p><button class="mini" onclick="youtubeSearch('como interpretar molde de costura fio do tecido margem piques português')">▶️ Buscar no YouTube</button></div>
+<div class="project"><span class="tag">TÉCNICA</span><h3>✂️ Costura reta e acabamento</h3><p class="small">Demonstrações para iniciantes.</p><button class="mini" onclick="youtubeSearch('costura reta bainha acabamento iniciantes português')">▶️ Buscar no YouTube</button></div>
 </div>
-<div class="tip">⚠️ Não copiamos nem hospedamos vídeos de terceiros. O YouTube informa que vídeos podem ser incorporados por meio do player oficial, sujeito aos Termos e Políticas da plataforma. citeturn0search3</div>
+<div class="tip">⚠️ O app não hospeda nem copia vídeos de terceiros; apenas abre uma busca no YouTube.</div>
 </section>
 
-
 <section id="lixeira" class="screen">
-<button class="back" onclick="go('home')">← Início</button>
-<h2>🗑️ Lixeira e dados salvos</h2>
-<p class="desc">Aqui você pode apagar os dados guardados localmente neste aparelho.</p>
-<div id="trashList"></div>
-<div class="tip">⚠️ A exclusão remove os dados deste navegador/aparelho. Ela não apaga o aplicativo nem os arquivos publicados no GitHub.</div>
+<button class="back" onclick="go('home')">← Início</button><h2>🗑️ Lixeira e dados salvos</h2><p class="desc">Apague os dados guardados localmente neste aparelho.</p><div id="trashList"></div>
+<div class="tip red">⚠️ A exclusão remove os dados deste navegador/aparelho. Não apaga o aplicativo nem os arquivos publicados no GitHub.</div>
 <button class="primary" style="background:#8f234d" onclick="clearAllData()">🗑️ APAGAR TODOS OS DADOS SALVOS</button>
 </section>
 
 <section id="sobre" class="screen">
 <button class="back" onclick="go('home')">← Início</button><h2>ℹ️ Sobre o Costura Fácil</h2>
-<div class="about"><p><b>Objetivo:</b> ensinar fundamentos de costura, leitura de moldes, medidas, corte e montagem de projetos de forma simples e progressiva.</p><p><b>Importante:</b> cada máquina, tecido e projeto pode exigir ajustes. O aplicativo é educativo e não substitui o manual da sua máquina nem uma prova de modelagem.</p><p><b>Privacidade:</b> as medidas e o progresso desta versão são armazenados localmente no navegador usando o armazenamento do próprio aparelho.</p><p><b>Como evoluir:</b> novos moldes, ilustrações e módulos podem ser acrescentados sem alterar a estrutura principal.</p><hr><p class="sources"><b>Base de pesquisa desta versão:</b> referências de ensino de costura e leitura de moldes consultadas em fontes especializadas, incluindo Seamwork e Sew Magazine. As orientações foram adaptadas para fins didáticos e não reproduzem moldes comerciais.</p></div>
+<div class="about">
+<p><b>Objetivo:</b> ensinar fundamentos de costura, leitura de moldes, medidas, corte e montagem de projetos de forma simples e progressiva.</p>
+<p><b>Como estudar:</b> leia a aula inteira, pratique em retalho, confira o resultado e repita quando necessário. Não há problema em voltar uma aula.</p>
+<p><b>Segurança:</b> cada máquina possui características próprias. Para troca de agulha, limpeza, passagem de linha, bobina e regulagens específicas, siga o manual do fabricante.</p>
+<p><b>Privacidade:</b> nesta versão, medidas, progresso e resultados ficam armazenados localmente no navegador do aparelho.</p>
+<p><b>Conteúdo:</b> as explicações são didáticas e devem ser adaptadas ao tecido, máquina, molde e projeto utilizados.</p>
+<hr><p class="sources"><b>Costura Fácil:</b> conteúdo didático e projetos próprios. O app não substitui cursos presenciais, manuais de fabricantes ou uma modelagem profissional.</p>
+</div>
 </section>
+
 <div style="text-align:center;padding:18px 8px 8px;color:#817680;font-size:12px">
-  <div class="heart">🧵</div>
-  <b>© 2026 Luis Ricardo — Todos os direitos reservados.</b><br>
-  <span>Costura Fácil • Conteúdo didático e projetos próprios.</span>
+<div class="heart">🧵</div><b>© 2026 Luís Ricardo Almeida Siqueira — Todos os direitos reservados.</b><br>
+<span>Costura Fácil • Conteúdo didático e projetos próprios.</span>
 </div>
 </main>
 
 <footer><button class="active" onclick="go('home')"><span class="nav">🏠</span>Início</button><button onclick="go('cursos')"><span class="nav">📚</span>Cursos</button><button onclick="go('moldes')"><span class="nav">📐</span>Moldes</button></footer>
 
-<div class="drawer" id="drawer" onclick="closeMenu(event)"><div class="drawerbox" onclick="event.stopPropagation()"><h2>🧵 Costura Fácil</h2>
+<div class="drawer" id="drawer" onclick="closeMenu(event)"><div class="drawerbox" onclick="event.stopPropagation()">
+<h2>🧵 Costura Fácil</h2>
 <button onclick="go('home');closeMenu()">🏠 Início</button><button onclick="go('cursos');closeMenu()">📚 Cursos</button><button onclick="go('moldes');closeMenu()">📐 Moldes</button><button onclick="go('medidas');closeMenu()">📏 Minhas medidas</button><button onclick="go('tecnicas');closeMenu()">✂️ Técnicas</button><button onclick="go('projetos');closeMenu()">👗 Projetos</button><button onclick="go('pratica');closeMenu()">🎯 Prática</button><button onclick="go('videos');closeMenu()">🎥 Vídeos</button><button onclick="go('lixeira');closeMenu()">🗑️ Lixeira</button><button onclick="go('glossario');closeMenu()">📖 Glossário</button><button onclick="go('sobre');closeMenu()">ℹ️ Sobre o app</button>
-</div></div><div class="toast" id="toast"></div>
+</div></div>
+<div class="toast" id="toast"></div>
 
 <script>
 const ids=['home','cursos','nivel1','nivel2','nivel3','nivel4','aula','moldes','moldeSaia','moldeAvental','moldeBolsa','blusa','medidas','tecnicas','projetos','projetoAvental','projetoBolsa','projetoFronha','pratica','glossario','videos','lixeira','sobre'];
-function go(id){ids.forEach(x=>document.getElementById(x)?.classList.remove('on'));document.getElementById(id)?.classList.add('on');window.scrollTo(0,0);if(id==='tecnicas')renderTech();if(id==='glossario')renderGloss();if(id==='pratica')renderQuiz();}
-function menu(){document.getElementById('drawer').classList.add('open')}function closeMenu(e){if(!e||e.target.id==='drawer')document.getElementById('drawer').classList.remove('open')}
-function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';clearTimeout(window.__t);window.__t=setTimeout(()=>x.style.display='none',2400)}
 
+function go(id){
+ ids.forEach(x=>document.getElementById(x)?.classList.remove('on'));
+ document.getElementById(id)?.classList.add('on');
+ window.scrollTo(0,0);
+ if(id==='tecnicas')renderTech();
+ if(id==='glossario')renderGloss();
+ if(id==='pratica')renderQuiz();
+ if(id==='lixeira')renderTrash();
+ updateProgress();
+}
+function menu(){document.getElementById('drawer').classList.add('open')}
+function closeMenu(e){if(!e||e.target.id==='drawer')document.getElementById('drawer').classList.remove('open')}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';clearTimeout(window.__t);window.__t=setTimeout(()=>x.style.display='none',2500)}
+function youtubeSearch(q){window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(q),'_blank','noopener')}
 
 function saveAppProgress(){
-  const data={savedAt:new Date().toLocaleString('pt-BR'),medidas:{}};
-  ['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'].forEach(x=>data.medidas[x]=localStorage.getItem('med_'+x)||'');
-  localStorage.setItem('costura_backup',JSON.stringify(data));
-  toast('Dados salvos neste aparelho ✓');
+ const data={savedAt:new Date().toLocaleString('pt-BR'),medidas:{},aulas:{},projetos:{}};
+ ['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'].forEach(x=>data.medidas[x]=localStorage.getItem('med_'+x)||'');
+ Object.keys(localStorage).filter(k=>k.startsWith('done_')).forEach(k=>data.aulas[k]=localStorage.getItem(k));
+ Object.keys(localStorage).filter(k=>k.startsWith('project_')).forEach(k=>data.projetos[k]=localStorage.getItem(k));
+ data.quiz=localStorage.getItem('quizScore')||'0';
+ localStorage.setItem('costura_backup',JSON.stringify(data));
+ toast('Progresso salvo neste aparelho ✓');
 }
 function shareApp(){
-  const url=window.location.href;
-  if(navigator.share){
-    navigator.share({title:'Costura Fácil',text:'Aprenda costura com o aplicativo Costura Fácil.',url}).catch(()=>{});
-  }else if(navigator.clipboard){
-    navigator.clipboard.writeText(url).then(()=>toast('Link do app copiado ✓')).catch(()=>toast('Use o endereço da página para compartilhar.'));
-  }else toast('Use o menu do navegador para compartilhar este app.');
-}
-function youtubeSearch(q){
-  const url='https://www.youtube.com/results?search_query='+encodeURIComponent(q);
-  window.open(url,'_blank','noopener');
+ const url=window.location.href;
+ if(navigator.share){navigator.share({title:'Costura Fácil',text:'Aprenda costura com o aplicativo Costura Fácil.',url}).catch(()=>{})}
+ else if(navigator.clipboard){navigator.clipboard.writeText(url).then(()=>toast('Link do app copiado ✓')).catch(()=>toast('Use o endereço da página para compartilhar.'))}
+ else toast('Use o menu do navegador para compartilhar este app.');
 }
 function openTrash(){renderTrash();go('lixeira')}
 function renderTrash(){
-  const keys=Object.keys(localStorage);
-  const med=keys.filter(k=>k.startsWith('med_')).length;
-  const done=keys.filter(k=>k.startsWith('done_')).length;
-  const proj=keys.filter(k=>k.startsWith('project_')).length;
-  const backup=localStorage.getItem('costura_backup')?'Sim':'Não';
-  document.getElementById('trashList').innerHTML=`<div class="box" style="padding:15px;margin:10px 0;line-height:1.6">
-  📏 Medidas salvas: <b>${med}</b><br>
-  📚 Aulas concluídas: <b>${done}</b><br>
-  👗 Projetos concluídos: <b>${proj}</b><br>
-  💾 Backup local: <b>${backup}</b>
-  </div>`;
+ const keys=Object.keys(localStorage);
+ const med=keys.filter(k=>k.startsWith('med_')).length;
+ const done=keys.filter(k=>k.startsWith('done_')).length;
+ const proj=keys.filter(k=>k.startsWith('project_')).length;
+ const backup=localStorage.getItem('costura_backup')?'Sim':'Não';
+ document.getElementById('trashList').innerHTML=`<div class="box" style="padding:15px;margin:10px 0;line-height:1.8">
+ 📏 Medidas salvas: <b>${med}</b><br>📚 Aulas concluídas: <b>${done}</b><br>👗 Projetos concluídos: <b>${proj}</b><br>💾 Backup local: <b>${backup}</b>
+ </div>`;
 }
 function clearAllData(){
-  if(confirm('Apagar todas as medidas, progresso, projetos e dados salvos neste aparelho?')){
-    localStorage.clear();loadMeasures();renderTrash();toast('Dados apagados.');go('home');
-  }
+ if(confirm('Apagar todas as medidas, progresso, projetos, quiz e dados salvos neste aparelho?')){
+  localStorage.clear();loadMeasures();renderTrash();toast('Dados apagados.');go('home');
+ }
 }
 
 const lessons={
 n1:[
-['1','Conhecendo a máquina','Identifique agulha, calcador, placa, volante, alimentação, reguladores e bobina. Use o manual do seu modelo para os detalhes específicos.'],
-['2','Segurança e preparação','Antes de trocar agulha, limpar ou mexer na região da bobina, desligue a máquina. Mantenha dedos afastados da agulha em movimento.'],
-['3','Linha e agulha','Escolha agulha e linha compatíveis com o tecido. Faça testes em retalho antes da peça.'],
-['4','Bobina','Aprenda a encher e instalar a bobina conforme o manual. A orientação de passagem varia entre máquinas.'],
-['5','Passagem da linha','Levante a agulha e o calcador e siga o esquema da sua máquina. Faça um teste de ponto após a passagem.'],
-['6','Primeiros pontos','Treine linhas retas em retalhos. Não puxe o tecido; deixe o sistema de transporte fazer o trabalho.']
+['1','Conhecendo a máquina','Aprenda a identificar as partes principais da máquina e descubra para que cada uma serve.'],
+['2','Segurança e preparação','Aprenda os cuidados básicos antes de ligar, limpar, trocar agulha ou mexer na bobina.'],
+['3','Linha e agulha','Entenda como escolher combinações adequadas e por que o teste em retalho é importante.'],
+['4','Bobina','Aprenda o que é a bobina, como ela participa do ponto e como seguir o manual da sua máquina para colocá-la.'],
+['5','Passagem da linha','Aprenda uma rotina de conferência para passar a linha corretamente sem depender de decorar caminhos universais.'],
+['6','Primeiros pontos','Faça seu primeiro exercício de costura reta e aprenda a controlar tecido, velocidade e direção.']
 ],
 n2:[
-['1','Costura reta','Marque uma linha e pratique velocidade constante. Faça retrocesso no começo e no fim quando o projeto pedir.'],
-['2','Zigue-zague','Use para alguns acabamentos de borda ou conforme o tecido e a máquina. Teste largura e comprimento no retalho.'],
-['3','Cantos','Ao chegar ao canto, pare com a agulha em posição segura, levante o calcador e gire o tecido mantendo o ponto de referência.'],
-['4','Curvas','Costure devagar e faça pequenos ajustes de direção, sem esticar o tecido.'],
-['5','Bainha','Dobre a borda, marque com ferro e costure mantendo largura uniforme.'],
-['6','Franzido','Faça pontos longos e puxe os fios de forma controlada para distribuir o franzido uniformemente.'],
-['7','Viés','Prepare a tira, envolva a borda e costure mantendo a largura constante.'],
-['8','Zíper','Marque o posicionamento, use o calcador adequado quando disponível e pratique em retalho.'],
-['9','Botões e casas','Marque a posição e faça uma amostra antes da peça definitiva.'],
-['10','Passadoria','Passe cada etapa conforme o tecido e o projeto. Passar durante a montagem ajuda a obter acabamento mais preciso.']
+['1','Costura reta','Aprenda a iniciar, conduzir e terminar uma linha reta com controle.'],
+['2','Zigue-zague','Entenda quando ele pode ser usado e como testar largura e comprimento.'],
+['3','Cantos','Aprenda a parar, girar o tecido e continuar sem criar um canto deformado.'],
+['4','Curvas','Aprenda a diminuir velocidade e orientar o tecido sem esticar.'],
+['5','Bainha','Aprenda a preparar uma borda dobrada, passar e costurar mantendo largura constante.'],
+['6','Franzido','Aprenda a criar e distribuir franzido de maneira controlada.'],
+['7','Viés','Entenda como preparar uma tira de viés e usá-la no acabamento.'],
+['8','Zíper','Aprenda a planejar o posicionamento e praticar em retalho antes da peça.'],
+['9','Botões e casas','Aprenda a marcar posições, testar e fazer o acabamento com segurança.'],
+['10','Passadoria','Aprenda por que passar durante a montagem melhora o resultado final.']
 ],
 n3:[
-['1','Como tirar medidas','Use fita métrica sem apertar. Faça cada medida pelo menos duas vezes quando estiver aprendendo.'],
-['2','Entendendo o molde','Identifique frente, costas, tamanho, fio, dobra, piques e instruções de corte.'],
-['3','Fio do tecido','A linha de fio deve ser posicionada de acordo com a indicação do molde e a estrutura do tecido.'],
-['4','Linha de dobra','Quando aparecer “na dobra”, encoste a marca indicada na dobra do tecido para formar uma peça espelhada.'],
-['5','Piques e marcações','Transfira marcações essenciais para facilitar o encaixe das peças durante a costura.'],
-['6','Margem de costura','Confirme no projeto quanto foi previsto. Não confunda linha de costura com borda de corte.'],
-['7','Corte','Prepare tecido, molde e superfície. Alinhe o fio, prenda o molde e corte com precisão.'],
-['8','Prova','Faça uma amostra ou peça de teste quando estiver aprendendo modelagem ou trabalhando com uma peça ajustada ao corpo.']
+['1','Como tirar medidas','Aprenda a posicionar a fita e registrar medidas de forma repetível.'],
+['2','Entendendo o molde','Aprenda a reconhecer frente, costas, tamanho, fio, dobra, piques e instruções.'],
+['3','Fio do tecido','Entenda o que significa fio e por que ele influencia o caimento.'],
+['4','Linha de dobra','Aprenda a posicionar corretamente uma peça que deve ser cortada na dobra.'],
+['5','Piques e marcações','Aprenda a transferir marcas essenciais para a montagem.'],
+['6','Margem de costura','Entenda a diferença entre linha de costura e borda de corte.'],
+['7','Corte','Aprenda a preparar superfície, tecido, molde e ferramentas antes de cortar.'],
+['8','Prova','Entenda por que uma amostra pode evitar perder tecido e como observar o caimento.']
 ],
 n4:[
-['1','Planejamento','Leia o projeto inteiro antes de cortar. Separe materiais, ferramentas e sequência.'],
-['2','Preparação do tecido','Verifique fio, avesso, direito, encolhimento e necessidade de passar o tecido.'],
-['3','Corte','Use o plano de corte e marque as referências importantes.'],
-['4','Montagem','Una as peças na ordem indicada e confira os piques antes de costurar.'],
-['5','Acabamentos','Escolha acabamento adequado ao tecido e à finalidade da peça.'],
-['6','Prova e ajustes','Vista ou teste a peça quando apropriado e corrija o molde antes do tecido definitivo.'],
-['7','Finalização','Passe a peça, apare linhas, confira costuras e faça os últimos reforços.']
-]
+['1','Planejamento','Aprenda a ler o projeto inteiro e organizar materiais antes de cortar.'],
+['2','Preparação do tecido','Aprenda a verificar fio, direito, avesso, encolhimento e necessidade de passar.'],
+['3','Corte','Aprenda a seguir o plano de corte e transferir as marcações importantes.'],
+['4','Montagem','Aprenda a unir peças na ordem correta e conferir os encaixes antes de costurar.'],
+['5','Acabamentos','Conheça formas de finalizar bordas e escolha conforme tecido e finalidade.'],
+['6','Prova e ajustes','Aprenda a testar a peça e identificar onde um ajuste pode ser necessário.'],
+['7','Finalização','Faça revisão das costuras, fios, passadoria e reforços antes de considerar a peça pronta.']
+]};
+
+const lessonDetails={
+'1|0':{nivel:'Nível 1 • Aula 1',title:'Conhecendo a máquina',intro:'Antes de costurar, você precisa saber onde estão as partes principais da sua máquina. Não é necessário decorar tudo de uma vez. O objetivo é reconhecer as peças que você vai usar com frequência.',materials:['Sua máquina de costura','Manual do fabricante','Um retalho de tecido','Linha e bobina da máquina'],steps:[
+['Comece com a máquina desligada','Coloque a máquina sobre uma superfície firme. Deixe espaço para movimentar o tecido e evite começar com o pedal pressionado.'],
+['Observe a agulha','A agulha é a peça que entra no tecido e conduz a linha superior. Nunca coloque os dedos próximos da agulha quando ela estiver se movimentando.'],
+['Localize o calcador','O calcador mantém o tecido pressionado enquanto ele passa pela máquina. Levantar e abaixar o calcador será uma ação muito frequente.'],
+['Localize os dentes de transporte','Eles ficam na região sob o calcador e ajudam a movimentar o tecido. Não tente substituir o trabalho deles puxando o tecido.'],
+['Encontre o volante','O volante permite posicionar a agulha manualmente em muitas máquinas. Consulte o manual para saber o sentido correto de operação.'],
+['Observe a bobina','A bobina fornece a linha inferior do ponto. A forma de colocar a bobina varia entre máquinas, então use o manual como referência principal.'],
+['Procure os controles','Identifique controles como comprimento do ponto, seleção de ponto e tensão, quando presentes. Não altere vários controles ao mesmo tempo sem fazer um teste.'],
+['Faça um reconhecimento final','Aponte para cada peça e tente explicar sua função com suas próprias palavras. Se não souber, consulte o manual.']],observe:'Você não precisa memorizar tudo hoje. O mais importante é saber onde procurar cada parte quando uma aula pedir.',errors:['Tentar usar a máquina sem conhecer o manual.','Puxar o tecido com força.','Colocar a mão perto da agulha em movimento.','Mudar várias regulagens sem fazer testes.'],practice:'Com a máquina desligada, identifique pelo menos 8 partes. Depois abra o manual e confirme os nomes.'},
+'1|1':{nivel:'Nível 1 • Aula 2',title:'Segurança e preparação',intro:'Segurança vem antes da velocidade. A máquina tem agulha, partes móveis e pode causar ferimentos quando usada sem atenção.',materials:['Máquina','Manual','Área de trabalho bem iluminada'],steps:[
+['Prepare a área','Use uma superfície firme, mantenha o espaço organizado e retire objetos que possam atrapalhar o tecido ou o pedal.'],
+['Comece com a máquina desligada','Para trocar agulha, mexer em determinadas regiões ou fazer limpeza, desligue a máquina conforme o manual.'],
+['Prenda cabelos e roupas soltas','Evite que cabelos, cordões ou mangas muito soltas se aproximem das partes móveis.'],
+['Posicione o corpo','Sente-se de maneira confortável e mantenha as mãos controlando o tecido longe da trajetória da agulha.'],
+['Teste devagar','Nas primeiras tentativas, use velocidade baixa. Controle vem antes de rapidez.'],
+['Pare quando algo parecer errado','Barulho diferente, linha embolando ou agulha quebrando são motivos para parar e investigar com a máquina desligada quando necessário.']],observe:'Segurança não é uma etapa que termina. Ela acompanha toda a prática.',errors:['Costurar distraído.','Tentar segurar o tecido perto da agulha.','Mexer na máquina ligada durante manutenção.'],practice:'Faça uma lista de três situações em que você deve parar e desligar a máquina antes de continuar.'},
+'1|2':{nivel:'Nível 1 • Aula 3',title:'Linha e agulha',intro:'Linha e agulha precisam ser compatíveis com o tecido e com o projeto. Não existe uma combinação única que sirva para tudo.',materials:['Diferentes retalhos','Linha adequada ao projeto','Agulhas apropriadas'],steps:[
+['Observe o tecido','Veja se é leve, médio, pesado, elástico ou possui características especiais.'],
+['Escolha a agulha','Use uma agulha apropriada ao tecido e siga recomendações do fabricante da máquina e da agulha.'],
+['Escolha a linha','Use uma linha adequada ao material e ao tipo de costura.'],
+['Faça um teste','Costure um retalho usando a mesma combinação prevista para a peça.'],
+['Observe o ponto','Veja se há pontos falhando, laçadas, tensão inadequada ou dano ao tecido.'],
+['Ajuste uma coisa por vez','Se algo estiver errado, mude apenas um fator e faça novo teste. Isso ajuda a descobrir a causa.']],observe:'Um teste de poucos centímetros pode evitar problemas em uma peça inteira.',errors:['Escolher agulha apenas pela aparência.','Usar a mesma configuração para tecidos muito diferentes.','Alterar tensão e outros controles todos de uma vez.'],practice:'Faça dois testes em retalhos diferentes e compare o comportamento do ponto.'},
+'1|3':{nivel:'Nível 1 • Aula 4',title:'Bobina',intro:'A bobina participa da formação do ponto fornecendo a linha inferior. A posição e o caminho da linha dependem do modelo da máquina.',materials:['Máquina','Bobina compatível','Linha','Manual'],steps:[
+['Desligue a máquina quando indicado','Antes de mexer na região da bobina, siga as orientações de segurança do fabricante.'],
+['Identifique a bobina correta','Bobinas podem ter formatos e materiais diferentes. Use o tipo indicado para sua máquina.'],
+['Aprenda a encher','Siga o procedimento do manual para enrolar a linha de forma uniforme.'],
+['Observe o enrolamento','A linha deve ficar distribuída de maneira regular, sem formar um monte de um lado.'],
+['Instale a bobina','Siga exatamente o desenho do manual para o sentido e caminho da linha.'],
+['Faça um teste','Depois de montar, costure um retalho e observe o ponto.']],observe:'Não memorize uma posição de bobina de outra máquina. Modelos diferentes podem usar sistemas diferentes.',errors:['Forçar a bobina.','Colocar uma bobina incompatível.','Ignorar o sentido indicado pelo fabricante.'],practice:'Faça a instalação seguindo o manual e depois explique para você mesmo por onde a linha passa.'},
+'1|4':{nivel:'Nível 1 • Aula 5',title:'Passagem da linha',intro:'A passagem correta da linha é fundamental. O caminho exato varia, portanto o manual da sua máquina é a referência principal.',materials:['Máquina','Linha','Manual'],steps:[
+['Levante o calcador','Em muitas máquinas isso ajuda a liberar corretamente o sistema de tensão.'],
+['Posicione a agulha','Coloque a agulha na posição recomendada pelo fabricante para facilitar a passagem.'],
+['Siga o diagrama','Acompanhe cada guia de linha na ordem indicada pelo manual.'],
+['Passe pela região da tensão','Não pule guias nem improvise o caminho.'],
+['Passe pela agulha','Use o método indicado para o seu modelo.'],
+['Puxe a linha para trás','Deixe uma pequena ponta de linha segura conforme a orientação da máquina.'],
+['Faça um teste','Costure devagar em retalho e observe se o ponto se forma corretamente.']],observe:'Quando a linha estiver embolando, não continue insistindo. Pare e revise o caminho desde o começo.',errors:['Pular um guia.','Passar a linha com o calcador em posição inadequada quando o manual indicar o contrário.','Continuar costurando com a linha mal passada.'],practice:'Passe a linha usando apenas o diagrama do manual e depois faça um teste de 10 cm.'},
+'1|5':{nivel:'Nível 1 • Aula 6',title:'Primeiros pontos',intro:'Agora vamos fazer a primeira prática real. O objetivo é aprender a conduzir o tecido, controlar a velocidade e observar o ponto.',materials:['Máquina preparada','Retalho de tecido','Linha','Régua','Marcador apropriado para tecido'],steps:[
+['Prepare um retalho','Use um pedaço que seja grande o suficiente para fazer várias linhas.'],
+['Marque linhas retas','Faça linhas paralelas. Elas serão sua referência visual.'],
+['Posicione o tecido','Coloque-o sob o calcador, alinhando a marca com uma referência da máquina.'],
+['Baixe o calcador','Confira antes de pressionar o pedal.'],
+['Comece devagar','Pressione o pedal suavemente e deixe a máquina conduzir o tecido.'],
+['Não puxe','Suas mãos devem orientar, não arrastar.'],
+['Faça o final','Pare, faça o procedimento de reforço indicado para o projeto e retire o tecido.'],
+['Repita','Faça várias linhas. A repetição é o que vai desenvolver o controle.']],observe:'No início, uma costura mais lenta e regular é mais importante que uma costura rápida.',errors:['Puxar o tecido.','Olhar somente para a agulha e esquecer a linha de referência.','Acelerar quando perder a direção.'],practice:'Faça 10 linhas. Depois faça 3 linhas sem marcação e compare com as primeiras.']}
 };
-function renderLessons(key,target){
- document.getElementById(target).innerHTML=lessons[key].map((l,i)=>`<div class="lesson"><div class="num">${l[0]}</div><div><b>${l[1]}</b><br><span class="small">${l[2]}</span></div><button onclick="openLesson('${key}',${i})">Abrir</button></div>`).join('');
+
+const generic={};
+function buildGeneric(k,i){
+ const l=lessons[k][i], n=l[1], intro=l[2];
+ const steps={
+  'Costura reta':[['Prepare o retalho','Marque linhas retas e deixe espaço para repetir o exercício.'],['Posicione o tecido','Alinhe a marca com uma referência da máquina e baixe o calcador.'],['Comece devagar','Use pressão suave no pedal e mantenha atenção na linha de referência.'],['Conduza sem puxar','As mãos orientam o tecido; não force contra os dentes de transporte.'],['Finalize','Pare, faça o reforço quando necessário e retire o tecido com cuidado.'],['Confira','Observe regularidade, direção e aparência dos pontos.']],
+  'Zigue-zague':[['Faça um teste','Use retalho do mesmo tipo de tecido do projeto.'],['Escolha uma configuração inicial','Use uma largura e comprimento adequados ao seu equipamento e faça testes.'],['Observe a cobertura','Veja se o ponto está cobrindo a borda sem cortar o tecido.'],['Ajuste aos poucos','Mude uma regulagem por vez e teste novamente.']],
+  'Cantos':[['Aproxime-se devagar','Reduza a velocidade antes de chegar ao canto.'],['Pare na posição correta','Siga o método recomendado para posicionar a agulha antes de girar.'],['Levante o calcador','Gire o tecido mantendo o ponto de referência.'],['Continue','Baixe o calcador e siga a nova direção.']],
+  'Curvas':[['Marque a curva','Faça uma linha suave no retalho.'],['Reduza a velocidade','Quanto mais fechada a curva, mais controle você precisa.'],['Oriente aos poucos','Faça pequenos movimentos em vez de tentar corrigir tudo de uma vez.'],['Não estique','Deixe o tecido plano e acompanhe a curva.']],
+  'Bainha':[['Prepare a borda','Apare a borda se necessário e marque a dobra.'],['Passe','Use o ferro adequado ao tecido para fixar a dobra.'],['Prenda','Use alfinetes ou outro método de fixação seguro.'],['Costure','Mantenha a distância da borda constante.'],['Confira','Veja se a largura ficou uniforme.']],
+  'Franzido':[['Prepare linhas de controle','Use pontos longos conforme o método escolhido.'],['Deixe pontas','Evite prender as pontas de forma que não possam ser puxadas.'],['Puxe gradualmente','Distribua o franzido por toda a extensão.'],['Alinhe','Confira se o volume está uniforme antes de unir as peças.']],
+  'Viés':[['Prepare a tira','Corte e passe a tira conforme a técnica escolhida.'],['Posicione','Envolva a borda mantendo a mesma largura.'],['Prenda','Fixe a tira antes da costura definitiva.'],['Costure','Avance devagar e confira a parte de baixo.']],
+  'Zíper':[['Faça uma amostra','Nunca comece a primeira tentativa diretamente na peça definitiva.'],['Marque','Defina exatamente onde o zíper ficará.'],['Prepare o tecido','Passe e estabilize as bordas quando necessário.'],['Use o calcador adequado','Se sua máquina possuir calcador específico, siga o manual.'],['Costure','Avance devagar e confira o alinhamento.']],
+  'Botões e casas':[['Marque','Defina posição e distância antes de abrir qualquer casa.'],['Faça uma amostra','Teste em retalho com o mesmo tecido e entretela, se houver.'],['Confira o tamanho','A abertura precisa acomodar o botão sem ficar excessivamente larga.'],['Finalize','Prenda o botão e confira a resistência.']],
+  'Passadoria':[['Leia o tecido','Confira cuidados de temperatura e umidade.'],['Passe por etapas','Assente cada costura enquanto a peça é montada.'],['Use proteção quando necessário','Alguns tecidos exigem pano de proteção ou temperatura menor.'],['Confira o resultado','Evite brilho, marcas ou deformação.']]
+ };
+ const s=steps[n]||[['Leia a explicação','Entenda o objetivo da técnica antes de começar.'],['Prepare um retalho','Faça o primeiro teste fora da peça definitiva.'],['Execute devagar','Priorize controle e precisão.'],['Observe','Confira o ponto, o tecido e o acabamento.'],['Repita','Faça novamente até o movimento ficar confortável.']];
+ return {nivel:'Nível '+(k==='n2'?'2':k==='n3'?'3':'4')+' • Aula '+l[0],title:n,intro,materials:['Retalho ou material de teste','Linha adequada','Ferramentas da técnica','Máquina e manual quando necessário'],steps:s,observe:'O objetivo desta aula é entender o processo e conseguir repetir o movimento com controle.',errors:['Fazer diretamente no tecido definitivo.','Acelerar antes de dominar o movimento.','Ignorar a preparação e a conferência.'],practice:'Repita a técnica em pelo menos três pequenos testes e compare o primeiro com o último.'};
 }
-function openLesson(k,i){localStorage.setItem('lastLesson',k+'_'+i);document.getElementById('aulaTitulo').textContent='🧵 Aula '+lessons[k][i][0]+' — '+lessons[k][i][1];document.getElementById('aulaTexto').innerHTML='<div class="box" style="padding:15px;margin:10px 0;line-height:1.55"><p>'+lessons[k][i][2]+'</p><div class="tip">🎯 <b>Prática:</b> faça um teste em um retalho antes de aplicar a técnica na peça principal.</div><p><b>Checklist:</b></p><p>☐ Entendi a explicação<br>☐ Fiz um teste<br>☐ Conferi o resultado<br>☐ Estou pronto para avançar</p></div>';go('aula')}
-function concluirAula(){let k=localStorage.getItem('lastLesson');if(k)localStorage.setItem('done_'+k,'1');toast('Aula marcada como concluída ✓');go('cursos')}
+function getDetail(k,i){return lessonDetails[k+'|'+i]||buildGeneric(k,i)}
+
+function renderLessons(key,target){
+ const el=document.getElementById(target);
+ el.innerHTML=lessons[key].map((l,i)=>{
+  const done=localStorage.getItem('done_'+key+'_'+i);
+  return `<div class="lesson ${done?'doneLesson':''}"><div class="num">${l[0]}</div><div><b>${l[1]}</b><br><span class="small">${l[2]}</span>${done?'<br><span class="statusBadge">✓ CONCLUÍDA</span>':''}</div><button onclick="openLesson('${key}',${i})">${done?'Rever':'Abrir'}</button></div>`;
+ }).join('');
+ updateLevelProgress(key);
+}
+function updateLevelProgress(key){
+ const total=lessons[key].length, done=lessons[key].filter((_,i)=>localStorage.getItem('done_'+key+'_'+i)).length;
+ const map={n1:'p1'};
+ const p=document.getElementById(map[key]);if(p)p.style.width=(done/total*100)+'%';
+}
+function openLesson(k,i){
+ localStorage.setItem('lastLesson',k+'_'+i);
+ const d=getDetail(k,i);
+ document.getElementById('aulaBack').setAttribute('onclick',`go('${k==='n1'?'nivel1':k==='n2'?'nivel2':k==='n3'?'nivel3':'nivel4'}')`);
+ document.getElementById('aulaHead').innerHTML=`<div class="detailHead"><div class="kicker">${d.nivel}</div><h2>🧵 ${d.title}</h2><p class="desc">${d.intro}</p><div class="infoGrid"><div class="infoChip"><b>⏱️ Ritmo</b>Faça sem pressa.</div><div class="infoChip"><b>🧪 Prática</b>Use retalho primeiro.</div></div></div>`;
+ let html='<h3>🧰 Materiais</h3><ul>'+d.materials.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+ html+='<div class="tip blue">📌 <b>Regra de ouro:</b> a primeira tentativa deve ser feita em um retalho sempre que isso for possível.</div><h3>👣 Passo a passo</h3><div class="steps">'+d.steps.map(x=>`<div class="step"><b>${x[0]}</b><br>${x[1]}</div>`).join('')+'</div>';
+ html+=`<div class="tip green"><b>👀 O que observar:</b><br>${d.observe}</div>`;
+ html+='<h3>❌ Erros comuns</h3><div class="box" style="padding:14px"><ul>'+d.errors.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>';
+ html+=`<div class="tip"><b>💡 Exercício:</b><br>${d.practice}</div>`;
+ document.getElementById('aulaTexto').innerHTML=html;
+ const checks=['Li a explicação inteira','Preparei o material','Fiz o exercício em retalho','Conferi o resultado','Entendi o que devo observar','Estou pronto para revisar ou avançar'];
+ document.getElementById('aulaChecklist').innerHTML=checks.map((x,j)=>`<label class="checkline"><input type="checkbox" onchange="saveCheck('${k}_${i}',${j},this.checked)"> <span>${x}</span></label>`).join('');
+ loadChecks(k+'_'+i);
+ go('aula');
+}
+function saveCheck(key,j,v){localStorage.setItem('check_'+key+'_'+j,v?'1':'0')}
+function loadChecks(key){document.querySelectorAll('#aulaChecklist input').forEach((e,j)=>e.checked=localStorage.getItem('check_'+key+'_'+j)==='1')}
+function currentLesson(){
+ const x=(localStorage.getItem('lastLesson')||'n1_0').split('_');return {k:x[0],i:Number(x[1])};
+}
+function concluirAula(){
+ const x=currentLesson();localStorage.setItem('done_'+x.k+'_'+x.i,'1');toast('Aula marcada como concluída ✓');
+ renderLessons(x.k,x.k==='n1'?'n1':x.k==='n2'?'n2':x.k==='n3'?'n3':'n4');updateProgress();
+}
+function nextLesson(){
+ const x=currentLesson(),arr=lessons[x.k];
+ if(x.i<arr.length-1){openLesson(x.k,x.i+1);return}
+ const order=['n1','n2','n3','n4'],p=order.indexOf(x.k);
+ if(p<order.length-1){openLesson(order[p+1],0)}else toast('Você chegou ao final do curso ✓');
+}
+function previousLesson(){
+ const x=currentLesson(),arr=lessons[x.k];
+ if(x.i>0){openLesson(x.k,x.i-1);return}
+ const order=['n1','n2','n3','n4'],p=order.indexOf(x.k);
+ if(p>0){openLesson(order[p-1],lessons[order[p-1]].length-1)}else toast('Você já está na primeira aula.');
+}
 
 const tech=[
-['🧵 Costura reta','Faça uma linha de teste. Mantenha o tecido alinhado e evite puxá-lo.'],
-['〰️ Zigue-zague','Teste largura e comprimento no retalho para escolher um acabamento apropriado.'],
-['↔️ Bainha','Dobre, marque e costure. Faça a largura ficar constante.'],
-['〰️ Curvas','Reduza a velocidade e faça pequenas correções sem esticar o tecido.'],
-['📐 Canto','Pare com a agulha posicionada, levante o calcador, gire e continue.'],
-['➰ Franzido','Use pontos longos e distribua o volume de forma uniforme.'],
-['🔗 Zíper','Marque, alinhe e use calcador adequado quando disponível. Faça teste antes.'],
-['⭕ Botão','Marque os pontos e faça a casa compatível com o tamanho do botão.'],
-['〰️ Viés','Prepare a tira e envolva a borda mantendo a largura constante.'],
-['📏 Passadoria','Passe por etapas para assentar costuras e melhorar o acabamento.'],
-['🧷 Pique','Use pequenos cortes ou marcas dentro da margem para alinhar peças.'],
-['🪡 Retrocesso','Faça alguns pontos para trás no início/fim quando o projeto exigir reforço.']
+['🧵 Costura reta','Marque uma linha de teste, alinhe com uma referência da máquina, comece devagar e não puxe o tecido.'],
+['〰️ Zigue-zague','Faça testes de largura e comprimento. Observe se a borda está sendo coberta sem cortar o tecido.'],
+['↔️ Bainha','Marque a dobra, passe, fixe e costure mantendo a largura uniforme.'],
+['〰️ Curvas','Reduza a velocidade e faça pequenas correções. Nunca estique o tecido para forçar a curva.'],
+['📐 Canto','Aproxime-se devagar, pare na posição indicada, gire o tecido e continue.'],
+['➰ Franzido','Use pontos longos conforme a técnica escolhida e distribua o volume antes de unir as peças.'],
+['🔗 Zíper','Marque o posicionamento, faça amostra e use o calcador adequado quando disponível.'],
+['⭕ Botão','Marque as posições, faça uma amostra e confira a abertura antes de fazer a casa definitiva.'],
+['〰️ Viés','Prepare a tira, envolva a borda e costure mantendo a largura constante.'],
+['📏 Passadoria','Passe por etapas e respeite as recomendações do tecido para evitar marcas ou deformação.'],
+['🧷 Pique','Faça pequenas marcações dentro da margem para ajudar no encaixe das peças.'],
+['🪡 Retrocesso','Use para reforçar início e fim quando o projeto ou tecido exigir.'],
+['📌 Direito e avesso','Identifique os lados antes de juntar peças. Um erro aqui pode obrigar a desfazer uma costura inteira.'],
+['📏 Medição','Mantenha a fita nivelada e repita a medição para conferir.']
 ];
-function renderTech(){let q=(document.getElementById('techSearch')?.value||'').toLowerCase();document.getElementById('techList').innerHTML=tech.filter(x=>(x[0]+x[1]).toLowerCase().includes(q)).map(x=>`<div class="tech"><b>${x[0]}</b><p class="small">${x[1]}</p></div>`).join('')}
+function renderTech(){
+ let q=(document.getElementById('techSearch')?.value||'').toLowerCase();
+ document.getElementById('techList').innerHTML=tech.filter(x=>(x[0]+x[1]).toLowerCase().includes(q)).map(x=>`<div class="tech"><b>${x[0]}</b><p class="small">${x[1]}</p></div>`).join('');
+}
 
 const gloss=[
-['Agulha','Peça que atravessa o tecido e conduz a linha.'],['Avesso','Lado interno ou não principal do tecido/peça.'],['Bainha','Acabamento feito na borda dobrada do tecido.'],['Bobina','Carretel que fornece a linha inferior da máquina.'],['Calcador','Peça que pressiona e ajuda a conduzir o tecido.'],['Dobra','Linha formada quando o tecido é dobrado.'],['Fio do tecido','Direção estrutural usada para orientar o corte.'],['Franzido','Tecido encurtado e reunido por pontos de controle.'],['Margem de costura','Espaço entre a linha de costura e a borda de corte.'],['Molde','Representação em papel ou digital das partes de uma peça.'],['Pique','Marca de referência usada para alinhar peças.'],['Direito','Lado principal/externo escolhido para aparecer na peça.'],['Retrocesso','Costura em sentido contrário usada para reforçar início/fim.'],['Viés','Direção diagonal do tecido; também nome de tira usada em acabamentos.'],['Zíper','Fecho com dentes/espiral e cursor.'],['Pence','Dobra costurada usada para modelar volume.'],['Linha de costura','Linha onde as peças são efetivamente unidas.'],['Linha de dobra','Indicação de posicionamento do molde junto à dobra do tecido.'],['Plano de corte','Orientação de como distribuir moldes no tecido.'],['Prova','Peça de teste usada para verificar medidas e caimento.']
+['Agulha','Peça que atravessa o tecido e conduz a linha. O tipo deve ser compatível com tecido e máquina.'],
+['Avesso','Lado interno ou não principal do tecido/peça.'],
+['Bainha','Acabamento feito na borda dobrada do tecido.'],
+['Bobina','Pequeno carretel que fornece a linha inferior da máquina.'],
+['Calcador','Peça que pressiona o tecido durante a costura.'],
+['Dobra','Linha formada quando o tecido é dobrado.'],
+['Fio do tecido','Direção estrutural usada para orientar o corte.'],
+['Franzido','Tecido reunido para ocupar menos comprimento e criar volume.'],
+['Margem de costura','Espaço entre a linha onde as peças são unidas e a borda de corte.'],
+['Molde','Representação em papel ou digital de uma parte da peça.'],
+['Pique','Marca de referência usada para alinhar peças durante a montagem.'],
+['Direito','Lado escolhido para ficar visível na peça.'],
+['Retrocesso','Costura em sentido contrário usada para reforçar quando apropriado.'],
+['Viés','Direção diagonal do tecido; também nome de uma tira usada em acabamentos.'],
+['Zíper','Fecho com dentes ou espiral e cursor.'],
+['Pence','Dobra costurada usada para modelar o tecido ao corpo.'],
+['Linha de costura','Linha imaginária ou marcada onde as peças serão efetivamente unidas.'],
+['Linha de dobra','Indicação de que determinada borda do molde deve encostar na dobra do tecido.'],
+['Plano de corte','Orientação de como distribuir moldes no tecido.'],
+['Prova','Peça de teste usada para verificar medidas e caimento.'],
+['Cava','Região do molde correspondente à abertura onde entra o braço.'],
+['Decote','Abertura da peça ao redor do pescoço.'],
+['Cós','Parte que finaliza e sustenta a região da cintura em determinadas peças.'],
+['Entretela','Material usado em alguns projetos para dar estrutura ou estabilidade ao tecido.'],
+['Caimento','Forma como o tecido e a peça se comportam sobre o corpo ou superfície.'],
+['Esquadrejar','Conferir se linhas e cantos estão formando ângulos corretos quando o projeto exige.'],
+['Passadoria','Uso do ferro durante ou após a montagem para assentar costuras e dobras.']
 ];
-function renderGloss(){let q=(document.getElementById('glossSearch')?.value||'').toLowerCase();document.getElementById('glossList').innerHTML=gloss.filter(x=>(x[0]+' '+x[1]).toLowerCase().includes(q)).map(x=>`<div class="tech"><b>${x[0]}</b><p class="small">${x[1]}</p></div>`).join('')}
+function renderGloss(){
+ let q=(document.getElementById('glossSearch')?.value||'').toLowerCase();
+ document.getElementById('glossList').innerHTML=gloss.filter(x=>(x[0]+' '+x[1]).toLowerCase().includes(q)).map(x=>`<div class="tech"><b>${x[0]}</b><p class="small">${x[1]}</p></div>`).join('');
+}
 
-function calcSaia(){let c=+sc.value,q=+sq.value,l=+sl.value;if(!c||!q||!l){toast('Preencha cintura, quadril e comprimento.');return}let w=q/4+1,wa=c/4+1;document.getElementById('saiaResultado').style.display='block';document.getElementById('saiaResultado').innerHTML=`<b>Visualização do quarto de molde</b><svg viewBox="0 0 320 280"><path d="M55 35 L${Math.min(265,55+w*1.4)} 35 L260 245 L45 245 Z" fill="#fde7f0" stroke="#b5165b" stroke-width="3"/><path d="M55 35 Q155 58 ${Math.min(265,55+w*1.4)} 35" fill="none" stroke="#76239b" stroke-width="3"/><line x1="55" y1="55" x2="55" y2="225" stroke="#3b82d0" stroke-width="2" stroke-dasharray="5 4"/><text x="155" y="140" text-anchor="middle" fill="#76239b" font-size="18">SAIA</text><text x="155" y="265" text-anchor="middle" fill="#555" font-size="11">linha da barra</text></svg><p>Referências didáticas: <b>quadril/4 + 1 cm = ${w.toFixed(1)} cm</b>; <b>cintura/4 + 1 cm = ${wa.toFixed(1)} cm</b>; comprimento = <b>${l} cm</b>.</p><div class="tip">⚠️ Este cálculo é uma base de estudo, não garante caimento individual. Acrescente margens conforme a construção escolhida e faça prova antes do tecido definitivo.</div><button class="outline" onclick="window.print()">🖨️ Imprimir esta página</button>`}
+function calcSaia(){
+ let c=+document.getElementById('sc').value,q=+document.getElementById('sq').value,l=+document.getElementById('sl').value;
+ if(!c||!q||!l){toast('Preencha cintura, quadril e comprimento.');return}
+ let w=q/4+1,wa=c/4+1;
+ const r=document.getElementById('saiaResultado');r.style.display='block';
+ r.innerHTML=`<b>Visualização didática do quarto de molde</b><svg viewBox="0 0 320 280"><path d="M55 35 L${Math.min(265,55+w*1.4)} 35 L260 245 L45 245 Z" fill="#fde7f0" stroke="#b5165b" stroke-width="3"/><path d="M55 35 Q155 58 ${Math.min(265,55+w*1.4)} 35" fill="none" stroke="#76239b" stroke-width="3"/><line x1="55" y1="55" x2="55" y2="225" stroke="#3b82d0" stroke-width="2" stroke-dasharray="5 4"/><text x="155" y="140" text-anchor="middle" fill="#76239b" font-size="18">SAIA</text><text x="155" y="265" text-anchor="middle" fill="#555" font-size="11">linha da barra</text></svg><p><b>Quadril ÷ 4 + 1 cm:</b> ${w.toFixed(1)} cm<br><b>Cintura ÷ 4 + 1 cm:</b> ${wa.toFixed(1)} cm<br><b>Comprimento:</b> ${l} cm</p><div class="tip red">⚠️ Este é um cálculo educativo simplificado. Ele não garante caimento individual e não substitui uma modelagem ajustada. Faça uma prova antes do tecido definitivo.</div><button class="outline" onclick="window.print()">🖨️ Imprimir</button>`;
+}
 
-function saveMeasures(){['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'].forEach(x=>{let e=document.getElementById('m_'+x);if(e)localStorage.setItem('med_'+x,e.value)});toast('Medidas salvas neste aparelho ✓')}
-function loadMeasures(){['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'].forEach(x=>{let e=document.getElementById('m_'+x),v=localStorage.getItem('med_'+x);if(e&&v)e.value=v})}
-function markProject(p){localStorage.setItem('project_'+p,'1');toast(p+' marcado como concluído ✓')}
+function saveMeasures(){
+ ['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'].forEach(x=>{let e=document.getElementById('m_'+x);if(e)localStorage.setItem('med_'+x,e.value)});
+ toast('Medidas salvas neste aparelho ✓');
+}
+function loadMeasures(){
+ ['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'].forEach(x=>{let e=document.getElementById('m_'+x),v=localStorage.getItem('med_'+x);if(e&&v)e.value=v});
+}
+function markProject(p){localStorage.setItem('project_'+p,'1');toast(p+' marcado como concluído ✓');updateProgress()}
 
 const quiz=[
-['Qual é uma boa prática antes de costurar uma peça definitiva?',['Cortar direto no tecido mais caro','Testar a técnica em um retalho','Ignorar o fio do tecido'],1],
-['O que a linha de fio ajuda a indicar?',['A direção estrutural do tecido','O tamanho da agulha','A cor da linha'],0],
-['Para que serve a margem de costura?',['Para decorar o molde','É o espaço entre a linha de costura e a borda de corte','Para escolher a cor'],1],
-['Ao trocar agulha ou mexer na região da bobina, o que é importante?',['Manter a máquina ligada','Desligar a máquina conforme orientação de segurança','Aumentar a velocidade'],1],
-['O que os piques ajudam a fazer?',['Alinhar peças durante a montagem','Escolher o tecido','Regular a iluminação'],0]
+['Antes de costurar uma peça definitiva, qual é uma boa prática?',['Cortar direto no tecido mais caro','Testar a técnica em um retalho','Ignorar o fio do tecido'],1,'O retalho permite descobrir problemas antes de comprometer o tecido definitivo.'],
+['O que a linha de fio ajuda a indicar?',['A direção estrutural do tecido','A cor da linha','O tamanho do botão'],0,'O fio orienta como o molde deve ser posicionado em relação à estrutura do tecido.'],
+['O que é margem de costura?',['Uma decoração do molde','O espaço entre a linha de costura e a borda de corte','Uma regulagem da máquina'],1,'A margem é o espaço que fica além da linha onde as peças serão unidas.'],
+['Ao mexer na agulha ou em determinadas partes da bobina, qual é a atitude segura?',['Manter a máquina ligada','Seguir o procedimento de desligamento indicado pelo fabricante','Aumentar a velocidade'],1,'A segurança depende do procedimento da sua máquina; em intervenções que possam colocar você em contato com partes móveis, desligue conforme o manual.'],
+['Para que servem os piques?',['Ajudar a alinhar peças','Escolher a cor do tecido','Regular a iluminação'],0,'Piques são marcas de referência para facilitar o encaixe durante a montagem.'],
+['O que você deve fazer quando uma costura começa a sair da direção?',['Acelerar','Puxar o tecido','Diminuir a velocidade e corrigir suavemente'],2,'Controle e pequenas correções são mais seguros do que puxar ou acelerar.'],
+['Por que passar o tecido durante a montagem?',['Só para deixar bonito','Ajuda a assentar dobras e costuras e melhora a precisão','Para escolher a linha'],1,'A passadoria é parte do processo de montagem e pode melhorar bastante o acabamento.'],
+['Por que fazer uma peça de prova?',['Para gastar mais tecido','Para verificar medidas e caimento antes do tecido definitivo','Para evitar medir'],1,'A prova permite descobrir ajustes antes de comprometer o tecido escolhido para a peça final.']
 ];
-function renderQuiz(){let score=Number(localStorage.getItem('quizScore')||0);document.getElementById('quizArea').innerHTML=quiz.map((q,i)=>`<div class="quiz"><b>${i+1}. ${q[0]}</b>${q[1].map((o,j)=>`<button class="option" onclick="answer(${i},${j},this)">${o}</button>`).join('')}<div id="r${i}" class="small"></div></div>`).join('')+`<div class="tip">🏆 Acertos registrados: <b>${score}</b></div>`}
-function answer(i,j,el){let r=document.getElementById('r'+i);document.querySelectorAll('.quiz')[i].querySelectorAll('.option').forEach((b,k)=>{b.disabled=true;if(k===quiz[i][2])b.classList.add('correct')});if(j===quiz[i][2]){el.classList.add('correct');let s=Number(localStorage.getItem('quizScore')||0)+1;localStorage.setItem('quizScore',s);r.textContent='✓ Correto!'}else{el.classList.add('wrong');r.textContent='A resposta correta foi destacada.'}}
+function renderQuiz(){
+ let score=Number(localStorage.getItem('quizScore')||0);
+ document.getElementById('quizArea').innerHTML=quiz.map((q,i)=>`<div class="quiz"><b>${i+1}. ${q[0]}</b>${q[1].map((o,j)=>`<button class="option" onclick="answer(${i},${j},this)">${o}</button>`).join('')}<div id="r${i}" class="small"></div></div>`).join('')+`<div class="tip">🏆 Acertos registrados: <b>${score}</b><br><span class="small">O contador acumula acertos feitos neste aparelho.</span></div>`;
+}
+function answer(i,j,el){
+ let r=document.getElementById('r'+i),q=quiz[i];
+ document.querySelectorAll('.quiz')[i].querySelectorAll('.option').forEach((b,k)=>{b.disabled=true;if(k===q[2])b.classList.add('correct')});
+ if(j===q[2]){el.classList.add('correct');let s=Number(localStorage.getItem('quizScore')||0)+1;localStorage.setItem('quizScore',s);r.textContent='✓ Correto! '+q[4]}
+ else{el.classList.add('wrong');r.textContent='A resposta correta foi destacada. '+q[4]}
+}
 
-renderLessons('n1','n1');renderLessons('n2','n2');renderLessons('n3','n3');renderLessons('n4','n4');renderTech();renderGloss();loadMeasures();
+function updateProgress(){
+ const all=Object.values(lessons).reduce((a,b)=>a+b.length,0);
+ const done=Object.entries(lessons).reduce((sum,[k,a])=>sum+a.filter((_,i)=>localStorage.getItem('done_'+k+'_'+i)).length,0);
+ const pct=all?done/all*100:0;
+ const p=document.getElementById('homeProgress');if(p)p.style.width=pct+'%';
+ const t=document.getElementById('homeProgressText');if(t)t.textContent=`${done} de ${all} aulas concluídas • ${Math.round(pct)}%`;
+ ['n1','n2','n3','n4'].forEach(k=>{const el=document.getElementById(k);if(el)renderLessons(k,k)});
+}
+
+renderLessons('n1','n1');renderLessons('n2','n2');renderLessons('n3','n3');renderLessons('n4','n4');renderTech();renderGloss();loadMeasures();updateProgress();
 </script>
 </div>
 </body>
