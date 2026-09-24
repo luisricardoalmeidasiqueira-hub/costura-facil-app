@@ -48,6 +48,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}@keyframes spinIn{0%{transform:rotateY(0) scale(.3)}60%{transform:rotateY(540deg) scale(1.15)}100%{transform:rotateY(720deg) scale(1)}}
 .reqLine{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:12px;color:var(--mut);margin-top:5px;padding:6px 8px;border-radius:10px;background:#faf5f8;cursor:pointer}.reqLine.feito{background:#eef8f1}.goLink{color:var(--p);font-weight:900;white-space:nowrap}.goBtn{border:0;background:var(--p);color:#fff;font-weight:900;border-radius:10px;padding:8px 11px;margin-top:9px;font-size:12px}
 .pattern{position:relative}.prizeTag{position:absolute;top:8px;right:8px;background:#f5b900;color:#4a3500;font-size:9px;font-weight:900;border-radius:10px;padding:3px 6px}
+.termos h3{color:var(--p);font-size:14px;margin:14px 0 4px}.termos p,.termos li{font-size:13px}.termos ul{padding-left:20px;margin:6px 0}
 .credits{text-align:center;padding:18px 8px 8px;color:#817680;font-size:12px;line-height:1.6}
 @media(max-width:390px){.brand{font-size:20px}}@media(max-width:340px){.grid{grid-template-columns:1fr}.infoGrid{grid-template-columns:1fr}}
 @media(min-width:681px){body{padding:0 20px}}
@@ -277,7 +278,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 </section>
 
 <section id="sobre" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>ℹ️ Sobre o Costura Fácil</h2>
+<button class="back" onclick="go('home')">← Início</button><h2>ℹ️ Sobre o Costura Fácil</h2><button class="goBtn" style="margin:2px 0 8px" onclick="verTermos()">📜 Ir para os Termos de uso</button>
 <div class="about">
 <p><b>Objetivo:</b> ensinar fundamentos de costura, leitura de moldes, medidas, corte e montagem de projetos de forma simples e progressiva.</p>
 <p><b>Como estudar:</b> leia a aula inteira, pratique em retalho, confira o resultado e repita quando necessário. Não há problema em voltar uma aula.</p>
@@ -288,6 +289,31 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <p><b>Conteúdo:</b> as explicações são didáticas e devem ser adaptadas ao tecido, máquina, molde e projeto utilizados.</p>
 <hr><p class="sources"><b>Costura Fácil:</b> conteúdo didático e projetos próprios. O app não substitui cursos presenciais, manuais de fabricantes ou uma modelagem profissional.</p>
 </div>
+<h2 id="termos" style="margin-top:18px">📜 Termos de uso e aviso legal</h2>
+<p class="small" id="termosVersao"></p>
+<div class="about termos">
+<p>Ao usar o Costura Fácil, você concorda com os termos abaixo. Leia com atenção.</p>
+<h3>1. O que é o app</h3>
+<p>O Costura Fácil é um <b>curso livre e gratuito</b> de costura, com conteúdo didático. Não é uma instituição de ensino credenciada e não faz parte da educação formal regulada pela Lei nº 9.394/1996 (Lei de Diretrizes e Bases da Educação). Por isso, <b>não emite certificados, diplomas ou comprovantes de conclusão de curso</b>.</p>
+<h3>2. Selos e medalhas</h3>
+<p>Os selos, medalhas (bronze, prata, ouro e diamante) e moldes desbloqueáveis são <b>recursos simbólicos de incentivo</b> aos estudos. Eles:</p>
+<ul><li>não são certificado, diploma, título ou comprovante de qualquer tipo;</li><li>não têm validade profissional, acadêmica ou legal;</li><li>não têm valor em dinheiro e não podem ser trocados por prêmios, produtos ou serviços;</li><li>ficam salvos apenas no aparelho e podem ser perdidos ao limpar os dados do navegador.</li></ul>
+<p>Esta informação é dada de forma clara em respeito ao direito à informação previsto no Código de Defesa do Consumidor (Lei nº 8.078/1990). Apresentar selos ou medalhas do app como comprovante de formação é de responsabilidade exclusiva de quem o fizer.</p>
+<h3>3. Segurança e uso do conteúdo</h3>
+<p>Costura envolve máquinas, agulhas, tesouras e ferro de passar. Siga sempre o manual do fabricante dos seus equipamentos e as orientações de segurança das aulas. Crianças e adolescentes devem usar os equipamentos com supervisão de um adulto.</p>
+<p>As aulas, medidas, cálculos e moldes são <b>orientações didáticas</b>. O resultado depende do tecido, das medidas, do equipamento e da execução de cada pessoa. Recomendamos sempre testar em retalho e fazer uma peça de prova antes de cortar tecido definitivo. O app não substitui cursos presenciais, manuais de fabricantes ou modelagem profissional.</p>
+<h3>4. Privacidade e dados</h3>
+<p>Em respeito à Lei Geral de Proteção de Dados (Lei nº 13.709/2018), informamos que:</p>
+<ul><li>medidas, progresso, provas, selos e fotos das peças ficam salvos <b>somente no seu aparelho</b>;</li><li>o desenvolvedor <b>não recebe, não coleta e não compartilha</b> esses dados;</li><li>você pode apagar tudo a qualquer momento pela tela Lixeira;</li><li>os links de vídeos abrem o YouTube, que tem política de privacidade própria.</li></ul>
+<h3>5. Direitos autorais</h3>
+<p>Os textos, aulas, organização do curso, desenhos, moldes, calculadoras e o código do aplicativo são de autoria de Luís Ricardo de Almeida Siqueira e protegidos pela Lei nº 9.610/1998 (Direitos Autorais) e pela Lei nº 9.609/1998 (Lei do Software).</p>
+<p>É permitido usar o app e imprimir moldes <b>para uso pessoal</b>. É proibido copiar, reproduzir, vender ou redistribuir o conteúdo ou o código, no todo ou em parte, sem autorização do autor. As técnicas de costura em si são de conhecimento geral e podem ser ensinadas livremente por qualquer pessoa, com suas próprias palavras.</p>
+<h3>6. Responsabilidade</h3>
+<p>O app é oferecido gratuitamente, no estado em que se encontra. Na medida permitida pela lei, o desenvolvedor não se responsabiliza por perda de tecido ou materiais, peças que não fiquem como esperado, danos a equipamentos ou acidentes decorrentes do uso inadequado de máquinas e ferramentas.</p>
+<h3>7. Alterações</h3>
+<p>Estes termos e o conteúdo do app podem ser atualizados a qualquer momento. A versão atual aparece no fim de todas as telas.</p>
+<hr><p class="sources">Desenvolvedor responsável: Luís Ricardo de Almeida Siqueira. Estes termos têm caráter informativo e não substituem orientação jurídica profissional.</p>
+</div>
 </section>
 
 <div class="credits">
@@ -296,6 +322,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <span>Costura Fácil • Conteúdo didático e projetos próprios.</span><br>
 <b>© 2026 Luís Ricardo de Almeida Siqueira — Todos os direitos reservados.</b>
 <div class="version" id="appVersion"></div>
+<div class="version"><a href="#" onclick="verTermos();return false" style="color:#9a8f98">Termos de uso e aviso legal</a></div>
 </div>
 </main>
 
@@ -303,15 +330,19 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 
 <div class="drawer" id="drawer" onclick="closeMenu(event)"><div class="drawerbox" onclick="event.stopPropagation()">
 <h2>🧵 Costura Fácil</h2>
-<button onclick="go('home')">🏠 Início</button><button onclick="abrirBusca()">🔎 Buscar no app</button><button onclick="go('cursos')">📚 Cursos</button><button onclick="go('moldes')">📐 Moldes</button><button onclick="go('medidas')">📏 Minhas medidas</button><button onclick="go('tecnicas')">✂️ Técnicas</button><button onclick="go('projetos')">👗 Projetos</button><button onclick="go('pratica')">🎯 Prática</button><button onclick="go('videos')">🎥 Vídeos</button><button onclick="go('glossario')">📖 Glossário</button><button onclick="go('selo')">🏆 Selos e moldes secretos</button><button onclick="go('lixeira')">🗑️ Lixeira</button><button onclick="go('sobre')">ℹ️ Sobre o app</button><button onclick="atualizarApp()">🔄 Atualizar o app</button>
+<button onclick="go('home')">🏠 Início</button><button onclick="abrirBusca()">🔎 Buscar no app</button><button onclick="go('cursos')">📚 Cursos</button><button onclick="go('moldes')">📐 Moldes</button><button onclick="go('medidas')">📏 Minhas medidas</button><button onclick="go('tecnicas')">✂️ Técnicas</button><button onclick="go('projetos')">👗 Projetos</button><button onclick="go('pratica')">🎯 Prática</button><button onclick="go('videos')">🎥 Vídeos</button><button onclick="go('glossario')">📖 Glossário</button><button onclick="go('selo')">🏆 Selos e moldes secretos</button><button onclick="go('lixeira')">🗑️ Lixeira</button><button onclick="go('sobre')">ℹ️ Sobre o app</button><button onclick="verTermos()">📜 Termos de uso</button><button onclick="atualizarApp()">🔄 Atualizar o app</button>
 </div></div>
 <div class="toast" id="toast"></div>
+<div class="medalModal" id="termosModal"><div class="medalBox" style="text-align:left"><div style="text-align:center;font-size:40px">📜</div><h2 style="text-align:center">Antes de começar</h2>
+<ul class="small" style="padding-left:18px;line-height:1.5;color:var(--ink)"><li>O Costura Fácil é um <b>curso livre e gratuito</b>, com conteúdo didático.</li><li>Selos e medalhas são <b>simbólicos</b>: não são certificado nem diploma.</li><li>Seus dados e fotos ficam <b>só no seu aparelho</b>.</li><li>Siga o manual da sua máquina e use as ferramentas com cuidado.</li><li>O conteúdo é protegido por direitos autorais: uso pessoal permitido.</li></ul>
+<button class="outline" style="width:100%" onclick="fecharTermosModal();verTermos()">Ler os termos completos</button>
+<button class="primary" style="margin-top:8px" onclick="aceitarTermos()">LI E CONCORDO</button></div></div>
 <div class="medalModal" id="medalModal"><div class="medalBox"><div class="medalBig" id="mmIcon">🥉</div><div class="small" id="mmTipo" style="font-weight:bold;letter-spacing:.5px"></div><h2 id="mmTitulo"></h2><div id="mmTexto" class="desc"></div><button class="primary" style="margin-top:14px" onclick="fecharMedalha()">UHUU! 🎉</button><button class="outline" id="mmAbrir" style="width:100%;margin-top:8px">🎁 Abrir o molde agora</button><span class="small">Medalha simbólica de incentivo. Não é certificado.</span></div></div>
 <input type="file" id="fotoPeca" accept="image/*" capture="environment" style="display:none" onchange="fotoEscolhida(this)">
 
 <script>
 /* ===== Versão do app ===== */
-const APP_VERSION='2.8', APP_DATE='24/09/2026';
+const APP_VERSION='2.9', APP_DATE='24/09/2026';
 /* ===== Proteção do progresso ===== */
 const SALT='CF-LRAS-2026-costura';
 function sig(k){const str=SALT+'|'+k;let h=2166136261;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}let h2=h^0x5bd1e995;for(let i=str.length-1;i>=0;i--){h2^=str.charCodeAt(i);h2=Math.imul(h2,2246822507)}return 'v'+(h>>>0).toString(36)+(h2>>>0).toString(36)}
@@ -329,6 +360,11 @@ const HORAS_MOLDE={Iniciante:2,Intermediário:12,Avançado:24,Lendário:48};
  localStorage.setItem('mig_sig','1');})();
 function lerSelosSalvos(){const g=localStorage.getItem('selos_ganhos')||'[]';if(g!=='[]'&&localStorage.getItem('selos_sig')!==sig('selos:'+g))return [];try{return JSON.parse(g)}catch(e){return []}}
 function salvarSelos(arr){const g=JSON.stringify(arr);localStorage.setItem('selos_ganhos',g);localStorage.setItem('selos_sig',sig('selos:'+g))}
+/* ===== Termos de uso ===== */
+const TERMOS_VERSAO='1.0', TERMOS_DATA='24/09/2026';
+function verTermos(){go('sobre');setTimeout(()=>document.getElementById('termos').scrollIntoView({behavior:'smooth',block:'start'}),120)}
+function aceitarTermos(){localStorage.setItem('termos_aceitos',TERMOS_VERSAO);fecharTermosModal();toast('Obrigado! Bons estudos 🧵')}
+function fecharTermosModal(){document.getElementById('termosModal').classList.remove('open')}
 /* ===== Navegação ===== */
 const navGroup={home:'home',cursos:'cursos',nivel1:'cursos',nivel2:'cursos',nivel3:'cursos',nivel4:'cursos',nivel5:'cursos',nivel6:'cursos',nivel7:'cursos',prova:'cursos',aula:'cursos',moldes:'moldes',molde:'moldes'};
 function go(id){
@@ -2023,6 +2059,8 @@ function updateProgress(){
 
 document.getElementById('homeMoldesTxt').textContent=moldes.length+' moldes com medidas e passo a passo';
 renderTech();renderGloss();loadMeasures();renderMoldes();updateProgress();
+document.getElementById('termosVersao').textContent='Versão '+TERMOS_VERSAO+' dos termos • atualizada em '+TERMOS_DATA;
+if(localStorage.getItem('termos_aceitos')!==TERMOS_VERSAO)setTimeout(()=>document.getElementById('termosModal').classList.add('open'),400);
 document.getElementById('appVersion').textContent='Versão '+APP_VERSION+' • atualizada em '+APP_DATE;
 (function(){const v=localStorage.getItem('app_version');if(v&&v!==APP_VERSION)setTimeout(()=>toast('✅ App atualizado para a versão '+APP_VERSION),600);localStorage.setItem('app_version',APP_VERSION);})();
 </script>
