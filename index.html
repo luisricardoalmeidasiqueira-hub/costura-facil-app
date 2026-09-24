@@ -19,7 +19,7 @@ main{padding:15px 15px 94px}.screen{display:none}.screen.on{display:block}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:13px}.card{border:1px solid var(--line);background:#fff;border-radius:17px;padding:14px;text-align:left;min-height:100px;color:var(--ink)}.card b{font-size:15px}.ico{font-size:28px;display:block;margin-bottom:7px}.card small{display:block;color:var(--mut);margin-top:4px}
 .tip{background:#fff5c9;border-radius:14px;padding:12px;margin:13px 0;line-height:1.48;color:#5e4d00}.tip.red{background:#fff0f0;color:#75272c}.tip.blue{background:#edf5ff;color:#24547e}.tip.green{background:#eaf8ef;color:#1d6b3a}
 .back{border:0;background:none;color:var(--p);font-weight:900;padding:5px 0;font-size:16px}h2{margin:8px 0 4px}h3{margin:7px 0}.list{display:grid;gap:10px}
-.lesson,.tech,.project,.item{padding:14px}.lesson{display:flex;gap:11px;align-items:center;margin-bottom:10px}.num{min-width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--pink);color:var(--p);font-weight:900}.lesson button,.mini{margin-left:auto;border:0;background:#f8e2ec;color:var(--p);font-weight:900;border-radius:10px;padding:9px 11px}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#eee5f3;color:var(--vio);font-size:11px;font-weight:bold}
+.lesson,.tech,.project,.item{padding:14px}.lesson{display:flex;gap:11px;align-items:center;margin-bottom:10px}.num{min-width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--pink);color:var(--p);font-weight:900}.lesson button,.mini{margin-left:auto;border:0;background:#f8e2ec;color:var(--p);font-weight:900;border-radius:10px;padding:9px 11px}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#eee5f3;color:var(--vio);font-size:11px;font-weight:bold}.tag.lvI{background:#e3f5e9;color:#1d6b3a}.tag.lvM{background:#eee5f3;color:var(--vio)}.tag.lvA{background:#fde2e4;color:#b3261e}.levelHelp{font-size:12px;color:var(--mut);line-height:1.5;margin:4px 0 0}
 .tech{margin-bottom:9px}
 .patterns{display:grid;grid-template-columns:1fr 1fr;gap:11px}.pattern{padding:14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}.pattern .emoji{font-size:48px}.pattern .small{flex:1}.pattern button{border:0;background:var(--p);color:#fff;border-radius:10px;padding:9px 14px;font-weight:900;margin-top:5px}
 .search{width:100%;padding:12px;border:1px solid #d9cbd5;border-radius:12px;margin:8px 0;background:#fff}
@@ -41,6 +41,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 .filterRow{display:flex;gap:7px;overflow:auto;margin:9px 0;padding-bottom:3px}.filterRow button{white-space:nowrap;border:0;border-radius:18px;padding:8px 12px;background:#f1e8ee;color:#665c64;font-weight:800}.filterRow button.sel{background:var(--p);color:#fff}
 .sectionTitle{display:flex;justify-content:space-between;align-items:center;margin-top:15px}.sectionTitle span{font-size:12px;color:var(--mut)}
 .progressText{font-size:12px;color:var(--mut);margin-top:5px}.statusBadge{font-size:10px;border-radius:20px;padding:4px 7px;background:#eaf8ef;color:#217443;font-weight:900}
+.seal{display:flex;gap:12px;align-items:center;margin-top:12px;padding:14px;border-radius:19px;border:1px solid var(--line);background:#fff}.seal .medal{font-size:40px;filter:grayscale(1);opacity:.45}.seal.won{background:linear-gradient(135deg,#fff8e1,#fde7f0);border-color:#f5b900}.seal.won .medal{filter:none;opacity:1}.seal b{display:block}.version{margin-top:6px;font-size:11px;color:#9a8f98}
 .credits{text-align:center;padding:18px 8px 8px;color:#817680;font-size:12px;line-height:1.6}
 @media(max-width:390px){.grid{grid-template-columns:1fr}.brand{font-size:22px}.infoGrid{grid-template-columns:1fr}}
 @media(min-width:681px){body{padding:0 20px}}
@@ -56,7 +57,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <section id="home" class="screen on">
 <div class="hero"><h1>Bem-vindo(a)! 💕</h1><p>Um curso de costura pensado para quem quer aprender com calma, praticar e evoluir passo a passo. Comece do zero e avance somente quando se sentir seguro.</p><button class="primary" onclick="go('cursos')">▶ COMEÇAR A APRENDER</button></div>
 <div class="grid">
-<button class="card" onclick="go('cursos')"><span class="ico">📚</span><b>Cursos</b><small>6 níveis com passo a passo detalhado</small></button>
+<button class="card" onclick="go('cursos')"><span class="ico">📚</span><b>Cursos</b><small>7 níveis, do iniciante ao avançado</small></button>
 <button class="card" onclick="go('moldes')"><span class="ico">📐</span><b>Moldes</b><small id="homeMoldesTxt">Medidas, peças e passo a passo</small></button>
 <button class="card" onclick="go('medidas')"><span class="ico">📏</span><b>Minhas medidas</b><small>Salve e consulte</small></button>
 <button class="card" onclick="go('tecnicas')"><span class="ico">✂️</span><b>Técnicas</b><small>Consulta rápida</small></button>
@@ -73,6 +74,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 </div></div>
 <div class="tip">💡 <b>Como aprender melhor:</b> leia uma aula, pratique em retalho, confira o resultado e só então avance. Costura melhora muito mais com repetição do que com pressa.</div>
 <div class="courseIntro" style="padding:15px"><b>📈 Seu progresso</b><div class="progress"><i id="homeProgress"></i></div><div id="homeProgressText" class="progressText"></div></div>
+<div class="seal" id="seal" onclick="moldeNivel='Avançado';moldeCat='Todos';go('moldes')"><div class="medal">🏆</div><div style="flex:1"><b id="sealTitle">Selo Nível Profissional</b><span class="small" id="sealText"></span><div class="progress" style="margin:7px 0 0"><i id="sealBar"></i></div><div class="version" style="margin-top:7px">Selo simbólico de incentivo. Não é certificado nem diploma e não tem validade profissional ou legal.</div></div></div>
 </section>
 
 <section id="cursos" class="screen">
@@ -83,6 +85,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <div class="lesson"><div class="num">4</div><div><b>Nível 4 — Confecção</b><br><span class="small">Planejamento, tecido, corte, montagem, ajustes e acabamento final.</span></div><button onclick="go('nivel4')">Ver</button></div>
 <div class="lesson"><div class="num">5</div><div><b>Nível 5 — Costura à mão</b><br><span class="small">Agulha de mão, nó, alinhavo, ponto atrás, invisível, caseado e botão.</span></div><button onclick="go('nivel5')">Ver</button></div>
 <div class="lesson"><div class="num">6</div><div><b>Nível 6 — Tecidos e materiais</b><br><span class="small">Tipos de tecido, malha, entretela, linhas, agulhas e cuidados.</span></div><button onclick="go('nivel6')">Ver</button></div>
+<div class="lesson"><div class="num" style="background:#fde2e4;color:#c53b45">7</div><div><b>Nível 7 — Técnicas avançadas</b> <span class="tag lvA">AVANÇADO</span><br><span class="small">Zíper invisível, bolso embutido, gola com pé, braguilha, forro e punho.</span></div><button onclick="go('nivel7')">Ver</button></div>
 <div class="tip blue">📌 <b>Não precisa correr.</b> Se uma aula parecer difícil, abra novamente, faça o exercício em um retalho e só depois avance.</div>
 </section>
 
@@ -106,6 +109,10 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <button class="back" onclick="go('cursos')">← Cursos</button><h2>🧶 Nível 6 — Tecidos e materiais</h2><p class="desc">Escolher bem o tecido e os materiais é metade do sucesso de uma peça.</p><div class="progress"><i id="p6"></i></div><div id="n6" class="list"></div>
 </section>
 
+<section id="nivel7" class="screen">
+<button class="back" onclick="go('cursos')">← Cursos</button><h2>🏆 Nível 7 — Técnicas avançadas</h2><p class="desc">Técnicas de acabamento profissional. Faça cada uma em retalho antes de usar em uma peça.</p><div class="tip red">⚠️ Recomendado depois de concluir os níveis 1 a 4.</div><div class="progress"><i id="p7"></i></div><div id="n7" class="list"></div>
+</section>
+
 <section id="aula" class="screen">
 <button class="back" id="aulaBack" onclick="go('nivel1')">← Voltar</button>
 <div id="aulaHead"></div><div id="aulaTexto" class="lessonBody"></div>
@@ -118,6 +125,8 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <button class="back" onclick="go('home')">← Início</button><h2>📐 Central de moldes</h2><p class="desc">Cada molde traz as medidas de corte, o desenho das peças e o passo a passo de montagem. Sempre faça uma prova antes de cortar tecido definitivo.</p>
 <input class="search" id="moldeSearch" oninput="renderMoldes()" placeholder="🔎 Buscar molde (ex.: saia, bolsa, bebê)...">
 <div class="filterRow" id="moldeFilter"></div>
+<div class="filterRow" id="moldeNivelFilter"></div>
+<p class="levelHelp" id="levelHelp"></p>
 <div class="sectionTitle"><b>Moldes disponíveis</b><span id="moldeCount"></span></div>
 <div class="patterns" id="moldeGrid" style="margin-top:9px"></div>
 <div class="tip">📌 Estes moldes são educativos. Medidas corporais, tecido e método de montagem podem exigir alterações. Faça uma amostra e confira o caimento.</div>
@@ -254,7 +263,8 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <div class="about">
 <p><b>Objetivo:</b> ensinar fundamentos de costura, leitura de moldes, medidas, corte e montagem de projetos de forma simples e progressiva.</p>
 <p><b>Como estudar:</b> leia a aula inteira, pratique em retalho, confira o resultado e repita quando necessário. Não há problema em voltar uma aula.</p>
-<p><b>Atualizar:</b> toque no botão 🔄 no topo para carregar a versão mais nova do app. Suas medidas e seu progresso continuam salvos.</p>
+<p><b>Atualizar:</b> toque no botão 🔄 no topo para carregar a versão mais nova do app. Suas medidas e seu progresso continuam salvos. A versão instalada aparece no fim de todas as telas.</p>
+<p><b>Selo Nível Profissional:</b> marque como feitos todos os moldes avançados para conquistar o selo na tela inicial. O selo é apenas simbólico, para incentivar os estudos. <b>Não é certificado, diploma ou comprovante de curso</b>, não tem validade profissional ou legal e não substitui cursos reconhecidos.</p>
 <p><b>Segurança:</b> cada máquina possui características próprias. Para troca de agulha, limpeza, passagem de linha, bobina e regulagens específicas, siga o manual do fabricante.</p>
 <p><b>Privacidade:</b> nesta versão, medidas, progresso e resultados ficam armazenados localmente no navegador do aparelho.</p>
 <p><b>Conteúdo:</b> as explicações são didáticas e devem ser adaptadas ao tecido, máquina, molde e projeto utilizados.</p>
@@ -265,8 +275,9 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <div class="credits">
 <div class="heart">🧵</div>
 <span>Desenvolvido por Luís Ricardo de Almeida Siqueira</span><br>
-<b>© 2026 Luís Ricardo de Almeida Siqueira — Todos os direitos reservados.</b><br>
-<span>Costura Fácil • Conteúdo didático e projetos próprios.</span>
+<span>Costura Fácil • Conteúdo didático e projetos próprios.</span><br>
+<b>© 2026 Luís Ricardo de Almeida Siqueira — Todos os direitos reservados.</b>
+<div class="version" id="appVersion"></div>
 </div>
 </main>
 
@@ -279,8 +290,10 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <div class="toast" id="toast"></div>
 
 <script>
+/* ===== Versão do app ===== */
+const APP_VERSION='2.2', APP_DATE='24/09/2026';
 /* ===== Navegação ===== */
-const navGroup={home:'home',cursos:'cursos',nivel1:'cursos',nivel2:'cursos',nivel3:'cursos',nivel4:'cursos',nivel5:'cursos',nivel6:'cursos',aula:'cursos',moldes:'moldes',molde:'moldes'};
+const navGroup={home:'home',cursos:'cursos',nivel1:'cursos',nivel2:'cursos',nivel3:'cursos',nivel4:'cursos',nivel5:'cursos',nivel6:'cursos',nivel7:'cursos',aula:'cursos',moldes:'moldes',molde:'moldes'};
 function go(id){
  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
  const alvo=document.getElementById(id);
@@ -746,6 +759,89 @@ Object.assign(lessonDetails,{
 ['Cubra a máquina','Proteja do pó quando não estiver usando.']],observe:'Máquina limpa costura melhor e faz menos barulho.',errors:['Usar óleo de cozinha ou qualquer óleo.','Nunca trocar a agulha.'],practice:'Faça uma limpeza completa na região da bobina seguindo o manual.'}
 });
 
+/* ===== Nível 7 — Técnicas avançadas ===== */
+lessons.n7=[
+['1','Zíper invisível','O zíper que some na costura, usado em vestidos e saias.'],
+['2','Costuras rebatida e inglesa','Acabamentos fortes e limpos de camisa e jeans.'],
+['3','Bolso embutido com zíper','O bolso de janela usado em bolsas e casacos.'],
+['4','Gola com pé de gola','A gola de camisa social, peça por peça.'],
+['5','Braguilha com zíper','A abertura de calça com vista e pertingal.'],
+['6','Forro completo','Como forrar uma peça e esconder todas as costuras.'],
+['7','Carcela de manga e punho','O acabamento da manga de camisa social.']
+];
+Object.assign(lessonDetails,{
+'n7|0':{nivel:'Nível 7 • Aula 1',title:'Zíper invisível',intro:'O zíper invisível é pregado antes de fechar a costura. Pelo direito só aparece o puxador. Ele exige calcador próprio e atenção à ordem.',materials:['Zíper invisível de 20 cm','Calcador de zíper invisível (ou calcador de zíper comum)','Dois retalhos de 25 × 15 cm com entretela em tira de 2 cm na borda','Ferro em temperatura baixa'],steps:[
+['Não costure a abertura','Ao contrário do zíper comum, a costura só é fechada depois do zíper.'],
+['Passe o zíper','Abra o zíper e, pelo avesso dele, passe a espiral com ferro morno para desenrolá-la. Assim a agulha chega mais perto dos dentes.'],
+['Estabilize as bordas','Aplique tiras de entretela de 2 cm nas bordas onde o zíper vai. Evita ondulação.'],
+['Marque a margem','Risque a linha de costura (ex.: 1,5 cm) nas duas peças.'],
+['Primeiro lado','Com o zíper aberto, coloque-o direito com direito sobre a peça da esquerda, com a espiral exatamente em cima da linha de costura e a fita virada para a borda.'],
+['Costure colado','Com o calcador invisível, a espiral passa pelo canal do calcador. Costure do topo até onde o cursor deixar.'],
+['Segundo lado','Feche o zíper para conferir a altura, marque o nível do topo na outra peça, abra de novo e costure da mesma forma.'],
+['Confira pelo direito','Feche o zíper: ele deve sumir e os topos das peças ficarem na mesma altura.'],
+['Feche a costura abaixo','Troque para o calcador de zíper comum. Afaste a ponta do zíper e costure a costura restante começando 2 mm acima e 1 mm para fora do fim da costura do zíper.'],
+['Prenda as pontas da fita','Costure a ponta de baixo de cada fita apenas nas margens da costura, sem pegar a peça.']],observe:'Pelo direito, a costura continua reta do zíper para baixo, sem bolha no encontro.',errors:['Fechar a costura antes de pregar o zíper.','Costurar em cima da espiral e o zíper não fechar.','Topos desalinhados porque não conferiu com o zíper fechado.','Bolha no fim do zíper por começar a costura muito longe dele.'],practice:'Faça três amostras. Na terceira, meça se o encontro das costuras ficou reto.'},
+'n7|1':{nivel:'Nível 7 • Aula 2',title:'Costuras rebatida e inglesa',intro:'São costuras em que a margem fica presa e escondida. Deixam a peça bonita por dentro e muito resistente.',materials:['Retalhos de brim e de tricoline','Linha de pesponto (opcional)','Régua e ferro'],steps:[
+['Rebatida: costure normal','Direito com direito, costure a 1,5 cm.'],
+['Apare uma margem','Corte uma das margens para 0,5 cm. A outra fica inteira.'],
+['Envolva','Dobre a margem maior por cima da menor, escondendo a borda cortada, e passe.'],
+['Deite e pesponte','Deite o conjunto para o lado da margem menor, passe e pesponte rente à dobra. Pelo direito aparecem duas linhas: é o acabamento de jeans e camisas.'],
+['Inglesa: costure pelo avesso','Avesso com avesso, costure a 0,7 cm.'],
+['Apare','Corte a margem para 3 mm, com cuidado para não sobrar fiapo.'],
+['Vire e passe','Vire direito com direito, com a costura bem na borda, e passe.'],
+['Segunda costura','Costure a 0,6 cm. A borda crua fica presa dentro. Total de margem usada: 1,3 cm.']],observe:'Por dentro nenhuma borda aparece, e a costura não desfia nem abre.',errors:['Na inglesa, sobrar fiapos que aparecem pelo direito.','Na rebatida, pesponto que foge da dobra.','Usar inglesa em tecido grosso (fica volumosa).'],practice:'Faça uma amostra de cada costura e compare o avesso das duas.'},
+'n7|2':{nivel:'Nível 7 • Aula 3',title:'Bolso embutido com zíper',intro:'É o bolso de janela: um retângulo recortado na peça com o zíper aparecendo e o saco do bolso escondido por trás.',materials:['Retalho da peça 30 × 30 cm','Tecido de bolso 22 × 34 cm','Zíper de 18 cm','Entretela 22 × 6 cm','Régua, caneta que some, tesoura pequena'],steps:[
+['Entretela','Aplique a entretela no avesso da peça, onde o bolso vai ficar.'],
+['Desenhe a janela','No avesso do tecido de bolso, a 3 cm do topo, desenhe um retângulo de 18 × 1 cm, centralizado.'],
+['Posicione','Coloque o tecido de bolso direito com direito sobre a peça, no lugar do bolso. Prenda com alfinetes.'],
+['Costure o retângulo','Com ponto curto (1,5 mm), costure exatamente sobre o desenho, girando nos cantos com a agulha abaixada. Sobreponha alguns pontos no fim.'],
+['Corte em Y','Corte pelo meio do retângulo, parando a 1 cm de cada ponta, e corte em diagonal até cada canto, rente à costura sem cortá-la.'],
+['Vire a janela','Empurre o tecido de bolso pela abertura para o avesso. Passe até a janela ficar retinha, sem o forro aparecer pelo direito.'],
+['Posicione o zíper','Pelo avesso, centralize o zíper na janela, com os dentes aparecendo. Prenda com fita adesiva de papel.'],
+['Pesponte a janela','Pelo direito, pesponte rente em volta da janela, prendendo o zíper.'],
+['Feche o saco','Pelo avesso, dobre o tecido de bolso para cima até a borda de baixo encontrar a de cima. Costure as laterais e o topo, apenas no tecido de bolso.']],observe:'A janela fica com cantos retos, sem pregas nas pontas.',errors:['Não cortar até os cantos e a janela enrugar.','Cortar a costura e abrir um buraco.','Ponto longo que solta ao cortar.'],practice:'Faça o bolso em um retalho e depois aplique no forro da bolsa estruturada.'},
+'n7|3':{nivel:'Nível 7 • Aula 4',title:'Gola com pé de gola',intro:'A gola de camisa tem duas partes: a gola (que dobra) e o pé de gola (a faixa em volta do pescoço, onde fica o botão). Cada uma é cortada dupla.',materials:['Molde de gola e pé de gola','Tecido de camisa','Entretela firme','Palito sem ponta para cantos'],steps:[
+['Corte e entretele','Corte 2 golas e 2 pés de gola. Aplique entretela em uma gola (a de cima) e em um pé de gola (o de fora).'],
+['Costure a gola','Direito com direito, costure as laterais e a borda de fora da gola, deixando aberto o lado que vai no pé. Nos cantos, dê um ponto na diagonal: o canto fica mais pontudo.'],
+['Apare e vire','Apare as margens para 3 mm nos cantos, vire e empurre com o palito. Passe deixando a costura um pouco para o lado de baixo.'],
+['Pesponte a gola','Pesponte a 0,5 cm da borda.'],
+['Prepare o pé','No pé de gola sem entretela, dobre e passe a margem da borda de baixo (1 cm) para o avesso.'],
+['Sanduíche','Coloque a gola entre os dois pés de gola, direito com direito, casando os piques do centro e das pontas. Costure a borda de cima do pé, das pontas arredondadas até o outro lado.'],
+['Vire o pé','Apare as curvas, vire e passe.'],
+['Pregue no decote','Costure o pé de gola com entretela no decote da camisa, direito com direito, casando os centros e as pontas com a borda da frente.'],
+['Feche por dentro','Por dentro, a borda passada do outro pé cobre a costura. Prenda com alfinetes e pesponte pelo direito rente à borda, em volta de todo o pé.']],observe:'As pontas do pé de gola encontram exatamente as bordas das frentes e os dois lados da gola ficam iguais.',errors:['Não casar os piques e a gola ficar torta.','Cantos grossos por não aparar.','Pesponto que não pega o pé de gola por dentro.'],practice:'Faça uma gola completa em tecido de prova antes da camisa.'},
+'n7|4':{nivel:'Nível 7 • Aula 5',title:'Braguilha com zíper',intro:'A braguilha tem três elementos: a vista (que forma a aba por cima), o pertingal (tira dupla que protege por trás) e o zíper.',materials:['Duas frentes de calça (ou retalhos em forma de gancho)','Zíper de calça de 18 cm','Vista: 6 × 20 cm com entretela','Pertingal: 10 × 20 cm dobrado ao meio'],steps:[
+['Marque','Marque no gancho das duas frentes o fim da abertura (18 cm abaixo da cintura) e a linha central.'],
+['Costure o gancho abaixo','Direito com direito, costure o gancho da frente da entreperna até a marca, com retrocesso.'],
+['Vista no lado de cima','No lado que fica por cima, costure a vista direito com direito ao longo da abertura. Vire para dentro, passe e pesponte rente à borda.'],
+['Lado de baixo','No outro lado, dobre a margem para o avesso deixando a dobra 0,3 cm além da linha central. Passe.'],
+['Zíper no lado de baixo','Coloque o zíper (fechado) com a fita por baixo dessa dobra e o pertingal por baixo do zíper. Pesponte rente à dobra, prendendo os três.'],
+['Feche por cima','Sobreponha o lado de cima até a linha central encontrar a outra. Prenda com alfinetes.'],
+['Prenda a outra fita','Pelo avesso, dobre a calça e costure a fita livre do zíper apenas na vista, sem pegar a frente.'],
+['Pesponto em J','Pelo direito, desenhe a curva em J a 3,5 cm da borda. Dobre o pertingal para longe e pesponte o J, prendendo a vista.'],
+['Travete','No fim do J, faça um travete (zigue-zague curto e denso) para reforçar.']],observe:'A aba cobre totalmente o zíper e o pertingal fica por trás, sem aparecer.',errors:['Pesponto pegar o pertingal e travar a abertura.','Lado de baixo sem a sobra de 0,3 cm e o zíper aparecer.','Costurar a fita livre na frente em vez da vista.'],practice:'Faça a braguilha em retalho de brim antes da calça.'},
+'n7|5':{nivel:'Nível 7 • Aula 6',title:'Forro completo',intro:'Forrar é fazer duas peças quase iguais (uma de tecido e uma de forro) e juntá-las. Por dentro nenhuma costura aparece.',materials:['Tecido principal','Forro (tafetá, cetim de forro ou tricoline fina)','Agulha fina','Ferro em temperatura baixa'],steps:[
+['Corte o forro','Use os mesmos moldes, sem vistas e sem extensões (fenda, carcela). O forro costuma ser 2 a 3 cm mais curto na barra.'],
+['Pences viram pregas','No forro, as pences podem ser costuradas só no topo (2 cm) para dar folga.'],
+['Monte as duas peças','Monte tecido e forro separados, cada um com seus acabamentos internos passados.'],
+['Una pelas bordas de cima','Direito com direito, costure tecido e forro nas bordas que não levam cós: decote, cavas ou cintura.'],
+['Pique e apare','Faça piques nas curvas e apare as margens para 0,5 cm.'],
+['Understitch','Abra, deite as margens para o lado do forro e pesponte o forro rente à costura. Assim o forro não aparece pelo direito.'],
+['Aberturas','Nas aberturas de zíper e fenda, dobre a margem do forro para dentro e prenda à mão na fita do zíper ou na fenda.'],
+['Barras separadas','Faça a barra do tecido e a do forro separadas. O forro fica 2 cm acima.'],
+['Ligue as barras (opcional)','Nas laterais, una as barras com uma correntinha de linha de 2 cm, para o forro não subir.']],observe:'O forro fica liso por dentro, sem puxar o tecido principal.',errors:['Forro do mesmo tamanho exato e repuxar a peça.','Pular o understitch e o forro aparecer.','Forro mais comprido que a barra.'],practice:'Forre a saia lápis da Central de moldes.'},
+'n7|6':{nivel:'Nível 7 • Aula 7',title:'Carcela de manga e punho',intro:'A manga de camisa tem uma abertura (carcela) e um punho com botão. É feita antes de fechar a lateral da manga.',materials:['Manga de camisa cortada','Tira de carcela 3 × 16 cm','Punho duplo com entretela','Botões'],steps:[
+['Marque a abertura','Na parte de trás da manga, marque uma linha de 10 cm a partir da barra.'],
+['Costure a tira','Corte a abertura. Abra a fenda em linha reta e costure a tira de carcela direito com direito ao longo de toda a fenda, a 0,5 cm.'],
+['Envolva','Dobre a tira sobre a margem, dobre a borda livre para dentro e costure pelo direito rente, como um viés.'],
+['Arremate o topo','Dobre a manga ao meio pela fenda, direito com direito, e costure um pequeno triângulo diagonal no topo da tira. Isso trava a abertura.'],
+['Pregas','Faça 1 ou 2 pregas na barra da manga, perto da carcela, até ela ter o tamanho do punho.'],
+['Feche a manga','Costure a lateral da manga (na camisa, junto com a lateral do corpo).'],
+['Prepare o punho','Costure as duas partes do punho pelas pontas e borda de baixo, vire e passe. A borda de cima de uma parte fica passada para dentro.'],
+['Pregue o punho','Costure a parte com entretela na barra da manga, direito com direito, casando as pontas com a carcela.'],
+['Feche por dentro','A outra parte cobre a costura. Pesponte em volta todo o punho.'],
+['Casa e botão','Faça a casa no lado de cima do punho e prenda o botão no outro lado.']],observe:'A carcela fica reta, sem franzir no topo, e o punho fecha certinho no pulso.',errors:['Cortar a abertura além da marca.','Esquecer as pregas e o punho não fechar.','Casa do lado errado.'],practice:'Faça a carcela e o punho em uma manga de prova.'}
+});
 function buildGeneric(k,i){
  const l=lessons[k][i], n=l[1], intro=l[2];
  const steps={
@@ -1064,18 +1160,24 @@ passos:[['Trace o círculo','Dobre o cetim em quatro, prenda um barbante no cant
 dica:'Cetim escorrega muito: use bastante alfinete e costure devagar. Uma folha de papel por baixo ajuda.'}
 ];
 
-let moldeCat='Todos', moldeAtual=null;
+let moldeCat='Todos', moldeNivel='Todos', moldeAtual=null;
+const levelClass={Iniciante:'lvI',Intermediário:'lvM',Avançado:'lvA'};
+const levelInfo={Todos:'Mostrando todos os níveis, do mais fácil ao mais desafiador.',Iniciante:'🟢 Iniciante: peças retas, poucas etapas. Ideal para as primeiras costuras.',Intermediário:'🟣 Intermediário: zíper, franzido, curvas ou cálculo de medidas. Faça depois de alguns projetos iniciantes.',Avançado:'🔴 Avançado: forro, gola, braguilha, peças ajustadas ao corpo. Exige prova e as técnicas do Nível 7.'};
 const medKeys=['busto','cintura','quadril','ombro','braco','compbraco','altura','comp'];
 
 function renderMoldes(){
  const q=(document.getElementById('moldeSearch')?.value||'').toLowerCase();
  const cats=['Todos','Casa','Acessórios','Roupas','Bebê','Pet'];
  document.getElementById('moldeFilter').innerHTML=cats.map(c=>`<button class="${c===moldeCat?'sel':''}" onclick="moldeCat='${c}';renderMoldes()">${c}</button>`).join('');
- const lista=moldes.filter(m=>(moldeCat==='Todos'||m.cat===moldeCat)&&(m.nome+' '+m.desc+' '+m.cat).toLowerCase().includes(q));
+ const nivs=['Todos','Iniciante','Intermediário','Avançado'],ic={Todos:'⭐',Iniciante:'🟢',Intermediário:'🟣',Avançado:'🔴'};
+ document.getElementById('moldeNivelFilter').innerHTML=nivs.map(n=>`<button class="${n===moldeNivel?'sel':''}" onclick="moldeNivel='${n}';renderMoldes()">${ic[n]} ${n==='Todos'?'Todos os níveis':n}</button>`).join('');
+ document.getElementById('levelHelp').textContent=levelInfo[moldeNivel];
+ const ordem={Iniciante:0,Intermediário:1,Avançado:2};
+ const lista=moldes.filter(m=>(moldeCat==='Todos'||m.cat===moldeCat)&&(moldeNivel==='Todos'||m.nivel===moldeNivel)&&(m.nome+' '+m.desc+' '+m.cat).toLowerCase().includes(q)).sort((a,b)=>ordem[a.nivel]-ordem[b.nivel]);
  document.getElementById('moldeCount').textContent=lista.length+(lista.length===1?' molde':' moldes');
  document.getElementById('moldeGrid').innerHTML=lista.map(m=>{
   const feito=localStorage.getItem('molde_'+m.id);
-  return `<div class="pattern"><div class="emoji">${m.emoji}</div><b>${m.nome}</b><span class="tag">${m.nivel.toUpperCase()}</span>${feito?'<span class="statusBadge">✓ FEITO</span>':''}<span class="small">${m.desc}</span><button onclick="openMolde('${m.id}')">Abrir</button></div>`;
+  return `<div class="pattern"><div class="emoji">${m.emoji}</div><b>${m.nome}</b><span class="tag ${levelClass[m.nivel]}">${m.nivel.toUpperCase()}</span>${feito?'<span class="statusBadge">✓ FEITO</span>':''}<span class="small">${m.desc}</span><button onclick="openMolde('${m.id}')">Abrir</button></div>`;
  }).join('')||'<p class="small">Nenhum molde encontrado. Tente outra palavra ou a categoria Todos.</p>';
 }
 
@@ -1297,12 +1399,170 @@ Object.assign(calcs,{
    return `<p><b>Corte:</b> ${l.toFixed(0)} × ${c.toFixed(0)} cm<br><b>Quadrado de cada canto:</b> ${q.toFixed(0)} × ${q.toFixed(0)} cm (altura + 12 cm que dobram por baixo)<br><b>Elástico:</b> cerca de ${el} cm (ajuste no colchão)</p><div class="tip">💡 Colchões mais altos ou com pillow top: meça a altura com ele.</div>`}}
 });
 
+/* ===== Moldes avançados ===== */
+moldes.push(
+{id:'saia-lapis',nome:'Saia lápis forrada com fenda',emoji:'🖤',cat:'Roupas',nivel:'Avançado',desc:'Justa, com pences, zíper invisível, fenda e forro.',tam:'Calculado com as suas medidas',
+mat:['1 m de tecido plano firme (gabardine, alfaiataria, sarja com elastano)','1 m de forro','Zíper invisível de 20 cm','Entretela para o cós e a fenda','Colchete ou botão'],
+pecas:[],calc:'reta',
+obs:'Parte da base da saia reta (calculadora acima). Frente: 1 na dobra. Costas: 2 peças, com costura no centro. Forro: mesmos moldes, sem a extensão da fenda e 3 cm mais curto.',
+passos:[['Base','Faça a base da saia reta pela calculadora e confirme na prova. Só avance com a base vestindo bem.'],
+['Afunile','Na barra, entre 2 e 3 cm em cada lateral, ligando com uma reta até a linha do quadril. Confira se você consegue andar: o passo precisa caber.'],
+['Separe as costas','Corte o molde das costas pelo centro e acrescente 1,5 cm de margem no centro: o zíper e a fenda ficam nessa costura.'],
+['Extensão da fenda','No centro das costas, a partir da barra, desenhe uma aba de 4 cm de largura por 18 cm de altura, com o topo em diagonal.'],
+['Corte','Tecido: frente na dobra, 2 costas, cós. Forro: frente na dobra e 2 costas sem aba. Entretela no cós e nas abas.'],
+['Pences','Costure as pences da frente e das costas, dando a ponta sem retrocesso (faça nó). Passe as pences da frente para o centro e as das costas também.'],
+['Zíper invisível','Pregue o zíper no centro das costas, com o topo a 1 cm da borda (margem do cós). Siga a aula de zíper invisível do Nível 7.'],
+['Centro costas e fenda','Costure o centro das costas do fim do zíper até o início da aba, girando e contornando o topo diagonal da aba.'],
+['Laterais','Feche as laterais, prove e ajuste. Chuleie e passe.'],
+['Monte o forro','Pences do forro só com 2 cm (viram folga). Centro costas: costure deixando aberto o zíper em cima e a fenda embaixo.'],
+['Una forro e saia','Avesso com avesso, alinhave o forro na cintura. Na abertura do zíper, dobre o forro e prenda à mão na fita.'],
+['Cós','Pregue o cós com entretela direito com direito, dobre, feche as pontas e finalize pelo lado de dentro.'],
+['Barra','Barra invisível de 4 cm à mão. Forro com barra dupla 3 cm mais curto.'],
+['Fenda','Dobre a aba da direita por baixo da esquerda. Prenda o forro em volta da fenda à mão, e faça um pesponto diagonal no topo pelo direito.']],
+dica:'Tecido com 2% a 3% de elastano deixa a saia muito mais confortável sem mudar o molde.'},
+
+{id:'vestido-tubinho',nome:'Vestido tubinho forrado',emoji:'👗',cat:'Roupas',nivel:'Avançado',desc:'Corpo e saia unidos na cintura, todo forrado.',tam:'Com base nas suas medidas',
+mat:['1,5 m de tecido plano firme (crepe, alfaiataria, jacquard)','1,5 m de forro','Zíper invisível de 55 cm','Molde-base de blusa e base da saia reta'],
+pecas:[{n:'Corpo frente',q:1,w:45,h:40,lab:'molde-base, na dobra'},{n:'Corpo costas',q:2,w:22,h:40,lab:'molde-base'},{n:'Saia frente',q:1,w:50,h:60,lab:'saia reta, na dobra'},{n:'Saia costas',q:2,w:25,h:60,lab:'saia reta'}],
+obs:'Corte o mesmo conjunto em forro. Sem mangas: decote e cavas são fechados pelo forro. O zíper fica no centro das costas.',
+passos:[['Prepare as bases','Una o molde-base de blusa (corpo) e a base da saia reta pela cintura. As pences do corpo e da saia devem se encontrar na cintura.'],
+['Prova','Faça a prova completa em tecido barato. Ajuste busto, cintura, ombro e comprimento antes de cortar.'],
+['Corte','Tecido e forro: corpo frente na dobra, 2 costas; saia frente na dobra, 2 costas. Margem de 1,5 cm no centro das costas.'],
+['Pences','Costure as pences do corpo e da saia no tecido e no forro.'],
+['Una corpo e saia','Una corpo e saia pela cintura, casando as pences. Faça o mesmo no forro.'],
+['Ombros','Costure os ombros do tecido. Separado, costure os ombros do forro.'],
+['Decote','Direito com direito, costure tecido e forro pelo decote. Faça piques, apare e pesponte o forro rente à costura (understitch).'],
+['Cavas','Ainda direito com direito, costure as duas cavas do tecido com as do forro. Pique, apare e faça understitch até onde alcançar.'],
+['Vire pelos ombros','Com o centro das costas aberto, puxe cada costas por dentro do túnel do ombro até a frente. O vestido sai virado, com decote e cavas limpos.'],
+['Laterais','Abra as costuras da cava e costure a lateral de uma vez: forro, encontro da cava, tecido, numa costura contínua.'],
+['Zíper invisível','Pregue o zíper no tecido do centro das costas. Feche o centro das costas abaixo dele.'],
+['Forro no zíper','Costure o forro na fita do zíper à máquina (direito com direito, por dentro) ou à mão.'],
+['Barras','Barra invisível no tecido e barra dupla no forro, 2 cm mais curta.'],
+['Passe','Passe tudo com pano de proteção.']],
+dica:'A virada pelos ombros parece mágica na primeira vez: treine em uma versão de prova.'},
+
+{id:'camisa-social',nome:'Camisa social',emoji:'👔',cat:'Roupas',nivel:'Avançado',desc:'Gola com pé, pala dupla, carcela e punhos.',tam:'Com base em molde de camisa',
+mat:['2 m de tricoline de camisa','Entretela para gola, pé de gola, punho e frente','8 a 10 botões pequenos','Linha de costura fina','Molde comercial de camisa no seu tamanho'],
+pecas:[{n:'Frente',q:2,w:35,h:75,lab:'do molde'},{n:'Costas',q:1,w:60,h:70,lab:'do molde, na dobra'},{n:'Pala',q:2,w:45,h:12,lab:'do molde, na dobra'},{n:'Manga',q:2,w:55,h:60,lab:'do molde'},{n:'Gola',q:2,w:45,h:8,lab:'do molde'},{n:'Pé de gola',q:2,w:42,h:4,lab:'do molde'},{n:'Punho',q:4,w:24,h:7,lab:'do molde'},{n:'Carcela da manga',q:2,w:3,h:16}],
+obs:'Use um molde comercial de camisa. Aqui está a ordem profissional de montagem, que é a parte mais difícil de acertar.',
+passos:[['Entretela','Aplique entretela na gola de cima, no pé de fora, em 2 punhos e na vista das frentes.'],
+['Vistas das frentes','Dobre a vista do lado dos botões e do lado das casas conforme o molde, passe e pesponte.'],
+['Prega das costas','Faça a prega no centro das costas (ou duas pregas laterais) e alinhave na borda de cima.'],
+['Pala dupla','Monte o sanduíche: pala de fora com direito para baixo sobre as costas, pala de dentro direito com direito por baixo das costas. Costure as três camadas.'],
+['Ombros pelo método burrito','Una os ombros das frentes na pala de fora. Enrole as frentes, puxe a pala de dentro por cima e costure os ombros de novo, pegando tudo. Vire pelo pescoço: ombros sem nenhuma costura aparente por dentro.'],
+['Gola','Faça a gola e o pé de gola seguindo a aula 4 do Nível 7 e pregue no decote.'],
+['Carcelas','Faça a carcela em cada manga (aula 7 do Nível 7) com a manga ainda aberta.'],
+['Mangas planas','Pregue a manga na cava com a camisa aberta. Use costura rebatida para acabamento de camisa.'],
+['Lateral e manga','Feche de uma vez da barra da camisa ao punho, também com costura rebatida ou inglesa.'],
+['Punhos','Faça as pregas e pregue os punhos.'],
+['Barra curva','Faça bainha estreita de 0,5 cm + 0,5 cm. Nas curvas, passe bem antes e costure devagar.'],
+['Casas e botões','Casas verticais na vista e horizontal no pé de gola e nos punhos. Pregue os botões com haste curta.'],
+['Passadoria final','Passe na ordem: gola, punhos, mangas, pala, frente, costas.']],
+dica:'Troque a agulha por uma fina (nº 70 ou 11) e use ponto 2,2 mm: costuras de camisa ficam mais delicadas.'},
+
+{id:'calca-alfaiataria',nome:'Calça reta com braguilha',emoji:'👖',cat:'Roupas',nivel:'Avançado',desc:'Bolso faca, braguilha com zíper, cós e passantes.',tam:'Copiada de uma calça que veste bem',
+mat:['1,5 m de sarja, brim leve ou alfaiataria','Tecido de bolso (tricoline)','Zíper de calça 18 cm','Entretela para cós e vista','1 botão e colchete','Papel para molde'],
+pecas:[{n:'Frente',q:2,s:'pant',lab:'decalque'},{n:'Costas',q:2,s:'pant',lab:'decalque'},{n:'Saco do bolso',q:2,w:18,h:28},{n:'Espelho do bolso',q:2,w:16,h:20},{n:'Vista',q:1,w:6,h:20},{n:'Pertingal',q:1,w:10,h:20},{n:'Cós',q:1,w:90,h:10,lab:'cintura + 12 cm'},{n:'Passantes',q:1,w:50,h:4,lab:'uma tira'}],
+obs:'Copie frente e costas de uma calça que veste bem (como no molde de pijama), marcando também a abertura do bolso faca e a da braguilha. Margem de 1 cm e 4 cm na barra.',
+passos:[['Decalque e prova','Copie a calça-base e faça uma prova. Ajuste gancho e largura antes de cortar o tecido bom.'],
+['Bolso faca: espelho','Costure o espelho (tecido da calça) sobre o saco do bolso de trás, pelo lado direito, e chuleie a borda.'],
+['Bolso faca: boca','Costure o saco da frente na boca do bolso da frente da calça, direito com direito. Vire para dentro, faça understitch e pesponte a boca pelo direito.'],
+['Feche o bolso','Por dentro, coloque o saco de trás (com espelho) sob o da frente, alinhe a cintura e a lateral e costure a curva de baixo dos sacos. Alinhave na cintura e na lateral.'],
+['Pences das costas','Costure e passe as pences para o centro.'],
+['Braguilha','Monte a braguilha na frente seguindo a aula 5 do Nível 7, incluindo o pesponto em J e o travete.'],
+['Laterais','Costure frente com costas pelas laterais, prendendo o bolso. Chuleie e passe aberto.'],
+['Entrepernas','Feche a entreperna de cada perna.'],
+['Gancho das costas','Vire uma perna e encaixe na outra. Costure o gancho das costas, emendando no gancho da frente. Costure duas vezes na curva.'],
+['Passantes','Faça a tira de passantes dobrada em 4 e pesponte. Corte 5 pedaços de 7 cm e alinhave na cintura: 2 na frente, 2 nas costas e 1 no centro das costas.'],
+['Cós','Pregue o cós com entretela, com 3 a 4 cm de sobra no lado do botão. Feche as pontas, dobre por dentro e pesponte ou feche à mão.'],
+['Passantes em cima','Dobre a ponta de cima dos passantes e costure no topo do cós com travete.'],
+['Botão e casa','Casa na ponta do cós do lado de cima, botão do outro lado, e colchete por dentro.'],
+['Barra','Prove com o sapato, marque e faça barra invisível de 4 cm. Passe com vinco se quiser.']],
+dica:'A braguilha é o ponto mais difícil: faça em retalho antes, com o mesmo tecido.'},
+
+{id:'blazer',nome:'Blazer forrado',emoji:'🧥',cat:'Roupas',nivel:'Avançado',desc:'Lapela, gola, manga em duas partes e forro ensacado.',tam:'Com base em molde comercial de blazer',
+mat:['2 m de tecido de alfaiataria','1,8 m de forro','Entretela termocolante média','Ombreiras e manta de cabeça de manga','Botões','Molde comercial de blazer'],
+pecas:[{n:'Frente',q:2,w:35,h:70,lab:'do molde'},{n:'Lateral',q:2,w:18,h:55,lab:'do molde'},{n:'Costas',q:2,w:25,h:70,lab:'do molde'},{n:'Manga (2 partes)',q:4,w:25,h:62,lab:'do molde'},{n:'Vista com lapela',q:2,w:14,h:70,lab:'do molde'},{n:'Gola',q:2,w:40,h:9,lab:'do molde'}],
+obs:'O forro é cortado com os moldes de frente sem a largura da vista, e com uma prega de folga no centro das costas. Um blazer é um projeto longo: separe vários dias.',
+passos:[['Prova','Faça uma prova em tecido barato sem forro e ajuste ombros, largura e comprimento das mangas.'],
+['Entretela','Aplique entretela nas frentes inteiras, vistas, gola, barras e bocas das mangas.'],
+['Carcaça','Costure recortes da frente com lateral, costas no centro e costas com lateral. Passe cada costura aberta.'],
+['Bolsos','Faça os bolsos (embutidos ou chapados) com as frentes ainda planas.'],
+['Ombros','Una os ombros e passe abertos.'],
+['Gola de cima na vista','Una as duas vistas às costas do forro (forro montado) e costure a gola de cima no decote dessa parte.'],
+['Gola de baixo no blazer','Costure a gola de baixo no decote do blazer.'],
+['Una a lapela','Direito com direito, costure blazer e forro-com-vista pela borda da frente, subindo pela lapela e contornando a gola até o outro lado. Pare exatamente no ponto onde gola e lapela se encontram e recomece do outro lado desse ponto.'],
+['Apare e vire','Apare, corte cantos e vire. Passe a lapela com a costura levemente para dentro na parte de baixo e para trás na parte da lapela.'],
+['Mangas','Monte cada manga de duas partes. Faça duas linhas de ponto longo na cabeça da manga, franza levemente e pregue na cava casando os piques.'],
+['Ombreira e cabeça de manga','Costure a tira de manta na cabeça da manga e prenda a ombreira à mão na margem do ombro.'],
+['Mangas do forro','Monte e pregue as mangas do forro no forro.'],
+['Ensacar','Costure a barra do forro na barra do blazer, direito com direito, e a boca das mangas do forro nas do blazer. Deixe uma abertura de 20 cm em uma manga do forro.'],
+['Vire e feche','Vire tudo pela abertura, feche a abertura à máquina rente e passe o blazer inteiro com pano de proteção.'],
+['Casas e botões','Faça as casas na frente e prenda os botões com haste.']],
+dica:'Passe cada costura antes de cruzar com outra. Em alfaiataria, o ferro faz metade do trabalho.'},
+
+{id:'bolsa-estruturada',nome:'Bolsa estruturada com zíper',emoji:'👛',cat:'Acessórios',nivel:'Avançado',desc:'Forro, bolso interno com zíper, fundo e topo com zíper.',tam:'Pronta com cerca de 34 × 26 × 10 cm',
+mat:['Tecido externo firme (lona, courino fino ou oxford)','Tecido de forro','Entretela estruturante ou manta acrílica','Zíper de 35 cm para o topo e zíper de 18 cm para o bolso','Tecido e manta para alças'],
+pecas:[{n:'Corpo externo',q:2,w:36,h:32},{n:'Forro',q:2,w:36,h:32},{n:'Entretela',q:2,w:34,h:30},{n:'Painel do zíper',q:4,w:36,h:5},{n:'Bolso interno',q:1,w:22,h:34},{n:'Alça',q:2,w:8,h:60},{n:'Zíper do topo',q:1,w:35,h:2,lab:'35 cm'}],
+obs:'Margem de 1 cm. Nos cantos de baixo de externo e forro, recorte quadrados de 5 × 5 cm: eles formam o fundo de 10 cm.',
+passos:[['Estruture','Aplique a entretela no avesso dos corpos externos, sem pegar a margem.'],
+['Recorte os cantos','Recorte os quadrados de 5 cm nos cantos de baixo do externo e do forro.'],
+['Bolso interno','Em um forro, faça o bolso embutido com zíper (aula 3 do Nível 7) a 7 cm do topo.'],
+['Alças','Faça as alças com manta dentro, dobradas em 4, com pesponto nas duas bordas.'],
+['Prenda as alças','Alinhave as pontas das alças no topo de cada corpo externo, a 8 cm de cada lado do centro, viradas para baixo.'],
+['Painel do zíper','Monte o zíper entre dois painéis (externo e forro) de cada lado, pelo método sanduíche. Pesponte.'],
+['Una painel e corpos','Costure cada lado do painel com zíper na borda de cima de um corpo externo, e o forro do painel no forro correspondente.'],
+['Abra o zíper','Deixe o zíper aberto até a metade.'],
+['Feche externo e forro','Direito com direito, costure as laterais e o fundo do externo e, separadamente, do forro. Deixe 12 cm abertos no fundo do forro.'],
+['Fundo','Em cada canto recortado, abra, casando a costura lateral com a do fundo, e costure reto. Faça isso no externo e no forro.'],
+['Vire','Vire pela abertura do forro. Empurre bem os cantos.'],
+['Feche e acomode','Feche a abertura do forro, coloque o forro dentro e pesponte a borda de cima se quiser mais firmeza.']],
+dica:'Use agulha de jeans (nº 16) e prendedores tipo clipe em vez de alfinetes quando o tecido for grosso ou courino.'},
+
+{id:'vestido-envelope',nome:'Vestido envelope em malha',emoji:'💃',cat:'Roupas',nivel:'Intermediário',desc:'Transpassado, com amarração na cintura.',tam:'Com base em uma blusa de malha que veste bem',
+mat:['2 m de malha com elastano (malha fria, viscolycra)','Agulha ponta bola','Tira de entretela para malha ou fita de estabilização'],
+pecas:[{n:'Frente transpassada',q:2,w:50,h:45,lab:'copiar e estender'},{n:'Costas',q:1,w:45,h:45,lab:'na dobra'},{n:'Saia frente',q:2,w:50,h:60},{n:'Saia costas',q:1,w:55,h:60,lab:'na dobra'},{n:'Manga',q:2,w:35,h:40,lab:'da blusa'},{n:'Faixa',q:2,w:6,h:110}],
+obs:'Copie uma blusa de malha. Na frente, estenda o decote em diagonal do ombro até a cintura do lado oposto: essa é a parte que cruza.',
+passos:[['Molde da frente','Copie a frente da blusa inteira (não na dobra). Trace uma linha do ponto do decote no ombro até a cintura, 8 a 10 cm além do centro. Corte por essa linha.'],
+['Saia','Retângulos levemente evasês. As saias da frente se sobrepõem uns 15 cm.'],
+['Estabilize o decote','Aplique a fita de estabilização nas bordas diagonais das frentes, para não esticar e abrir.'],
+['Acabamento do decote','Dobre 1 cm das diagonais e das costas e costure com ponto zigue-zague estreito ou agulha dupla.'],
+['Ombros e mangas','Una ombros e pregue as mangas com ponto elástico.'],
+['Laterais','Feche as laterais do corpo e das mangas.'],
+['Una a saia','Una a saia ao corpo pela cintura, cruzando as frentes.'],
+['Faixas','Faça as faixas como tubos. Prenda uma em cada lado da cintura, deixando uma pequena abertura na lateral para a faixa passar.'],
+['Barra','Malha não desfia: faça barra simples de 2 cm com agulha dupla.']],
+dica:'Nunca estique a malha enquanto costura. Se ondular, diminua a pressão do calcador.'},
+
+{id:'saia-pregas',nome:'Saia de pregas',emoji:'🎓',cat:'Roupas',nivel:'Intermediário',desc:'Pregas iguais marcadas com precisão, com calculadora.',tam:'Calculado com as suas medidas',
+mat:['Tecido plano que vinca bem (tricoline, gabardine, xadrez)','Zíper invisível de 20 cm','Entretela para o cós','Régua comprida e ferro'],
+pecas:[],calc:'pregas',
+obs:'Cada prega faca "come" o dobro da profundidade dela. A calculadora mostra o tecido total e a distância entre pregas.',
+passos:[['Calcule','Use a calculadora acima.'],
+['Corte','Corte o retângulo. Se precisar emendar, faça a emenda escondida dentro de uma prega.'],
+['Barra primeiro','Faça a barra antes das pregas: depois fica muito difícil.'],
+['Marque as pregas','Pelo direito, marque na cintura e na barra as linhas de dobra e de encontro, com a medida da calculadora. Use giz e régua comprida.'],
+['Dobre e alinhave','Dobre cada prega, leve a dobra até a linha de encontro e prenda com alfinetes na cintura e na barra.'],
+['Passe','Passe as pregas de cima a baixo com pano úmido. Deixe esfriar antes de mexer.'],
+['Prenda no topo','Alinhave a 0,7 cm da cintura para as pregas não se moverem.'],
+['Zíper','Feche o centro das costas com zíper invisível.'],
+['Cós','Pregue o cós com entretela.'],
+['Pesponto (opcional)','Pesponte cada prega por 10 cm abaixo da cintura para ela ficar assentada no quadril.']],
+dica:'Tecido xadrez ajuda: use as linhas do próprio xadrez para marcar as pregas.'}
+);
+Object.assign(calcs,{
+ pregas:{fields:[{id:'cintura',l:'Cintura (cm)',ph:'74',med:'cintura'},{id:'comp',l:'Comprimento da saia (cm)',ph:'50',med:'comp'},{id:'n',l:'Número de pregas',ph:'16'},{id:'prof',l:'Profundidade de cada prega (cm)',ph:'3'}],
+  run(v){const n=Math.round(v.n),larg=v.cintura+n*2*v.prof+3,esp=v.cintura/n;
+   return `<p><b>Largura do tecido:</b> ${larg.toFixed(0)} cm (cintura + ${n} pregas × 2 × ${v.prof} + 3 de margem)<br><b>Altura de corte:</b> ${(v.comp+1+4).toFixed(0)} cm (comprimento + 1 cm cintura + 4 cm barra)<br><b>Espaço visível entre pregas:</b> ${esp.toFixed(1)} cm<br><b>Sequência para marcar:</b> ${esp.toFixed(1)} cm aparente + ${(v.prof*2).toFixed(1)} cm escondidos, repetindo.</p><div class="tip">💡 Para uma saia com pregas até o quadril, confira se a largura das pregas abertas passa pelo quadril.</div>`}}
+});
+
 function openMolde(id){
  const m=moldes.find(x=>x.id===id);if(!m)return;
  moldeAtual=m;
  const feito=localStorage.getItem('molde_'+m.id);
  const nPecas=m.pecas.reduce((a,p)=>a+p.q,0);
  let h=`<div class="detailHead"><div class="kicker">${m.cat} • ${m.nivel}</div><h2>${m.emoji} ${m.nome}</h2><p class="desc">${m.desc}</p><div class="infoGrid"><div class="infoChip"><b>📏 Tamanho</b>${m.tam}</div><div class="infoChip"><b>🧩 Peças</b>${nPecas?nPecas+' peças para cortar':(m.calc?'Calculadas com suas medidas':'Conforme o molde-base')}</div></div></div><div class="lessonBody">`;
+ if(m.nivel==='Avançado')h+='<div class="tip red">🔴 <b>Molde avançado.</b> Faça antes uma prova em tecido barato e treine as técnicas do Nível 7 em retalho.</div>';
  h+='<h3>🧰 Materiais</h3><ul>'+m.mat.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
  if(m.pecas.length){h+='<h3>✂️ Peças para cortar</h3><div class="pieceGrid">'+m.pecas.map(pieceSvg).join('')+'</div><p class="small">Desenhos fora de escala: use as medidas escritas (largura × altura).</p>'}
  h+=`<div class="tip blue">📌 ${m.obs}</div>`;
@@ -1332,9 +1592,22 @@ function runCalc(){
  const r=document.getElementById('calcRes');r.style.display='block';r.innerHTML=c.run(v);
  r.scrollIntoView({behavior:'smooth',block:'start'});
 }
+function sealStatus(){
+ const av=moldes.filter(m=>m.nivel==='Avançado');
+ const feitos=av.filter(m=>localStorage.getItem('molde_'+m.id)).length;
+ return {total:av.length,feitos,ganhou:av.length>0&&feitos===av.length};
+}
+function renderSeal(){
+ const st=sealStatus(),el=document.getElementById('seal');if(!el)return;
+ el.classList.toggle('won',st.ganhou);
+ document.getElementById('sealTitle').textContent=st.ganhou?'🎉 Nível Profissional conquistado!':'Selo Nível Profissional';
+ document.getElementById('sealText').textContent=st.ganhou?`Você concluiu todos os ${st.total} moldes avançados. Parabéns!`:`${st.feitos} de ${st.total} moldes avançados feitos. Toque para ver os moldes.`;
+ document.getElementById('sealBar').style.width=(st.total?st.feitos/st.total*100:0)+'%';
+}
 function toggleMoldeFeito(){
- const k='molde_'+moldeAtual.id;
+ const k='molde_'+moldeAtual.id,antes=sealStatus().ganhou;
  if(localStorage.getItem(k)){localStorage.removeItem(k);toast('Molde desmarcado')}else{localStorage.setItem(k,'1');toast('Molde marcado como feito ✓')}
+ if(!antes&&sealStatus().ganhou)setTimeout(()=>toast('🏆 Parabéns! Você conquistou o selo Nível Profissional (selo simbólico, não é certificado).'),2600);
  openMolde(moldeAtual.id);
 }
 
@@ -1397,7 +1670,16 @@ const gloss=[
 ['Prova','Peça de teste usada para verificar medidas e caimento.'],
 ['Retrocesso','Costura em sentido contrário usada para reforçar quando apropriado.'],
 ['Viés','Direção diagonal do tecido; também nome de uma tira usada em acabamentos.'],
-['Zíper','Fecho com dentes ou espiral e cursor.']
+['Zíper','Fecho com dentes ou espiral e cursor.'],
+['Carcela','Tira de acabamento em aberturas, como a da manga de camisa.'],
+['Ensacar','Unir tecido e forro pelas bordas e virar, escondendo todas as costuras.'],
+['Lapela','Parte da frente do blazer que dobra para fora, abaixo da gola.'],
+['Pala','Faixa recortada nas costas da camisa, na altura dos ombros.'],
+['Pé de gola','Faixa que envolve o pescoço na camisa social, onde a gola é presa.'],
+['Pertingal','Tira dupla que fica atrás do zíper da braguilha.'],
+['Travete','Zigue-zague curto e denso para reforçar pontos de esforço.'],
+['Understitch','Pesponto do forro ou vista sobre as margens, para ele não aparecer pelo direito.'],
+['Vista','Peça que faz o acabamento interno de uma borda, como decote ou abertura.']
 ];
 function renderGloss(){
  const q=(document.getElementById('glossSearch')?.value||'').toLowerCase();
@@ -1444,12 +1726,15 @@ function updateProgress(){
  const done=Object.entries(lessons).reduce((sum,[k,a])=>sum+a.filter((_,i)=>localStorage.getItem('done_'+k+'_'+i)).length,0);
  const pct=all?done/all*100:0;
  const p=document.getElementById('homeProgress');if(p)p.style.width=pct+'%';
+ renderSeal();
  const t=document.getElementById('homeProgressText');if(t)t.textContent=`${done} de ${all} aulas concluídas • ${Math.round(pct)}%`;
  Object.keys(lessons).forEach(renderLessons);
 }
 
 document.getElementById('homeMoldesTxt').textContent=moldes.length+' moldes com medidas e passo a passo';
 renderTech();renderGloss();loadMeasures();renderMoldes();updateProgress();
+document.getElementById('appVersion').textContent='Versão '+APP_VERSION+' • atualizada em '+APP_DATE;
+(function(){const v=localStorage.getItem('app_version');if(v&&v!==APP_VERSION)setTimeout(()=>toast('✅ App atualizado para a versão '+APP_VERSION),600);localStorage.setItem('app_version',APP_VERSION);})();
 </script>
 </div>
 </body>
