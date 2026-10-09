@@ -43,7 +43,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 .progressText{font-size:12px;color:var(--mut);margin-top:5px}.statusBadge{font-size:10px;border-radius:20px;padding:4px 7px;background:#eaf8ef;color:#217443;font-weight:900}
 .seal{display:flex;gap:12px;align-items:center;margin-top:12px;padding:14px;border-radius:19px;border:1px solid var(--line);background:#fff}.seal .medal{font-size:40px;filter:grayscale(1);opacity:.45}.seal.won{background:linear-gradient(135deg,#fff8e1,#fde7f0);border-color:#f5b900}.seal.won .medal{filter:none;opacity:1}.seal b{display:block}.version{margin-top:6px;font-size:11px;color:#9a8f98}
 .medalBar{display:flex;gap:5px;margin-top:8px;align-items:center;background:#ffffff1f;border:0;border-radius:20px;padding:3px 9px 3px 6px;color:#fff;font-size:11px;font-weight:bold;width:max-content}.medalBar span{font-size:17px;line-height:1}.medalBar span.off{filter:grayscale(1) brightness(1.6);opacity:.45}
-.vitrine{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.vit{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 4px;text-align:center}.vit .mi{font-size:30px;display:block}.vit.off .mi{filter:grayscale(1);opacity:.35}.vit b{display:block;font-size:11px;margin-top:3px}.vit small{font-size:10px;color:var(--mut)}.vit.on{border-color:#f5b900;background:linear-gradient(180deg,#fffbea,#fff)}
+.vitrine{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:10px}.vit{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 4px;text-align:center}.vit .mi{font-size:26px;display:block}.vit.off .mi{filter:grayscale(1);opacity:.35}.vit b{display:block;font-size:11px;margin-top:3px}.vit small{font-size:10px;color:var(--mut)}.vit.on{border-color:#f5b900;background:linear-gradient(180deg,#fffbea,#fff)}
 .medalModal{position:fixed;inset:0;background:#1a0f1aee;z-index:120;display:none;align-items:center;justify-content:center;padding:20px}.medalModal.open{display:flex}.medalBox{background:#fff;border-radius:24px;padding:24px 18px;text-align:center;max-width:330px;width:100%;animation:pop .5s ease}.medalBig{font-size:96px;display:inline-block;animation:spinIn 1s ease;filter:drop-shadow(0 0 18px #f5b900)}.medalBox h2{margin:6px 0 2px;color:var(--p)}.medalBox .small{display:block;margin-top:6px}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}@keyframes spinIn{0%{transform:rotateY(0) scale(.3)}60%{transform:rotateY(540deg) scale(1.15)}100%{transform:rotateY(720deg) scale(1)}}
 .reqLine{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:12px;color:var(--mut);margin-top:5px;padding:6px 8px;border-radius:10px;background:#faf5f8;cursor:pointer}.reqLine.feito{background:#eef8f1}.goLink{color:var(--p);font-weight:900;white-space:nowrap}.goBtn{border:0;background:var(--p);color:#fff;font-weight:900;border-radius:10px;padding:8px 11px;margin-top:9px;font-size:12px}
@@ -65,7 +65,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <input class="search" id="buscaGeral" oninput="buscarApp()" placeholder="🔎 Buscar no app (ex.: vestido de festa, zíper, bolsa)"><div id="buscaRes"></div>
 <div class="hero"><h1>Bem-vindo(a)! 💕</h1><p>Um curso de costura pensado para quem quer aprender com calma, praticar e evoluir passo a passo. Comece do zero e avance somente quando se sentir seguro.</p><button class="primary" onclick="go('cursos')">▶ COMEÇAR A APRENDER</button></div>
 <div class="grid">
-<button class="card" onclick="go('cursos')"><span class="ico">📚</span><b>Cursos</b><small>7 níveis, do iniciante ao avançado</small></button>
+<button class="card" onclick="go('cursos')"><span class="ico">📚</span><b>Cursos</b><small>8 níveis, do iniciante à alta costura</small></button>
 <button class="card" onclick="go('moldes')"><span class="ico">📐</span><b>Moldes</b><small id="homeMoldesTxt">Medidas, peças e passo a passo</small></button>
 <button class="card" onclick="go('medidas')"><span class="ico">📏</span><b>Minhas medidas</b><small>Salve e consulte</small></button>
 <button class="card" onclick="go('tecnicas')"><span class="ico">✂️</span><b>Técnicas</b><small>Consulta rápida</small></button>
@@ -87,7 +87,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 </section>
 
 <section id="cursos" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>📚 Curso completo</h2><p class="desc">Aulas longas e guiadas para quem está começando. Você pode seguir a ordem ou abrir qualquer aula para consulta.</p>
+<button class="back" onclick="go('home')">← Início</button><h2>📚 Curso completo</h2><p class="desc">Aulas longas e guiadas para quem está começando. Os níveis abrem em ordem: cada um libera quando você passa na prova do anterior.</p>
 <div class="lesson"><div class="num">1</div><div><b>Nível 1 — Primeiros passos</b><br><span class="small">Máquina, segurança, linha, agulha, bobina e primeiros pontos.</span></div><button onclick="go('nivel1')">Ver</button></div>
 <div class="lesson"><div class="num">2</div><div><b>Nível 2 — Costura prática</b><br><span class="small">Reta, zigue-zague, cantos, curvas, bainha, franzido, viés, zíper e acabamento.</span></div><button onclick="go('nivel2')">Ver</button></div>
 <div class="lesson"><div class="num">3</div><div><b>Nível 3 — Medidas e moldes</b><br><span class="small">Medidas, direito e avesso, fio, dobra, piques, margens, corte e prova.</span></div><button onclick="go('nivel3')">Ver</button></div>
@@ -95,6 +95,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <div class="lesson"><div class="num">5</div><div><b>Nível 5 — Costura à mão</b><br><span class="small">Agulha de mão, nó, alinhavo, ponto atrás, invisível, caseado e botão.</span></div><button onclick="go('nivel5')">Ver</button></div>
 <div class="lesson"><div class="num">6</div><div><b>Nível 6 — Tecidos e materiais</b><br><span class="small">Tipos de tecido, malha, entretela, linhas, agulhas e cuidados.</span></div><button onclick="go('nivel6')">Ver</button></div>
 <div class="lesson"><div class="num" style="background:#fde2e4;color:#c53b45">7</div><div><b>Nível 7 — Técnicas avançadas</b> <span class="tag lvA">AVANÇADO</span><br><span class="small">Zíper invisível, bolso embutido, gola com pé, braguilha, forro e punho.</span></div><button onclick="go('nivel7')">Ver</button></div>
+<div class="lesson" style="border:2px solid #f5b900"><div class="num" style="background:#fff3c4;color:#6b4e00">8</div><div><b>Nível 8 — Alta costura</b> <span class="tag lvL">LENDÁRIO</span><br><span class="small">Tecidos de noiva, renda, botões forrados, amarração, cauda e bordado. Termina com a prova final.</span></div><button onclick="go('nivel8')">Ver</button></div>
 <div class="tip blue">📌 <b>Não precisa correr.</b> Se uma aula parecer difícil, abra novamente, faça o exercício em um retalho e só depois avance.</div>
 </section>
 
@@ -122,8 +123,12 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <button class="back" onclick="go('cursos')">← Cursos</button><h2>🏆 Nível 7 — Técnicas avançadas</h2><p class="desc">Técnicas de acabamento profissional. Faça cada uma em retalho antes de usar em uma peça.</p><div class="tip red">⚠️ Recomendado depois de concluir os níveis 1 a 4.</div><div class="progress"><i id="p7"></i></div><div id="n7" class="list"></div>
 </section>
 
+<section id="nivel8" class="screen">
+<button class="back" onclick="go('cursos')">← Cursos</button><h2>👑 Nível 8 — Alta costura</h2><p class="desc">O nível dos vestidos de noiva e de festa. Use tecidos de teste antes do tecido caro.</p><div class="tip red">⚠️ Recomendado depois do Nível 7 e da medalha de Diamante.</div><div class="progress"><i id="p8"></i></div><div id="n8" class="list"></div>
+</section>
+
 <section id="prova" class="screen">
-<button class="back" id="provaBack" onclick="go('cursos')">← Voltar</button><h2 id="provaTitulo">📝 Prova</h2><p class="desc">Responda com calma. É preciso acertar 4 de 5 para aprovar o nível.</p><div id="provaArea"></div>
+<button class="back" id="provaBack" onclick="go('cursos')">← Voltar</button><h2 id="provaTitulo">📝 Prova</h2><p class="desc">Responda com calma. Provas de nível: nota mínima 6 (de 10). Prova final: nota mínima 8.</p><div id="provaArea"></div>
 </section>
 
 <section id="aula" class="screen">
@@ -272,7 +277,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 </section>
 
 <section id="selo" class="screen">
-<button class="back" onclick="go('home')">← Início</button><h2>🏆 Selos e moldes secretos</h2><p class="desc">Estude, costure e marque "✓ Já fiz este" nos moldes. Os selos são conquistados em ordem: cada um exige o anterior. Para chegar ao último é preciso concluir todos os 7 níveis do curso.</p>
+<button class="back" onclick="go('home')">← Início</button><h2>🏆 Selos e moldes secretos</h2><p class="desc">Estude, costure e marque "✓ Já fiz este" nos moldes. Os selos são conquistados em ordem: cada um exige o anterior. Para chegar ao último é preciso concluir todos os 8 níveis do curso.</p>
 <div id="seloConteudo"></div>
 <div class="tip red">⚠️ Os selos e as medalhas são apenas simbólicos, para incentivar os estudos. <b>Não são certificados, diplomas ou comprovantes de curso</b>, não têm validade profissional ou legal e não substituem cursos reconhecidos.</div>
 </section>
@@ -283,7 +288,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <p><b>Objetivo:</b> ensinar fundamentos de costura, leitura de moldes, medidas, corte e montagem de projetos de forma simples e progressiva.</p>
 <p><b>Como estudar:</b> leia a aula inteira, pratique em retalho, confira o resultado e repita quando necessário. Não há problema em voltar uma aula.</p>
 <p><b>Atualizar:</b> toque no botão 🔄 no topo para carregar a versão mais nova do app. Suas medidas e seu progresso continuam salvos. A versão instalada aparece no fim de todas as telas.</p>
-<p><b>Selos e moldes secretos:</b> são 4 selos conquistados em ordem, e cada um exige o anterior. Para ganhar o último é preciso concluir todas as aulas dos 7 níveis e fazer os moldes pedidos. Cada selo desbloqueia um molde secreto, e o último libera o molde lendário. Para valer, cada aula precisa de leitura mínima de 1 minuto e checklist completo (até 5 aulas por dia); cada nível tem uma prova; e cada molde exige tempo de confecção e foto da peça pronta (até 2 por dia). Cada selo dá uma medalha (bronze, prata, ouro e diamante), que aparece no topo do app. Selos e medalhas são apenas simbólicos, para incentivar os estudos. <b>Não são certificados, diplomas ou comprovantes de curso</b>, não têm validade profissional ou legal e não substituem cursos reconhecidos.</p>
+<p><b>Selos e moldes secretos:</b> são 6 selos conquistados em ordem, e cada um exige o anterior. Para ganhar o último é preciso concluir todas as aulas dos 8 níveis, passar na prova final e fazer os moldes pedidos. Cada selo desbloqueia um molde secreto; a medalha Coroa, a última, só vem com todos os selos e libera um molde super especial. Para valer, cada aula precisa de leitura mínima de 1 minuto e checklist completo (até 5 aulas por dia); cada nível tem uma prova de 10 perguntas com nota (6 ou 7 = 1 estrela, 8 ou 9 = 2, 10 = 3), o próximo nível só abre com nota mínima 6, e a Coroa exige no mínimo 20 das 24 estrelas; e cada molde exige tempo de confecção e foto da peça pronta (até 2 por dia). Cada selo dá uma medalha (bronze, prata, ouro, diamante e coroa), que aparece no topo do app. Selos e medalhas são apenas simbólicos, para incentivar os estudos. <b>Não são certificados, diplomas ou comprovantes de curso</b>, não têm validade profissional ou legal e não substituem cursos reconhecidos.</p>
 <p><b>Segurança:</b> cada máquina possui características próprias. Para troca de agulha, limpeza, passagem de linha, bobina e regulagens específicas, siga o manual do fabricante.</p>
 <p><b>Privacidade:</b> nesta versão, medidas, progresso e resultados ficam armazenados localmente no navegador do aparelho.</p>
 <p><b>Conteúdo:</b> as explicações são didáticas e devem ser adaptadas ao tecido, máquina, molde e projeto utilizados.</p>
@@ -296,7 +301,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 <h3>1. O que é o app</h3>
 <p>O Costura Fácil é um <b>curso livre e gratuito</b> de costura, com conteúdo didático. Não é uma instituição de ensino credenciada e não faz parte da educação formal regulada pela Lei nº 9.394/1996 (Lei de Diretrizes e Bases da Educação). Por isso, <b>não emite certificados, diplomas ou comprovantes de conclusão de curso</b>.</p>
 <h3>2. Selos e medalhas</h3>
-<p>Os selos, medalhas (bronze, prata, ouro e diamante) e moldes desbloqueáveis são <b>recursos simbólicos de incentivo</b> aos estudos. Eles:</p>
+<p>Os selos, medalhas (bronze, prata, ouro, diamante e coroa) e moldes desbloqueáveis são <b>recursos simbólicos de incentivo</b> aos estudos. Eles:</p>
 <ul><li>não são certificado, diploma, título ou comprovante de qualquer tipo;</li><li>não têm validade profissional, acadêmica ou legal;</li><li>não têm valor em dinheiro e não podem ser trocados por prêmios, produtos ou serviços;</li><li>ficam salvos apenas no aparelho e podem ser perdidos ao limpar os dados do navegador.</li></ul>
 <p>Esta informação é dada de forma clara em respeito ao direito à informação previsto no Código de Defesa do Consumidor (Lei nº 8.078/1990). Apresentar selos ou medalhas do app como comprovante de formação é de responsabilidade exclusiva de quem o fizer.</p>
 <h3>3. Segurança e uso do conteúdo</h3>
@@ -342,7 +347,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 
 <script>
 /* ===== Versão do app ===== */
-const APP_VERSION='2.9', APP_DATE='24/09/2026';
+const APP_VERSION='3.2', APP_DATE='09/10/2026';
 /* ===== Proteção do progresso ===== */
 const SALT='CF-LRAS-2026-costura';
 function sig(k){const str=SALT+'|'+k;let h=2166136261;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}let h2=h^0x5bd1e995;for(let i=str.length-1;i>=0;i--){h2^=str.charCodeAt(i);h2=Math.imul(h2,2246822507)}return 'v'+(h>>>0).toString(36)+(h2>>>0).toString(36)}
@@ -366,8 +371,10 @@ function verTermos(){go('sobre');setTimeout(()=>document.getElementById('termos'
 function aceitarTermos(){localStorage.setItem('termos_aceitos',TERMOS_VERSAO);fecharTermosModal();toast('Obrigado! Bons estudos 🧵')}
 function fecharTermosModal(){document.getElementById('termosModal').classList.remove('open')}
 /* ===== Navegação ===== */
-const navGroup={home:'home',cursos:'cursos',nivel1:'cursos',nivel2:'cursos',nivel3:'cursos',nivel4:'cursos',nivel5:'cursos',nivel6:'cursos',nivel7:'cursos',prova:'cursos',aula:'cursos',moldes:'moldes',molde:'moldes'};
+const navGroup={home:'home',cursos:'cursos',nivel1:'cursos',nivel2:'cursos',nivel3:'cursos',nivel4:'cursos',nivel5:'cursos',nivel6:'cursos',nivel7:'cursos',nivel8:'cursos',prova:'cursos',aula:'cursos',moldes:'moldes',molde:'moldes'};
 function go(id){
+ const mN=/^nivel(\d)$/.exec(id);
+ if(mN&&!nivelAberto('n'+mN[1])){toast(`🔒 O Nível ${mN[1]} abre quando você passar na prova do Nível ${mN[1]-1} (nota mínima 6)`);id='cursos'}
  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
  const alvo=document.getElementById(id);
  if(!alvo)return;
@@ -382,6 +389,7 @@ function go(id){
  if(id==='moldes')renderMoldes();
  if(id==='medidas')loadMeasures();
  if(id==='selo')renderSeloScreen();
+ if(id==='cursos')renderCursos();
  updateProgress();
 }
 function menu(){document.getElementById('drawer').classList.add('open')}
@@ -945,34 +953,162 @@ n5:[['Qual o tamanho ideal da linha na agulha de mão?',['Mais ou menos o tamanh
 n6:[['A malha:',['Não estica','Estica e é feita de laçadas','Desfia muito'],1],['Um bom tecido para iniciantes é:',['Tricoline','Chiffon','Cetim'],0],['O lado da cola da entretela vai:',['No avesso do tecido','No direito do tecido','Virado para o ferro'],0],['Para costurar malha, use agulha:',['Ponta bola','De couro','Qualquer agulha velha'],0],['Na etiqueta, o símbolo da bacia indica:',['Lavagem','Secagem','Passadoria'],0]],
 n7:[['O zíper invisível é pregado:',['Antes de fechar a costura','Depois de fechar a costura','Só à mão'],0],['Na costura inglesa, a primeira costura é feita:',['Avesso com avesso','Direito com direito','Pelo direito, com pesponto'],0],['No bolso embutido, as pontas são cortadas:',['Em Y até os cantos','Em linha reta','Em zigue-zague'],0],['O pertingal fica:',['Atrás do zíper da braguilha','Na gola','No punho'],0],['O understitch serve para:',['O forro não aparecer pelo direito','Franzir','Fechar o zíper'],0]]
 };
+/* ===== Nível 8 — Alta costura ===== */
+lessons.n8=[
+['1','Tecidos de noiva','Cetim, mikado, tule, organza e renda: como escolher, cortar e passar.'],
+['2','Aplicação de renda','Recortar motivos de renda e aplicar à mão sem a costura aparecer.'],
+['3','Botões forrados e alcinhas','A fileira de botões das costas do vestido de noiva.'],
+['4','Corpete com amarração','Ilhoses, cordão e a aba de proteção por baixo da amarração.'],
+['5','Cauda e barra com crinol','Como desenhar a cauda e dar forma à barra.'],
+['6','Bordado de pérolas e pedraria','Bordar à mão pedras, pérolas e canutilhos com firmeza.']
+];
+Object.assign(lessonDetails,{
+'n8|0':{nivel:'Nível 8 • Aula 1',title:'Tecidos de noiva',intro:'Tecidos de noiva são caros, delicados e marcam com facilidade. Antes de cortar, é preciso conhecer o comportamento de cada um.',materials:['Amostras de cetim, mikado, tule, organza e renda','Ferro com regulagem e pano de algodão fino','Agulhas novas nº 60 ou 70','Alfinetes de seda (finos)'],steps:[
+['Conheça os principais','Cetim: brilhante e escorregadio. Mikado: encorpado, segura forma. Tule: transparente e leve, para véus e anáguas. Organza: transparente e firme. Renda: decorativa, usada por cima de outro tecido.'],
+['Teste o alfinete','Espete um alfinete numa amostra e retire. Se ficar furo, use alfinetes só dentro da margem ou prendedores tipo clipe.'],
+['Teste o ferro','Passe uma amostra com pano por cima, na menor temperatura que funcione. Veja se brilhou, manchou ou derreteu.'],
+['Teste a água','Pingue uma gota d\'água. Muitos cetins ficam com mancha de água: nesse caso, passe sem vapor.'],
+['Sentido do brilho','Cetim tem um sentido de brilho. Corte todas as peças no mesmo sentido, como uma estampa com lado certo.'],
+['Agulha nova','Comece cada peça de noiva com agulha nova e fina. Agulha gasta puxa fios.'],
+['Mãos limpas','Lave as mãos e não use creme antes de manusear. Cubra a mesa com lençol limpo.']],observe:'Antes de qualquer corte, você sabe como o tecido reage ao alfinete, ao ferro e à água.',errors:['Passar cetim com vapor e manchar.','Cortar peças com sentidos de brilho diferentes.','Usar alfinetes grossos que deixam furo.'],practice:'Faça uma cartela com amostras dos tecidos e anote ao lado o resultado de cada teste.'},
+'n8|1':{nivel:'Nível 8 • Aula 2',title:'Aplicação de renda',intro:'Na alta costura, a renda é recortada em motivos (flores, folhas) e aplicada à mão, contornando o desenho. Assim não aparece costura reta.',materials:['Renda com motivos bem definidos','Tecido base (tule ou cetim)','Tesoura pequena e afiada','Agulha fina e linha da cor da renda','Alfinetes de seda'],steps:[
+['Escolha os motivos','Observe a renda e marque os motivos que vai usar, pensando na posição no vestido.'],
+['Recorte rente','Corte em volta do motivo, rente ao cordão de contorno, sem cortar o cordão.'],
+['Monte o desenho','Distribua os motivos sobre a peça vestida no manequim ou na prova. Fotografe antes de prender.'],
+['Prenda com alfinetes','Prenda cada motivo com alfinetes de seda dentro do motivo.'],
+['Pontos invisíveis','Costure à mão com pontos pequenos, passando a linha por cima do cordão de contorno, a cada 3 a 4 mm.'],
+['Sem puxar','Não aperte a linha: a peça franze. Trabalhe com a peça plana na mesa.'],
+['Encontros','Onde um motivo encontra outro, sobreponha levemente e costure pelo contorno do de cima.'],
+['Recorte por baixo (opcional)','Em barras, depois de aplicar, recorte o tecido base por baixo da renda para o contorno ficar vazado.']],observe:'A renda parece ter nascido na peça: nenhuma costura reta aparece.',errors:['Cortar o cordão do contorno e a renda desfiar.','Puxar a linha e franzir o tule.','Aplicar sem provar a posição antes.'],practice:'Aplique 3 motivos de renda em um quadrado de tule de 30 cm.'},
+'n8|2':{nivel:'Nível 8 • Aula 3',title:'Botões forrados e alcinhas',intro:'A fileira de botões forrados nas costas é a marca do vestido de noiva. Os botões fecham em alcinhas de tecido ou de linha, em vez de casas.',materials:['Kit de botão forrado de 1 cm (ou forminhas e máquina de forrar)','Retalhos do tecido do vestido','Tira de viés de 2,5 cm para as alcinhas (ou linha grossa)','Agulha de virar alcinha (ou um fio de náilon)'],steps:[
+['Forre os botões','Corte círculos de tecido do tamanho indicado no kit, encaixe na tampa, dobre as bordas para dentro e feche com a base.'],
+['Alcinha de tecido','Dobre a tira de viés direito com direito, costure a 0,3 cm da dobra, apare e vire com a agulha de virar. Fica um cordãozinho.'],
+['Marque a carreira','No lado das alcinhas, marque a posição de cada uma, normalmente a cada 2 cm.'],
+['Meça a alça','Corte as alcinhas com o tamanho exato para o botão passar justo: cerca de 2 vezes o diâmetro do botão.'],
+['Prenda as alcinhas','Alinhave as alcinhas viradas para dentro na borda da abertura, direito com direito. Depois a vista ou o forro cobre essa costura.'],
+['Pregue os botões','No outro lado, pregue cada botão alinhado com sua alcinha, com haste curta e linha dupla.'],
+['Zíper escondido (dica)','Muitos vestidos usam zíper invisível por baixo, e os botões ficam só como enfeite. É mais prático para a noiva.']],observe:'Todos os botões ficam alinhados e cada alcinha fecha justinha.',errors:['Alcinhas de tamanhos diferentes.','Botões fora do alinhamento das alças.','Tecido grosso demais no botão, que não fecha a tampa.'],practice:'Faça uma carreira de 8 botões e alcinhas em um retalho.'},
+'n8|3':{nivel:'Nível 8 • Aula 4',title:'Corpete com amarração',intro:'A amarração nas costas permite ajustar o corpete no dia. Leva ilhoses, cordão e uma aba de proteção por baixo, para a pele não aparecer.',materials:['Corpete montado com estrutura','Ilhoses de 5 mm com arruela e alicate (ou casas pequenas)','2,5 a 3 m de cordão ou fita de cetim','Retalho para a aba de proteção (cerca de 12 × 35 cm)','Fita de gorgurão para reforço'],steps:[
+['Reforce as bordas','Costure uma fita de gorgurão por dentro das duas bordas das costas. Sem reforço, o ilhós rasga.'],
+['Barbatanas na borda','Coloque uma barbatana de cada lado, rente à borda. Ela mantém a linha reta quando o cordão puxar.'],
+['Marque os ilhoses','Marque a cada 2 a 2,5 cm, a 1,2 cm da borda, os dois lados exatamente na mesma altura.'],
+['Aplique os ilhoses','Fure e aplique cada ilhós com o alicate, conferindo que não ficou torto.'],
+['Faça a aba de proteção','Dobre o retalho ao meio no comprimento, costure, vire, coloque entretela ou barbatana e pesponte.'],
+['Prenda a aba','Costure a aba por dentro de um dos lados, para que ela passe por baixo da amarração.'],
+['Passe o cordão','Passe em X de cima para baixo, deixando as pontas sobrando embaixo para o laço.'],
+['Prove ajustando','Vista, ajuste do meio para as pontas. A abertura ideal fica entre 2 e 5 cm.']],observe:'A abertura fica paralela de cima a baixo e a aba cobre a pele.',errors:['Ilhoses sem reforço que rasgam.','Ilhoses desalinhados entre os lados.','Esquecer a aba e a pele aparecer.'],practice:'Faça uma amostra com 6 pares de ilhoses e aba de proteção.'},
+'n8|4':{nivel:'Nível 8 • Aula 5',title:'Cauda e barra com crinol',intro:'A cauda é uma extensão das costas da saia. O crinol, uma fita rígida de tela, dá forma e movimento à barra.',materials:['Molde da saia','Papel grande','Crinol de 5 a 10 cm','Fita métrica longa e régua curva'],steps:[
+['Escolha o tamanho','Cauda pequena (escova): 20 a 30 cm. Capela: 1 metro. Catedral: 2 metros ou mais.'],
+['Alongue as costas','No molde das costas, a partir do quadril, prolongue o centro com o comprimento da cauda.'],
+['Desenhe a curva','Ligue a ponta da cauda à lateral com uma curva longa e suave, chegando à lateral na altura do chão.'],
+['Confira a frente','A frente fica 1 a 2 cm acima do chão com o sapato, para a noiva não pisar.'],
+['Pendure antes','Monte a saia e deixe pendurada 24 horas. Tecidos em viés cedem.'],
+['Nivele e corte','Vista com o sapato, marque a barra da frente e as laterais e apare a cauda seguindo a curva.'],
+['Aplique o crinol','Costure o crinol na borda da barra pelo direito, a 0,5 cm. Dobre para o avesso e prenda à mão ou com pesponto.'],
+['Alça de cauda (opcional)','Prenda uma alcinha de linha no meio da cauda e um botão por dentro da saia para levantar a cauda na festa.']],observe:'A cauda se abre em leque, sem pontas, e a frente não arrasta.',errors:['Cauda com bico na ponta por curva malfeita.','Cortar a barra antes de pendurar.','Frente comprida demais.'],practice:'Desenhe em papel uma cauda pequena e uma capela sobre o mesmo molde.'},
+'n8|5':{nivel:'Nível 8 • Aula 6',title:'Bordado de pérolas e pedraria',intro:'O bordado à mão é feito ponto a ponto, prendendo cada pedra com segurança. Na alta costura, nada pode soltar no meio da festa.',materials:['Pérolas, canutilhos, vidrilhos e pedras de costurar','Agulha de bordar miçangas (bem fina e comprida)','Linha de poliéster ou nylon da cor do tecido','Bastidor','Cera de abelha para a linha (opcional)'],steps:[
+['Monte no bastidor','Estique o tecido no bastidor, sem deformar.'],
+['Encere a linha','Passe a linha na cera: ela fica mais forte e não embola.'],
+['Pérola solta','Saia com a agulha, passe pela pérola, entre ao lado e repita a volta duas vezes. Dê um nó pequeno pelo avesso a cada 3 ou 4 pérolas.'],
+['Fileira de pérolas','Passe várias pérolas na linha, deite no desenho e prenda com um ponto entre cada pérola (ponto preso).'],
+['Canutilho','Passe o canutilho e entre na ponta dele. Cuidado: borda cortante pode cortar a linha.'],
+['Pedra com furos','Pedras de costurar têm 2 ou 4 furos. Passe a linha 2 vezes por cada furo.'],
+['Siga o desenho da renda','Em vestidos de noiva, borde por cima dos motivos de renda: o bordado parece parte dela.'],
+['Arremate','Termine com 2 nós pelo avesso e passe a linha por baixo dos pontos antes de cortar.']],observe:'Puxando de leve, nenhuma pedra se mexe.',errors:['Linha sem nó a cada poucas pedras: se arrebentar, cai tudo.','Pontos frouxos e pedras penduradas.','Linha comum de algodão, que apodrece com o tempo.'],practice:'Borde uma flor de renda com 10 pérolas e 6 canutilhos.'}
+});
+provas.n8=[['Por que testar o cetim com uma gota d\'água?',['Muitos cetins mancham com água','Para ver se encolhe','Para limpar o tecido'],0],['A renda é aplicada:',['Recortada nos motivos e costurada à mão pelo contorno','Com costura reta à máquina','Colada com cola quente'],0],['O tamanho da alcinha do botão forrado é de cerca de:',['2 vezes o diâmetro do botão','10 cm','Metade do botão'],0],['Antes de aplicar ilhoses no corpete, você deve:',['Reforçar as bordas com gorgurão e barbatana','Cortar a borda','Lavar o corpete'],0],['Antes de cortar a barra da cauda, a saia deve:',['Ficar pendurada 24 horas','Ser lavada','Ser bordada'],0]];
+provas.final=[
+['Qual tecido é transparente e leve, usado em véus?',['Tule','Brim','Mikado'],0],
+['O sentido do brilho do cetim exige:',['Cortar todas as peças no mesmo sentido','Cortar em qualquer sentido','Cortar só na diagonal'],0],
+['Uma cauda capela tem cerca de:',['1 metro','5 cm','5 metros'],0],
+['O crinol serve para:',['Dar forma e movimento à barra','Fechar o zíper','Forrar botões'],0],
+['No bordado, por que dar nó a cada poucas pérolas?',['Se a linha arrebentar, não caem todas','Para economizar linha','Para enfeitar'],0],
+['A aba de proteção da amarração serve para:',['A pele não aparecer pela abertura','Segurar a cauda','Prender o véu'],0],
+['O cós de gorgurão por dentro do vestido de festa serve para:',['Segurar o peso da saia','Enfeitar','Substituir o zíper'],0],
+['As barbatanas do corpete ficam:',['Em canaletas nas costuras do forro','Soltas no forro','Coladas no tecido de fora'],0],
+['O understitch é feito para:',['O forro não aparecer pelo direito','Franzir o tecido','Fazer pregas'],0],
+['Na costura francesa, a primeira costura é:',['Avesso com avesso','Direito com direito','Pelo direito com pesponto'],0],
+['O zíper invisível é pregado:',['Antes de fechar a costura','Depois de fechar a costura','Só à mão'],0],
+['Por que fazer prova em tecido barato antes de um vestido de noiva?',['Para ajustar sem estragar o tecido caro','Para gastar mais','Não é necessário'],0],
+['O godê inteiro é um molde em forma de:',['Círculo','Retângulo','Triângulo'],0],
+['Para passar cetim, o mais seguro é:',['Ferro morno, sem vapor e com pano por cima','Ferro no máximo com vapor','Passar direto sem proteção'],0],
+['Fios de renda recortada não desfiam se você:',['Cortar rente sem cortar o cordão de contorno','Cortar dentro do motivo','Cortar com tesoura cega'],0]
+];
 const ESPERA_PROVA_MIN=10;
+/* ===== Banco extra de perguntas (provas de 10) ===== */
+provas.n1.push(['O volante serve para:',['Mover a agulha à mão','Regular a tensão','Enrolar a bobina'],0],['Os dentes de transporte:',['Movimentam o tecido','Cortam a linha','Seguram a bobina'],0],['Nas primeiras costuras, a velocidade deve ser:',['Baixa','Máxima','Tanto faz'],0],['O manual da máquina é:',['A referência principal para bobina e linha','Desnecessário','Só para consertos'],0],['Antes de ligar a máquina, a área deve estar:',['Firme e organizada','Cheia de tecidos soltos','Com o pedal pressionado'],0],['Barulho diferente na máquina é sinal para:',['Parar e verificar','Costurar mais rápido','Puxar o tecido'],0],['Linha e agulha devem ser:',['Compatíveis com o tecido','Sempre as mesmas','As mais grossas possíveis'],0]);
+provas.n2.push(['O comprimento de ponto padrão para tecido plano é cerca de:',['2,5 mm','8 mm','0,5 mm'],0],['Em curvas para fora, os piques são:',['Em V','Retos até a costura','Desnecessários'],0],['Para chulear com zigue-zague, a agulha cai:',['Dentro do tecido e fora da borda','Só fora do tecido','No meio da peça'],0],['O calcador de zíper serve para:',['Costurar colado aos dentes','Fazer franzido','Pregar botão'],0],['O tamanho da casa de botão é:',['Diâmetro + altura do botão','O dobro do botão','Metade do botão'],0],['Na passadoria de costuras, o ferro deve:',['Pressionar, sem arrastar','Ser arrastado com força','Ficar parado vários minutos'],0],['Antes de virar uma peça, os cantos são:',['Cortados em diagonal sem cortar a costura','Costurados de novo','Deixados como estão'],0]);
+provas.n3.push(['A cintura é medida:',['Na parte mais fina','No quadril','No busto'],0],['A ourela é:',['A borda de fábrica que não desfia','O meio do tecido','A diagonal'],0],['O viés estica:',['Bastante','Nada','Só quando molhado'],0],['A borda marcada "na dobra" é:',['Encostada na dobra e não cortada','Cortada normalmente','Cortada em zigue-zague'],0],['Ao cortar, a lâmina de baixo da tesoura:',['Fica apoiada na mesa','Levanta o tecido','Não importa'],0],['Estampas com sentido exigem:',['Todas as peças no mesmo sentido','Peças em sentidos alternados','Cortar na diagonal'],0],['Se cortou com margem de 1 cm, deve costurar com:',['1 cm','2 cm','0,5 cm'],0]);
+provas.n4.push(['Ao calcular o tecido, acrescente cerca de:',['10% de sobra','50% de sobra','Nada'],0],['Tecido torto deve ser:',['Endireitado antes de cortar','Cortado assim mesmo','Jogado fora'],0],['A entretela é aplicada:',['Antes de costurar as peças','Depois da peça pronta','Nunca'],0],['A ordem de montagem começa por:',['Detalhes planos, como pences e bolsos','A barra','Os botões'],0],['Na prova, rugas horizontais indicam:',['Peça apertada','Peça larga','Barra torta'],0],['Ajustes de largura devem ser feitos:',['Por igual dos dois lados','Só de um lado','Na barra'],0],['Antes de considerar pronta, a peça deve:',['Ter linhas cortadas, fechos testados e ser passada','Ser lavada três vezes','Ser desmanchada'],0]);
+provas.n5.push(['A ponta da linha cortada em diagonal:',['Entra mais fácil na agulha','Fica mais forte','Não muda nada'],0],['O dedal serve para:',['Empurrar a agulha sem machucar','Medir a linha','Cortar fios'],0],['O alinhavo usa linha de cor:',['Contrastante, para achar e tirar depois','Igual ao tecido','Preta sempre'],0],['No ponto atrás, pelo direito os pontos:',['Se tocam formando uma linha contínua','Ficam separados','Formam um X'],0],['Linha dupla é indicada para:',['Botões e reforços','Bainha invisível fina','Alinhavo'],0],['O ponto caseado é usado para:',['Proteger bordas, como em feltro','Franzir','Fazer pences'],0],['O remate à mão serve para:',['Terminar a costura sem soltar','Começar a costura','Enfeitar'],0]);
+provas.n6.push(['Tecido plano é feito de:',['Fios cruzados','Laçadas','Fibras coladas'],0],['Malha costuma:',['Enrolar na borda e não desfiar','Desfiar muito','Ser rígida'],0],['Lavar o tecido antes de cortar evita:',['A peça encolher depois','Que o tecido desbote sempre','Usar entretela'],0],['A entretela deve ser:',['Mais leve que o tecido','Mais pesada que o tecido','Do mesmo tecido'],0],['A cola da entretela firma:',['Depois de esfriar','Na hora, ainda quente','Depois de lavar'],0],['Na malha, o tecido ao costurar deve:',['Ir sozinho, sem esticar','Ser bem esticado','Ser puxado para trás'],0],['Lubrificar a máquina:',['Só se o manual pedir','Com óleo de cozinha','Todo dia'],0]);
+provas.n7.push(['No bolso embutido, o ponto deve ser:',['Curto, para não soltar ao cortar','Bem longo','Zigue-zague largo'],0],['A costura rebatida aparece pelo direito como:',['Duas linhas de pesponto','Nenhuma linha','Um zigue-zague'],0],['A gola de camisa tem duas partes:',['Gola e pé de gola','Gola e punho','Gola e pala'],0],['O travete serve para:',['Reforçar pontos de esforço','Fechar o zíper','Fazer casa'],0],['O forro costuma ser, em relação à barra:',['Um pouco mais curto','Mais comprido','Do mesmo tamanho exato'],0],['A carcela da manga é feita:',['Antes de fechar a lateral da manga','Depois do punho','Só à mão'],0],['O topo da carcela é travado com:',['Um pequeno triângulo costurado','Um botão','Cola'],0]);
+provas.n8.push(['Tecido de noiva encorpado que segura forma:',['Mikado','Tule','Chiffon'],0],['Para não deixar furos em cetim, use:',['Alfinetes de seda ou clipes','Alfinetes grossos','Grampos'],0],['A cauda pequena (escova) tem cerca de:',['20 a 30 cm','2 metros','5 cm'],0],['Antes dos ilhoses, cada borda das costas recebe:',['Uma barbatana rente à borda','Um zíper','Um botão'],0],['A linha do bordado de pérolas deve ser:',['De poliéster ou nylon','De algodão comum','De lã'],0],['A abertura ideal da amarração fica entre:',['2 e 5 cm','15 e 20 cm','Totalmente fechada'],0],['Um vestido de noiva deve ser guardado em:',['Capa de tecido respirável','Saco plástico','Caixa molhada'],0]);
+
+/* ===== Notas e estrelas ===== */
+const NIVEIS=['n1','n2','n3','n4','n5','n6','n7','n8'];
+const COROA_ESTRELAS=20;
+function setStars(k,n){localStorage.setItem('estrelas_'+k,String(n));localStorage.setItem('estrelas_sig_'+k,sig('estrelas:'+k+':'+n))}
+function getStars(k){const n=localStorage.getItem('estrelas_'+k);if(n!==null&&localStorage.getItem('estrelas_sig_'+k)===sig('estrelas:'+k+':'+n))return Number(n);return isOk('prova_'+k)?1:0}
+function totalStars(){return NIVEIS.reduce((a,k)=>a+getStars(k),0)}
+function starsDe(nota){return nota>=10?3:nota>=8?2:nota>=6?1:0}
+function estrelasTxt(n){return n?'⭐'.repeat(n)+'☆'.repeat(3-n):'☆☆☆'}
+function nivelAberto(k){const i=NIVEIS.indexOf(k);return i<=0||provaOk(NIVEIS[i-1])}
+function irMelhorarEstrelas(){const abertos=NIVEIS.filter(nivelAberto),k=abertos.find(x=>getStars(x)<3&&lessons[x].every((_,i)=>isOk('done_'+x+'_'+i)))||abertos.find(x=>!provaOk(x))||abertos[abertos.length-1];go('nivel'+k.slice(1))}
+function reqEstrelas(n){return {txt:`Ter pelo menos ${n} estrelas nas provas`,ir:irMelhorarEstrelas,botao:'⭐ Ganhar mais estrelas',prog:()=>[Math.min(totalStars(),n),n]}}
+const explicaNota='<div class="tip"><b>⭐ Como funciona a nota</b><br>Cada prova tem 10 perguntas. Nota abaixo de 6: reprovado, e o próximo nível não abre. Nota 6 ou 7 = ⭐ • 8 ou 9 = ⭐⭐ • 10 = ⭐⭐⭐. Você pode refazer a prova para melhorar: fica sempre a melhor nota.<br><b>👑 Medalha Coroa:</b> o selo especial que libera um <b>molde super especial</b> só é conquistado com <b>no mínimo '+COROA_ESTRELAS+' das 24 estrelas</b>. Estude para tirar nota alta!</div>';
+
 let provaAtual=null;
-function provaOk(k){return isOk('prova_'+k)}
+function provaOk(k){return k==='final'?isOk('prova_final'):getStars(k)>=1}
+function nivelDe(k){return k==='final'?'8':k.slice(1)}
+function minAcertos(k){return k==='final'?8:6}
+function provaFinalCard(){
+ if(provaOk('final'))return `<div class="lesson doneLesson"><div class="num">👑</div><div><b>Prova final de Alta Costura</b><br><span class="statusBadge">✓ APROVADA</span></div></div>`;
+ if(!provaOk('n8')||!selosGanhos().includes('s5'))return `<div class="lesson" style="opacity:.75"><div class="num">🔒</div><div><b>Prova final de Alta Costura</b><br><span class="small">Libera depois da prova do Nível 8 e do selo 🎀 Ateliê de Festa.</span></div></div>`;
+ const espera=Number(localStorage.getItem('prova_wait_final')||0)-Date.now();
+ if(espera>0)return `<div class="lesson"><div class="num">⏳</div><div><b>Prova final de Alta Costura</b><br><span class="small">Revise e tente de novo em ${Math.ceil(espera/60000)} min.</span></div></div>`;
+ return `<div class="lesson" style="border-color:#f5b900;border-width:2px"><div class="num">👑</div><div><b>Prova final de Alta Costura</b><br><span class="small">10 perguntas de todo o curso. Acerte 8.</span></div><button onclick="abrirProva('final')">Fazer</button></div>`;
+}
 function provaCard(k){
- const tot=lessons[k].length,feitas=lessons[k].filter((_,i)=>isOk('done_'+k+'_'+i)).length,nome='Nível '+k.slice(1);
- if(provaOk(k))return `<div class="lesson doneLesson"><div class="num">📝</div><div><b>Prova do ${nome}</b><br><span class="statusBadge">✓ APROVADA</span></div></div>`;
- if(feitas<tot)return `<div class="lesson" style="opacity:.75"><div class="num">🔒</div><div><b>Prova do ${nome}</b><br><span class="small">Conclua todas as aulas (${feitas}/${tot}) para liberar a prova.</span></div></div>`;
+ const tot=lessons[k].length,feitas=lessons[k].filter((_,i)=>isOk('done_'+k+'_'+i)).length,nome='Nível '+k.slice(1),st=getStars(k);
  const espera=Number(localStorage.getItem('prova_wait_'+k)||0)-Date.now();
- if(espera>0)return `<div class="lesson"><div class="num">⏳</div><div><b>Prova do ${nome}</b><br><span class="small">Revise as aulas e tente de novo em ${Math.ceil(espera/60000)} min.</span></div></div>`;
- return `<div class="lesson" style="border-color:var(--p)"><div class="num">📝</div><div><b>Prova do ${nome}</b><br><span class="small">5 perguntas. Acerte 4 para aprovar o nível.</span></div><button onclick="abrirProva('${k}')">Fazer</button></div>`;
+ if(feitas<tot)return `<div class="lesson" style="opacity:.75"><div class="num">🔒</div><div><b>Prova do ${nome}</b><br><span class="small">Conclua todas as aulas (${feitas}/${tot}) para liberar a prova.</span></div></div>`+explicaNota;
+ const nota=localStorage.getItem('nota_'+k);
+ const status=provaOk(k)?`<span class="statusBadge">✓ APROVADA</span> <span style="font-size:15px">${estrelasTxt(st)}</span>${nota?`<br><span class="small">Melhor nota: ${nota}</span>`:''}`:`<span class="small">10 perguntas. Nota mínima 6 para aprovar e abrir o próximo nível.</span>`;
+ let btn='';
+ if(espera>0)btn=`<span class="small" style="margin-left:auto">⏳ ${Math.ceil(espera/60000)} min</span>`;
+ else if(st<3)btn=`<button onclick="abrirProva('${k}')">${provaOk(k)?'Melhorar':'Fazer'}</button>`;
+ return `<div class="lesson ${provaOk(k)?'doneLesson':''}" style="${provaOk(k)?'':'border-color:var(--p)'}"><div class="num">📝</div><div><b>Prova do ${nome}</b><br>${status}</div>${btn}</div>`+explicaNota;
 }
 function embaralha(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function abrirProva(k){
  const espera=Number(localStorage.getItem('prova_wait_'+k)||0)-Date.now();if(espera>0){toast('Aguarde '+Math.ceil(espera/60000)+' min para tentar de novo');return}
- provaAtual={k,qs:embaralha(provas[k]).map(q=>{const ops=embaralha(q[1].map((o,i)=>({o,c:i===q[2]})));return {p:q[0],ops}}),resp:{}};
- document.getElementById('provaTitulo').textContent='📝 Prova do Nível '+k.slice(1);
- document.getElementById('provaBack').setAttribute('onclick',`go('nivel${k.slice(1)}')`);
- document.getElementById('provaArea').innerHTML=provaAtual.qs.map((q,i)=>`<div class="quiz"><b>${i+1}. ${q.p}</b>${q.ops.map((o,j)=>`<button class="option" id="po_${i}_${j}" onclick="marcarProva(${i},${j})">${o.o}</button>`).join('')}</div>`).join('')+`<button class="primary" style="margin-top:12px" onclick="enviarProva()">ENVIAR RESPOSTAS</button>`;
+ provaAtual={k,qs:embaralha(provas[k]).slice(0,10).map(q=>{const ops=embaralha(q[1].map((o,i)=>({o,c:i===q[2]})));return {p:q[0],ops}}),resp:{}};
+ document.getElementById('provaTitulo').textContent=k==='final'?'👑 Prova final de Alta Costura':'📝 Prova do Nível '+k.slice(1);
+ document.getElementById('provaBack').setAttribute('onclick',`go('nivel${nivelDe(k)}')`);
+ document.getElementById('provaArea').innerHTML=(k==='final'?'':explicaNota)+provaAtual.qs.map((q,i)=>`<div class="quiz"><b>${i+1}. ${q.p}</b>${q.ops.map((o,j)=>`<button class="option" id="po_${i}_${j}" onclick="marcarProva(${i},${j})">${o.o}</button>`).join('')}</div>`).join('')+`<button class="primary" style="margin-top:12px" onclick="enviarProva()">ENVIAR RESPOSTAS</button>`;
  go('prova');
 }
 function marcarProva(i,j){provaAtual.resp[i]=j;provaAtual.qs[i].ops.forEach((_,x)=>document.getElementById('po_'+i+'_'+x).classList.toggle('sel',x===j))}
 function enviarProva(){
  const p=provaAtual;if(Object.keys(p.resp).length<p.qs.length){toast('Responda todas as perguntas');return}
- const acertos=p.qs.filter((q,i)=>q.ops[p.resp[i]].c).length,erradas=p.qs.map((q,i)=>q.ops[p.resp[i]].c?null:i+1).filter(Boolean);
+ const acertos=p.qs.filter((q,i)=>q.ops[p.resp[i]].c).length,erradas=p.qs.map((q,i)=>q.ops[p.resp[i]].c?null:i+1).filter(Boolean),tot=p.qs.length;
+ const nota=Math.round(acertos*10/tot);
  let html;
- if(acertos>=4){setOk('prova_'+p.k);html=`<div class="tip green"><b>🎉 Aprovado!</b> Você acertou ${acertos} de 5. O Nível ${p.k.slice(1)} está completo.</div>`}
- else{localStorage.setItem('prova_wait_'+p.k,String(Date.now()+ESPERA_PROVA_MIN*60000));html=`<div class="tip red"><b>Ainda não foi desta vez.</b> Você acertou ${acertos} de 5 (precisa de 4). Revise as aulas: as perguntas ${erradas.join(', ')} estavam erradas. Nova tentativa liberada em ${ESPERA_PROVA_MIN} minutos, com as perguntas em outra ordem.</div>`}
- document.getElementById('provaArea').innerHTML=html+`<button class="primary" onclick="go('nivel${p.k.slice(1)}')">VOLTAR AO NÍVEL</button>`;
+ if(p.k==='final'){
+  if(acertos>=8){setOk('prova_final');html=`<div class="tip green"><b>🎉 Aprovado!</b> Nota ${nota}. Prova final de Alta Costura concluída!</div>`}
+  else{localStorage.setItem('prova_wait_final',String(Date.now()+30*60000));html=`<div class="tip red"><b>Ainda não foi desta vez.</b> Nota ${nota} (precisa de 8). As perguntas ${erradas.join(', ')} estavam erradas. Nova tentativa em 30 minutos.</div>`}
+ }else{
+  const ganhou=starsDe(nota),antes=getStars(p.k);
+  localStorage.setItem('prova_wait_'+p.k,String(Date.now()+ESPERA_PROVA_MIN*60000));
+  if(ganhou>antes){setStars(p.k,ganhou);localStorage.setItem('nota_'+p.k,String(nota))}
+  else if(ganhou===antes&&nota>Number(localStorage.getItem('nota_'+p.k)||0))localStorage.setItem('nota_'+p.k,String(nota));
+  const total=totalStars();
+  if(ganhou>0)html=`<div class="tip green"><b>🎉 Aprovado com nota ${nota}!</b><br><span style="font-size:22px">${estrelasTxt(ganhou)}</span><br>${ganhou>antes?(antes?'Você melhorou suas estrelas neste nível!':'O Nível '+p.k.slice(1)+' está completo.'):'Sua melhor nota continua valendo.'}${erradas.length?' Errou as perguntas '+erradas.join(', ')+'.':''}<br>Total: <b>${total} de 24 estrelas</b>. A Coroa 👑 precisa de ${COROA_ESTRELAS}.</div>`;
+  else html=`<div class="tip red"><b>Ainda não foi desta vez.</b> Nota ${nota} (mínimo 6). Revise as aulas: as perguntas ${erradas.join(', ')} estavam erradas. Nova tentativa em ${ESPERA_PROVA_MIN} minutos, com outras perguntas.</div>`;
+  if(ganhou>0&&ganhou<3)html+=`<div class="tip blue">Quer mais estrelas? Em ${ESPERA_PROVA_MIN} minutos você pode refazer a prova para melhorar a nota.</div>`;
+ }
+ document.getElementById('provaArea').innerHTML=html+`<button class="primary" onclick="go('nivel${nivelDe(p.k)}')">VOLTAR AO NÍVEL</button>`;
  window.scrollTo(0,0);updateProgress();
 }
 /* ===== Busca geral ===== */
@@ -985,7 +1121,7 @@ function buscarApp(){
  let h='';
  const ms=moldes.filter(m=>bate(m.nome+' '+m.desc+' '+m.cat+' '+m.nivel,q));
  if(ms.length)h+='<h3>📐 Moldes</h3>'+ms.map(m=>{
-  if(!moldeLiberado(m)){const sl=seloDoMolde(m);return `<div class="lesson"><div class="num">🔒</div><div><b>${m.nivel==='Lendário'?'💎 Sim, existe! Molde lendário secreto':m.nome}</b><br><span class="small">Está bloqueado. Desbloqueie com o selo ${sl.emoji} ${sl.nome}.</span></div><button onclick="go('selo')">Ver</button></div>`}
+  if(!moldeLiberado(m)){const sl=seloDoMolde(m);return `<div class="lesson"><div class="num">🔒</div><div><b>${m.segredo||m.nivel==='Lendário'?'Sim, existe! '+nomeSecreto(m):m.nome}</b><br><span class="small">Está bloqueado. Desbloqueie com o selo ${sl.emoji} ${sl.nome}.</span></div><button onclick="go('selo')">Ver</button></div>`}
   return `<div class="lesson"><div class="num">${m.emoji}</div><div><b>${m.nome}</b><br><span class="small">${m.cat} • ${m.nivel}</span></div><button onclick="openMolde('${m.id}')">Abrir</button></div>`}).join('');
  const as=[];Object.keys(lessons).forEach(k=>lessons[k].forEach((l,i)=>{if(bate(l[1]+' '+l[2],q))as.push([k,i,l])}));
  if(as.length)h+='<h3>📚 Aulas</h3>'+as.map(([k,i,l])=>`<div class="lesson"><div class="num">${k.slice(1)}.${l[0]}</div><div><b>${l[1]}</b><br><span class="small">Nível ${k.slice(1)}</span></div><button onclick="openLesson('${k}',${i})">Abrir</button></div>`).join('');
@@ -1001,11 +1137,12 @@ function renderLessons(key){
  el.innerHTML=lessons[key].map((l,i)=>{
   const done=isOk('done_'+key+'_'+i);
   return `<div class="lesson ${done?'doneLesson':''}"><div class="num">${l[0]}</div><div><b>${l[1]}</b><br><span class="small">${l[2]}</span>${done?'<br><span class="statusBadge">✓ CONCLUÍDA</span>':''}</div><button onclick="openLesson('${key}',${i})">${done?'Rever':'Abrir'}</button></div>`;
- }).join('')+provaCard(key);
+ }).join('')+provaCard(key)+(key==='n8'?provaFinalCard():'');
  const total=lessons[key].length, feitas=lessons[key].filter((_,i)=>isOk('done_'+key+'_'+i)).length;
  const p=document.getElementById('p'+key.slice(1));if(p)p.style.width=(feitas/total*100)+'%';
 }
 function openLesson(k,i){
+ if(!nivelAberto(k)){toast(`🔒 O Nível ${k.slice(1)} abre quando você passar na prova do Nível ${k.slice(1)-1} (nota mínima 6)`);go('cursos');return}
  localStorage.setItem('lastLesson',k+'_'+i);
  const d=getDetail(k,i);
  document.getElementById('aulaBack').setAttribute('onclick',`go('nivel${k.slice(1)}')`);
@@ -1331,7 +1468,7 @@ function renderMoldes(){
  document.getElementById('moldeCount').textContent=lista.length+(lista.length===1?' molde':' moldes');
  document.getElementById('moldeGrid').innerHTML=lista.map(m=>{
   const feito=isOk('molde_'+m.id);
-  if(!moldeLiberado(m)){const sl=seloDoMolde(m);return `<div class="pattern locked ${m.nivel==='Lendário'?'legend':''}"><div class="emoji">🔒</div><b>${m.nivel==='Lendário'?'Molde lendário secreto':m.nome}</b><span class="tag ${levelClass[m.nivel]}">${m.nivel.toUpperCase()}</span><span class="small">Ganhe o selo ${sl.emoji} ${sl.nome} para desbloquear.</span><button onclick="go('selo')">Como ganhar</button></div>`}
+  if(!moldeLiberado(m)){const sl=seloDoMolde(m);return `<div class="pattern locked ${m.nivel==='Lendário'?'legend':''}"><div class="emoji">🔒</div><b>${nomeSecreto(m)}</b><span class="tag ${levelClass[m.nivel]}">${m.nivel.toUpperCase()}</span><span class="small">Ganhe o selo ${sl.emoji} ${sl.nome} para desbloquear.</span><button onclick="go('selo')">Como ganhar</button></div>`}
   return `<div class="pattern ${m.premio?'prize':''}">${m.premio?'<span class="prizeTag">🎁 PRÊMIO</span>':''}<div class="emoji">${m.emoji}</div><b>${m.nome}</b><span class="tag ${levelClass[m.nivel]}">${m.nivel.toUpperCase()}</span>${feito?'<span class="statusBadge">✓ FEITO</span>':''}<span class="small">${m.desc}</span><button onclick="openMolde('${m.id}')">Abrir</button></div>`;
  }).join('')||'<p class="small">Nenhum molde encontrado. Tente outra palavra ou a categoria Todos.</p>';
 }
@@ -1801,16 +1938,67 @@ passos:[['Prova em tecido barato','Obrigatório. Corte o corpete em algodão cru
 dica:'Este é o molde mais difícil do app. Faça sem pressa, uma etapa por dia, e peça ajuda para provar.',calc:'gode'}
 );
 
+/* ===== Moldes-prêmio da Alta Costura ===== */
+moldes.push(
+{id:'veu-noiva',premio:true,segredo:'Molde especial secreto',nome:'Véu de noiva com renda e pérolas',emoji:'🤍',cat:'Acessórios',nivel:'Avançado',desc:'Véu de tule com barrado de renda aplicada e pérolas bordadas.',tam:'Véu de 1,5 m (ajustável)',
+mat:['3 m de tule de véu (macio, 3 m de largura)','2 a 3 m de renda com motivos ou galão de renda','Pente de véu (metal ou plástico)','Pérolas de 3 e 4 mm','Agulha fina e linha de nylon transparente','Alfinetes de seda'],
+pecas:[{n:'Tule (camada única)',q:1,w:150,h:160,s:'oval',lab:'oval 150 × 160'},{n:'Renda do barrado',q:1,w:450,h:6,lab:'cerca de 4,5 m'}],
+obs:'Dobre o tule ao meio na largura e desenhe meio oval com os cantos bem arredondados. O topo reto (dobra) fica no pente. Para véu mais longo, aumente a altura do oval.',
+passos:[['Defina o comprimento','Na noiva, meça do alto da cabeça até onde o véu deve chegar: ombro (70 cm), cotovelo (80 cm), ponta dos dedos (100 cm) ou capela (1,5 m a 2 m).'],
+['Desenhe o oval','Estenda o tule dobrado ao meio sobre a mesa coberta e desenhe a curva com giz de lavar, de forma suave, sem bicos.'],
+['Corte','Corte com tesoura grande, em golpes longos. Tule não desfia, então não precisa de bainha.'],
+['Prove o caimento','Prenda provisoriamente no pente e veja no espelho. Ajuste a curva se necessário.'],
+['Aplique a renda','Siga a aula 2 do Nível 8: prenda a renda pela borda, contornando os motivos, com pontos invisíveis.'],
+['Bordado de pérolas','Siga a aula 6 do Nível 8: espalhe pérolas sobre a renda e, se quiser, algumas soltas no tule, com nó a cada 3 pérolas.'],
+['Franza o topo','Faça uma linha de pontos à mão a 1 cm do topo e franze até ter a largura do pente (cerca de 10 cm).'],
+['Prenda no pente','Enrole a linha por entre os dentes do pente, prendendo o franzido com pontos firmes. Cubra com um pedaço de fita de cetim.'],
+['Revisão','Passe de leve a vapor à distância, sem encostar o ferro no tule.']],
+dica:'Faça a primeira curva em tule barato: errar no tule de véu custa caro.'},
+
+{id:'vestido-noiva',premio:true,segredo:'Molde super especial secreto 👑',nome:'Vestido de noiva com cauda',emoji:'👰',cat:'Roupas',nivel:'Lendário',desc:'O molde da Coroa: corpete com amarração, renda aplicada, botões forrados e cauda.',tam:'Sob medida (prova obrigatória, em duas etapas)',
+mat:['5 a 7 m de tecido de noiva (mikado, zibeline ou cetim duchesse)','2 a 3 m de renda com motivos','1 m de brim leve para estrutura do corpete','Forro para corpete e saia','Barbatanas rilsan de 8 mm e ponteiras','Ilhoses de 5 mm (cerca de 24) e 3 m de cordão de cetim','30 botões forrados de 1 cm e tira de viés para as alcinhas','Crinol de 8 cm (cerca de 5 m)','Tule armado para anágua','Fita de gorgurão de 2,5 cm'],
+pecas:[{n:'Corpete frente centro',q:1,w:20,h:38,lab:'molde, na dobra'},{n:'Corpete frente lateral',q:2,w:18,h:34,lab:'molde'},{n:'Corpete costas',q:4,w:16,h:30,lab:'molde'},{n:'Saia frente',q:1,s:'tri',w:90,h:110,lab:'painel evasê'},{n:'Saia costas com cauda',q:2,s:'tri',w:80,h:200,lab:'com cauda'},{n:'Aba da amarração',q:1,w:12,h:35}],
+obs:'O molde é feito do zero, a partir de um molde-base de blusa no tamanho da noiva (ou do corpete do vestido de festa, se já estiver ajustado). Corpete tomara que caia com recortes princesa, cortado 3 vezes: tecido, estrutura e forro. Saia evasê em 6 painéis com as costas prolongadas na cauda. Margem de 1,5 cm nas costuras (para ajustes) e 3 cm no centro das costas. A calculadora de godê abaixo ajuda a conferir a roda da saia.',calc:'gode',
+passos:[['Tire as medidas','Com a noiva de roupa íntima e o sapato da festa, meça: busto, abaixo do busto, cintura, quadril, altura do busto (do ombro ao bico do seio), separação dos bicos, comprimento da cintura frente e costas (do ombro à cintura) e altura da cintura até o chão. Anote em Minhas medidas.'],
+['Prepare o molde-base','Copie em papel o molde-base de blusa (frente e costas) no tamanho da noiva, só até a cintura, sem mangas. Marque o ápice do busto (ponto mais alto do seio) com as medidas tiradas.'],
+['Desenhe o decote','Tomara que caia: na frente, desenhe a borda de cima 2 a 3 cm acima do ápice, em curva (reta ou coração). Nas costas, a borda fica na altura das omoplatas, uns 10 cm abaixo da cava. Elimine a cava e o ombro.'],
+['Trace os recortes princesa','Na frente, desenhe uma linha da borda de cima, passando pelo ápice, até a cintura, perto da pence. Nas costas, uma linha paralela ao centro, passando pela pence das costas. Transfira as pences para dentro desses recortes.'],
+['Ajuste para ficar firme','Corpete sem alça precisa ser justo: tire 0,5 cm em cada recorte na borda de cima (no total 2 a 3 cm) para ele não cair. Na cintura, a folga é zero.'],
+['Separe as peças','Recorte o papel pelas linhas princesa. Ficam: frente centro (na dobra), 2 frentes laterais, 2 costas centro e 2 costas laterais. Marque piques nos recortes (no ápice e 5 cm acima e abaixo), o fio em cada peça e acrescente as margens.'],
+['Molde da saia','Faça 6 painéis evasês: frente (na dobra), 2 laterais e 2 costas. Largura de cada painel na cintura = cintura ÷ 6 + margens. Abra cada painel na barra até a roda desejada (60 a 100 cm por painel). Comprimento = cintura até o chão + 2 cm. Nos painéis das costas, prolongue a cauda (aula 5 do Nível 8).'],
+['Calcule o tecido','Desenhe na mesa (ou em papel) um retângulo com a largura do tecido e encaixe todas as peças no mesmo sentido do brilho. Some o comprimento usado e acrescente 10%. Faça o mesmo para forro, estrutura e tule.'],
+['Prova 1 — corpete','Corte o corpete em algodão cru, monte com ponto longo e prove na noiva. Ajuste até não sobrar nada no busto e na cintura. Passe tudo para o molde.'],
+['Prova 2 — saia e cauda','Monte a saia em tecido barato, prolongue a cauda (aula 5 do Nível 8) e prove com o sapato. Defina o comprimento da frente e o tamanho da cauda.'],
+['Teste o tecido','Faça os testes da aula 1 do Nível 8 (alfinete, ferro, água e sentido do brilho) antes de cortar.'],
+['Corte','Corte tecido, estrutura e forro do corpete; tecido e forro da saia, todos no mesmo sentido do brilho.'],
+['Estruture o corpete','Alinhave tecido sobre brim em cada peça e monte o corpete com recortes princesa, como no vestido de festa.'],
+['Barbatanas','Faça as canaletas no forro e coloque as barbatanas, incluindo as das bordas das costas.'],
+['Amarração','Reforce as bordas das costas com gorgurão e aplique os ilhoses e a aba de proteção (aula 4 do Nível 8).'],
+['Botões falsos (opcional)','Se quiser a fileira de botões, aplique as alcinhas e botões forrados por cima de uma faixa nas costas da saia, como enfeite (aula 3 do Nível 8).'],
+['Una corpete e forro','Costure pela borda de cima, apare, pique, faça understitch e vire.'],
+['Monte a saia','Una os painéis da saia com costura fechada e passe aberta. Faça o mesmo no forro e na anágua de tule.'],
+['Pendure 24 horas','Pendure a saia montada antes da barra, para o viés ceder.'],
+['Una corpete e saia','Costure a saia no corpete pela cintura, deixando o forro livre. Prenda o cós de gorgurão por dentro para segurar o peso.'],
+['Aplique a renda','Prove e distribua os motivos de renda no corpete e descendo pela saia. Aplique à mão (aula 2 do Nível 8).'],
+['Borde','Borde pérolas e pedraria sobre a renda (aula 6 do Nível 8), concentrando no corpete.'],
+['Barra e cauda','Vista com o sapato, nivele a frente, apare a cauda em curva e aplique o crinol.'],
+['Feche o forro','Prenda à mão o forro do corpete na cintura e nas bordas da amarração.'],
+['Alça de cauda','Coloque a alcinha e o botão por dentro para a noiva levantar a cauda na festa.'],
+['Passadoria e cuidado final','Passe com ferro morno e pano, sem vapor no cetim. Guarde em capa de tecido respirável, nunca em plástico.']],
+dica:'Este é o maior projeto do app. Divida em semanas: estrutura, montagem, renda, bordado e acabamento. E sempre tenha alguém para ajudar nas provas.'}
+);
 /* ===== Selos e desbloqueios ===== */
 function moldesFeitos(filtro){return moldes.filter(m=>(!filtro||filtro(m))&&isOk('molde_'+m.id)).length}
 function nivelFeito(k){return [lessons[k].filter((_,i)=>isOk('done_'+k+'_'+i)).length,lessons[k].length]}
 function irMoldes(n){moldeCat='Todos';moldeNivel=n;const b=document.getElementById('moldeSearch');if(b)b.value='';go('moldes')}
 function reqNivel(k,nome){return {txt:'Concluir o '+nome+' (aulas e prova)',ir:()=>go('nivel'+k.slice(1)),botao:'📚 Abrir o '+nome,prog:()=>{const [a,b]=nivelFeito(k);return [a+(provaOk(k)?1:0),b+1]}}}
 const selos=[
-{id:'s1',emoji:'🧵',nome:'Primeiros Pontos',premio:'bolsa-saco',reqs:[reqNivel('n1','Nível 1')]},
-{id:'s2',emoji:'✂️',nome:'Mão na Massa',premio:'pijama-cetim',reqs:[reqNivel('n2','Nível 2'),reqNivel('n3','Nível 3'),{txt:'Fazer 5 moldes (qualquer nível)',ir:()=>irMoldes('Todos'),botao:'📐 Ver os moldes',prog:()=>[Math.min(moldesFeitos(m=>!m.premio),5),5]}]},
-{id:'s3',emoji:'🥈',nome:'Costura Firme',premio:'vestido-chemise',reqs:[reqNivel('n4','Nível 4'),reqNivel('n5','Nível 5'),reqNivel('n6','Nível 6'),{txt:'Fazer 3 moldes intermediários',ir:()=>irMoldes('Intermediário'),botao:'📐 Ver moldes intermediários',prog:()=>[Math.min(moldesFeitos(m=>m.nivel==='Intermediário'&&!m.premio),3),3]}]},
-{id:'s4',emoji:'🏆',nome:'Nível Profissional',premio:'vestido-festa',lendario:true,reqs:[reqNivel('n7','Nível 7'),{txt:'Fazer todos os moldes avançados',ir:()=>irMoldes('Avançado'),botao:'📐 Ver moldes avançados',prog:()=>{const f=m=>m.nivel==='Avançado'&&!m.premio;return [moldesFeitos(f),moldes.filter(f).length]}}]}
+{id:'s1',emoji:'🧵',nome:'Primeiros Pontos',premio:'bolsa-saco',reqs:[reqNivel('n1','Nível 1'),reqEstrelas(2)]},
+{id:'s2',emoji:'✂️',nome:'Mão na Massa',premio:'pijama-cetim',reqs:[reqNivel('n2','Nível 2'),reqNivel('n3','Nível 3'),reqEstrelas(6),{txt:'Fazer 5 moldes (qualquer nível)',ir:()=>irMoldes('Todos'),botao:'📐 Ver os moldes',prog:()=>[Math.min(moldesFeitos(m=>!m.premio),5),5]}]},
+{id:'s3',emoji:'🥈',nome:'Costura Firme',premio:'vestido-chemise',reqs:[reqNivel('n4','Nível 4'),reqNivel('n5','Nível 5'),reqNivel('n6','Nível 6'),reqEstrelas(12),{txt:'Fazer 3 moldes intermediários',ir:()=>irMoldes('Intermediário'),botao:'📐 Ver moldes intermediários',prog:()=>[Math.min(moldesFeitos(m=>m.nivel==='Intermediário'&&!m.premio),3),3]}]},
+{id:'s4',emoji:'🏆',nome:'Nível Profissional',premio:'vestido-festa',lendario:true,reqs:[reqNivel('n7','Nível 7'),reqEstrelas(16),{txt:'Fazer todos os moldes avançados',ir:()=>irMoldes('Avançado'),botao:'📐 Ver moldes avançados',prog:()=>{const f=m=>m.nivel==='Avançado'&&!m.premio;return [moldesFeitos(f),moldes.filter(f).length]}}]},
+{id:'s5',emoji:'🎀',nome:'Ateliê de Festa',premio:'veu-noiva',reqs:[reqNivel('n8','Nível 8'),reqEstrelas(18),{txt:'Fazer o vestido de festa lendário',ir:()=>openMolde('vestido-festa'),botao:'💎 Abrir o vestido de festa',prog:()=>[isOk('molde_vestido-festa')?1:0,1]}]},
+{id:'s6',emoji:'👑',nome:'Alta Costura',premio:'vestido-noiva',lendario:true,reqs:[reqEstrelas(COROA_ESTRELAS),{txt:'Passar na prova final de Alta Costura (8 de 10)',ir:()=>go('nivel8'),botao:'📝 Fazer a prova final',prog:()=>[provaOk('final')?1:0,1]},{txt:'Fazer todos os moldes-prêmio',ir:()=>irMoldes('Todos'),botao:'🎁 Ver moldes-prêmio',prog:()=>{const f=m=>m.premio&&m.id!=='vestido-noiva';return [moldesFeitos(f),moldes.filter(f).length]}}]}
 ];
 selos.forEach(s=>{s.prog=function(){let p=0,t=0;this.reqs.forEach(r=>{const [a,b]=r.prog();p+=Math.min(a,b);t+=b});return [p,t]}});
 function selosGanhos(){
@@ -1823,7 +2011,8 @@ function selosGanhos(){
  }
  return g;
 }
-const medalhas={s1:{icone:'🥉',nome:'Bronze'},s2:{icone:'🥈',nome:'Prata'},s3:{icone:'🥇',nome:'Ouro'},s4:{icone:'💎',nome:'Diamante'}};
+const medalhas={s1:{icone:'🥉',nome:'Bronze'},s2:{icone:'🥈',nome:'Prata'},s3:{icone:'🥇',nome:'Ouro'},s4:{icone:'💎',nome:'Diamante'},s6:{icone:'👑',nome:'Coroa'}};
+const medIds=Object.keys(medalhas);
 let filaMedalhas=[];
 function checkSelos(){
  const antes=lerSelosSalvos(),g=selosGanhos();
@@ -1834,20 +2023,21 @@ function checkSelos(){
 }
 function mostrarMedalha(){
  const md=document.getElementById('medalModal');if(md.classList.contains('open')||!filaMedalhas.length)return;
- const id=filaMedalhas.shift(),s=selos.find(x=>x.id===id),me=medalhas[id],m=moldes.find(x=>x.id===s.premio);
+ const id=filaMedalhas.shift(),s=selos.find(x=>x.id===id),me=medalhas[id]||{icone:s.emoji,nome:null},m=moldes.find(x=>x.id===s.premio);
  const ic=document.getElementById('mmIcon');ic.textContent=me.icone;ic.style.animation='none';void ic.offsetWidth;ic.style.animation='';
- document.getElementById('mmTipo').textContent='MEDALHA DE '+me.nome.toUpperCase();
+ document.getElementById('mmTipo').textContent=me.nome?'MEDALHA DE '+me.nome.toUpperCase():'NOVO SELO ESPECIAL';
  document.getElementById('mmTitulo').textContent='Selo '+s.nome+'!';
- document.getElementById('mmTexto').innerHTML=`Parabéns, você conquistou a medalha de <b>${me.nome}</b>.<br>🎁 Molde desbloqueado: <b>${m.nome}</b>`;
+ document.getElementById('mmTexto').innerHTML=(me.nome?`Parabéns, você conquistou a medalha de <b>${me.nome}</b>.`:'Parabéns, você conquistou um selo especial! A próxima é a Coroa 👑')+`<br>🎁 Molde desbloqueado: <b>${m.nome}</b>`;
  document.getElementById('mmAbrir').onclick=()=>{fecharMedalha();openMolde(m.id)};
  md.classList.add('open');
 }
 function fecharMedalha(){document.getElementById('medalModal').classList.remove('open');renderMedalhas();setTimeout(mostrarMedalha,300)}
 function renderMedalhas(){
  const g=selosGanhos(),bar=document.getElementById('medalBar'),vit=document.getElementById('vitrine');
- if(bar)bar.innerHTML=selos.map(s=>`<span class="${g.includes(s.id)?'':'off'}">${medalhas[s.id].icone}</span>`).join('')+` ${g.length}/${selos.length}`;
- if(vit)vit.innerHTML=selos.map(s=>{const ok=g.includes(s.id),d=localStorage.getItem('medalha_data_'+s.id);return `<div class="vit ${ok?'on':'off'}" onclick="go('selo')"><span class="mi">${medalhas[s.id].icone}</span><b>${medalhas[s.id].nome}</b><small>${ok?(d||'conquistada'):'🔒 bloqueada'}</small></div>`}).join('');
+ if(bar)bar.innerHTML=medIds.map(id=>`<span class="${g.includes(id)?'':'off'}">${medalhas[id].icone}</span>`).join('')+` ${medIds.filter(id=>g.includes(id)).length}/${medIds.length}`;
+ if(vit)vit.innerHTML=medIds.map(id=>{const ok=g.includes(id),d=localStorage.getItem('medalha_data_'+id);return `<div class="vit ${ok?'on':'off'}" onclick="go('selo')"><span class="mi">${medalhas[id].icone}</span><b>${medalhas[id].nome}</b><small>${ok?(d||'conquistada'):'🔒 bloqueada'}</small></div>`}).join('');
 }
+function nomeSecreto(m){return m.segredo||(m.nivel==='Lendário'?'Molde lendário secreto':m.nome)}
 function seloDoMolde(m){return selos.find(s=>s.premio===m.id)}
 function moldeLiberado(m){if(!m.premio)return true;const s=seloDoMolde(m);return selosGanhos().includes(s.id)}
 function openMolde(id){
@@ -1894,8 +2084,8 @@ function renderSeal(){
  const el=document.getElementById('seal');if(!el)return;
  const g=selosGanhos(),prox=selos.find(x=>!g.includes(x.id)),todos=g.length===selos.length;
  el.classList.toggle('won',g.length>0);
- document.getElementById('sealTitle').textContent=todos?'💎 Todos os selos conquistados!':`🏆 Selos: ${g.length} de ${selos.length}`;
- let txt;if(todos)txt='Você desbloqueou o molde lendário. Parabéns!';else{const [p,t]=prox.prog();txt=`Próximo: ${prox.emoji} ${prox.nome} (${Math.round(p/t*100)}% dos requisitos). Os selos são conquistados em ordem.`}
+ document.getElementById('sealTitle').textContent=todos?'👑 Todos os selos conquistados!':`🏆 Selos: ${g.length} de ${selos.length}`;
+ let txt;if(todos)txt='Você ganhou a Coroa e desbloqueou o molde super especial. Parabéns!';else{const [p,t]=prox.prog();txt=`Próximo: ${prox.emoji} ${prox.nome} (${Math.round(p/t*100)}% dos requisitos). Os selos são conquistados em ordem.`}
  document.getElementById('sealText').textContent=txt;
  document.getElementById('sealBar').style.width=(g.length/selos.length*100)+'%';
 }
@@ -1903,18 +2093,26 @@ function irReq(i,j){selos[i].reqs[j].ir()}
 function continuarEstudos(){
  const g=selosGanhos();
  for(let i=0;i<selos.length;i++){if(g.includes(selos[i].id))continue;const s=selos[i];const j=s.reqs.findIndex(r=>{const [p,t]=r.prog();return p<t});if(j>=0){s.reqs[j].ir();return}}
- toast('Você conquistou todas as medalhas! 💎');go('selo');
+ toast('Você conquistou todas as medalhas! 👑');go('selo');
+}
+function renderCursos(){
+ document.querySelectorAll('#cursos .lesson').forEach(card=>{const bt=card.querySelector('button');if(!bt)return;const m=/nivel(\d)/.exec(bt.getAttribute('onclick')||'');if(!m)return;const k='n'+m[1];
+  let tag=card.querySelector('.stTag');if(!tag){tag=document.createElement('div');tag.className='small stTag';tag.style.marginTop='4px';card.children[1].appendChild(tag)}
+  const ab=nivelAberto(k);tag.innerHTML=ab?`Prova: ${provaOk(k)?estrelasTxt(getStars(k)):'ainda não feita'}`:'🔒 Trancado: passe na prova do nível anterior';
+  card.style.opacity=ab?1:.6;bt.textContent=ab?'Ver':'🔒'});
+ let t=document.getElementById('cursosStars');if(!t){t=document.createElement('div');t.id='cursosStars';const d=document.querySelector('#cursos .desc');d.after(t)}
+ t.innerHTML=`<div class="tip"><b>⭐ ${totalStars()} de 24 estrelas</b> • a Coroa 👑 precisa de ${COROA_ESTRELAS}. Cada nível só abre depois da prova do anterior.</div>`;
 }
 function renderSeloScreen(){
  const g=selosGanhos();
- document.getElementById('seloConteudo').innerHTML=`<div class="seal ${g.length?'won':''}" style="flex-direction:column;text-align:center"><div class="medal" style="font-size:46px">🏆</div><b style="font-size:16px">${g.length} de ${selos.length} selos</b><span class="small">Cada selo desbloqueia um molde secreto. O último libera o molde lendário 💎</span><div class="progress" style="width:100%"><i style="width:${g.length/selos.length*100}%"></i></div></div>`+
+ document.getElementById('seloConteudo').innerHTML=`<div class="seal ${g.length?'won':''}" style="flex-direction:column;text-align:center"><div class="medal" style="font-size:46px">🏆</div><b style="font-size:16px">${g.length} de ${selos.length} selos • ⭐ ${totalStars()} de 24 estrelas</b><span class="small">Cada selo desbloqueia um molde secreto. A medalha Coroa 👑 exige todos os selos, todas as medalhas e no mínimo ${COROA_ESTRELAS} das 24 estrelas das provas.</span><div class="progress" style="width:100%"><i style="width:${g.length/selos.length*100}%"></i></div></div>`+
  selos.map((s,i)=>{const ok=g.includes(s.id),liberado=i===0||g.includes(selos[i-1].id),m=moldes.find(x=>x.id===s.premio);
   const reqs=s.reqs.map((r,j)=>{const [p,t]=r.prog(),f=ok||p>=t;return `<div class="reqLine ${f?'feito':''}" onclick="irReq(${i},${j})"><span>${f?'✅':'⬜'} ${r.txt} <b>${Math.min(p,t)}/${t}</b></span><span class="goLink">Ir ›</span></div>`}).join('');
   const pend=s.reqs.findIndex(r=>{const [p,t]=r.prog();return p<t});
   const cta=!ok&&liberado&&pend>=0?`<button class="goBtn" onclick="irReq(${i},${pend})">▶ Continuar: ${s.reqs[pend].botao}</button>`:'';
   const bloqueio=!ok&&!liberado?`<div class="small" style="margin-top:6px;color:#b3261e"><b>🔒 Conquiste antes o selo ${selos[i-1].emoji} ${selos[i-1].nome}</b></div>`:'';
   const [p,t]=s.prog();
-  return `<div class="seloCard ${ok?'ok':''} ${s.lendario?'leg':''}"><div class="big">${medalhas[s.id].icone}</div><div style="flex:1"><span class="small">Selo ${i+1} • Medalha de ${medalhas[s.id].nome}${s.lendario?' • FINAL':''}</span><br><b>${s.nome}</b> ${ok?'<span class="statusBadge">✓ CONQUISTADO</span>':''}${bloqueio}${reqs}${cta}${ok?'':`<div class="progress" style="margin:7px 0 2px"><i style="width:${Math.min(p/t,1)*100}%"></i></div>`}<span class="small">🎁 Prêmio: <b>${ok||!s.lendario?m.nome:'Molde lendário secreto'}</b> ${ok?'':'🔒'}</span>${ok?`<br><button class="mini" onclick="openMolde('${m.id}')">Abrir molde ${m.emoji}</button>`:''}</div></div>`}).join('');
+  return `<div class="seloCard ${ok?'ok':''} ${s.lendario?'leg':''}"><div class="big">${medalhas[s.id]?medalhas[s.id].icone:s.emoji}</div><div style="flex:1"><span class="small">Selo ${i+1} • ${medalhas[s.id]?'Medalha de '+medalhas[s.id].nome:'Selo especial'}${i===selos.length-1?' • FINAL':''}</span><br><b>${s.nome}</b> ${ok?'<span class="statusBadge">✓ CONQUISTADO</span>':''}${bloqueio}${reqs}${cta}${ok?'':`<div class="progress" style="margin:7px 0 2px"><i style="width:${Math.min(p/t,1)*100}%"></i></div>`}<span class="small">🎁 Prêmio: <b>${ok?m.nome:nomeSecreto(m)}</b> ${ok?'':'🔒'}</span>${ok?`<br><button class="mini" onclick="openMolde('${m.id}')">Abrir molde ${m.emoji}</button>`:''}</div></div>`}).join('');
 }
 function moldeBotoes(m){
  const k='molde_'+m.id,feito=isOk(k),ini=Number(localStorage.getItem('inicio_'+m.id)||0);
@@ -2053,7 +2251,7 @@ function updateProgress(){
  const pct=all?done/all*100:0;
  const p=document.getElementById('homeProgress');if(p)p.style.width=pct+'%';
  checkSelos();renderSeal();renderMedalhas();
- const t=document.getElementById('homeProgressText');if(t)t.textContent=`${done} de ${all} aulas concluídas • ${Math.round(pct)}%`;
+ const t=document.getElementById('homeProgressText');if(t)t.textContent=`${done} de ${all} aulas concluídas • ${Math.round(pct)}% • ⭐ ${totalStars()}/24 estrelas`;
  Object.keys(lessons).forEach(renderLessons);
 }
 
