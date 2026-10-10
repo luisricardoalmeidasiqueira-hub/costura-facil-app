@@ -347,7 +347,7 @@ footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(680
 
 <script>
 /* ===== Versão do app ===== */
-const APP_VERSION='3.2', APP_DATE='09/10/2026';
+const APP_VERSION='3.4', APP_DATE='10/10/2026';
 /* ===== Proteção do progresso ===== */
 const SALT='CF-LRAS-2026-costura';
 function sig(k){const str=SALT+'|'+k;let h=2166136261;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}let h2=h^0x5bd1e995;for(let i=str.length-1;i>=0;i--){h2^=str.charCodeAt(i);h2=Math.imul(h2,2246822507)}return 'v'+(h>>>0).toString(36)+(h2>>>0).toString(36)}
@@ -1936,6 +1936,191 @@ passos:[['Prova em tecido barato','Obrigatório. Corte o corpete em algodão cru
 ['Barra','Vista com o sapato da festa, nivele a barra do chão e faça barra estreita ou com crinol para dar forma.'],
 ['Passadoria final','Passe com vapor por dentro e pano de proteção. Guarde pendurado pelas alcinhas internas de cabide.']],
 dica:'Este é o molde mais difícil do app. Faça sem pressa, uma etapa por dia, e peça ajuda para provar.',calc:'gode'}
+);
+
+/* ===== Moldes Pet ===== */
+moldes.push(
+{id:'roupa-pet',nome:'Roupinha de inverno para cachorro',emoji:'🐕',cat:'Pet',nivel:'Intermediário',desc:'Moletom com gola e punhos de ribana, calculado pelas medidas do cão.',tam:'Calculado com as medidas do animal',
+mat:['Moletom flanelado, soft ou fleece (pouco tecido: 30 a 70 cm)','Ribana para gola e punhos','Linha de poliéster','Agulha ponta bola','Fita métrica'],
+pecas:[],calc:'roupaPet',
+obs:'São 2 peças principais: costas (maior, por cima) e barriga (menor, por baixo), mais a gola e os punhos de ribana. A barriga é mais curta para o cão fazer xixi sem sujar a roupa.',
+passos:[['Meça o cão em pé','Pescoço: onde fica a coleira. Peito: a parte mais larga, logo atrás das patas da frente. Costas: da coleira até a base do rabo. Patas: distância entre as duas patas da frente, por baixo.'],
+['Calcule','Use a calculadora acima. Ela mostra o tamanho de cada peça já com folga e margem de 1 cm.'],
+['Desenhe as costas','Em papel, desenhe meio retângulo (a peça é cortada na dobra) com a largura e o comprimento das costas. Arredonde a ponta de baixo (lado do rabo) e faça uma curva rasa no pescoço.'],
+['Desenhe a barriga','Meio retângulo com a largura e o comprimento da barriga. Marque os buracos das patas: dois ovais de 5 a 8 cm, a 4 cm do topo e afastados do centro pela metade da distância entre as patas.'],
+['Prove no papel','Segure as duas peças de papel no cão. Confira se cobre as costas, se a barriga não aperta e se os buracos das patas estão no lugar.'],
+['Corte','Dobre o moletom, encoste a borda do centro na dobra e corte costas e barriga. Corte a gola e os punhos de ribana com o elástico no sentido do comprimento.'],
+['Una as laterais','Direito com direito, costure as laterais das costas na barriga a 1 cm, com zigue-zague estreito ou ponto elástico.'],
+['Punhos das patas','Feche cada punho em anel, dobre ao meio (avesso com avesso) e costure no buraco da pata esticando só a ribana.'],
+['Gola','Feche a gola em anel, dobre ao meio e costure no pescoço, dividindo em 4 partes iguais e esticando a ribana até casar.'],
+['Barra','Faça bainha de 1 cm na borda de trás, ou aplique uma tira de ribana como na gola.'],
+['Prova final','Vista no cão: ele precisa andar, sentar e deitar sem a roupa apertar nas axilas.']],
+dica:'Nunca deixe o cão sozinho e sem supervisão com roupa, e tire se ele ficar molhado. Prefira tecidos sem botões ou enfeites que ele possa morder.'},
+
+{id:'cama-pet',nome:'Caminha redonda com borda',emoji:'🛏️',cat:'Pet',nivel:'Intermediário',desc:'Cama tipo ninho, com borda fofa e base removível.',tam:'Calculado pelo tamanho do animal',
+mat:['Tecido firme e lavável para a parte de fora (oxford, sarja ou suede)','Tecido macio para a parte de dentro (soft ou plush)','Fibra siliconada para a borda','Espuma de 3 a 5 cm ou manta grossa para a base','Zíper ou velcro (opcional)'],
+pecas:[],calc:'camaPet',
+obs:'A cama tem 3 partes: a base redonda (um círculo de tecido de fora e outro de tecido macio), a borda (um tubo grande cheio de fibra que contorna a base) e o fundo acolchoado.',
+passos:[['Meça o animal deitado','Com o animal enrolado dormindo, meça do focinho à base do rabo. Gato e cão pequeno costumam ficar entre 30 e 50 cm.'],
+['Calcule','Use a calculadora acima para achar o diâmetro da base e o tamanho da borda.'],
+['Trace os círculos','Dobre o tecido em quatro e trace com barbante, a partir do canto da dobra, o raio indicado. Corte um círculo de tecido de fora, um de tecido macio e um de espuma ou manta (sem margem).'],
+['Monte a base','Coloque a espuma entre os dois círculos de tecido, alinhave em volta a 1 cm da borda e faça 2 ou 3 linhas retas atravessando para segurar a espuma.'],
+['Faça a borda','Una os dois retângulos da borda (tecido de fora e tecido macio) pelas bordas compridas, formando um tubo. Vire.'],
+['Divida a borda em gomos','Costure linhas atravessadas no tubo a cada 15 cm, deixando abertas as pontas. Isso impede que a fibra escorregue.'],
+['Encha','Encha cada gomo com fibra, empurrando com cabo de colher, sem deixar muito duro.'],
+['Una borda e base','Feche as pontas do tubo formando um anel. Costure a borda em volta da base, com o tecido macio para dentro, prendendo muito bem com alfinetes.'],
+['Fundo de fora','Para dar acabamento por baixo, costure um círculo de tecido de fora cobrindo a costura, ou aplique viés.']],
+dica:'Faça a capa da base com zíper para poder tirar e lavar a espuma separada.'},
+
+{id:'colchonete-pet',nome:'Colchonete com capa de zíper',emoji:'🟫',cat:'Pet',nivel:'Iniciante',desc:'Capa removível para espuma, fácil de lavar.',tam:'Calculado pelo tamanho da espuma',
+mat:['Tecido resistente (oxford, sarja ou lona)','Espuma do tamanho desejado','Zíper comum do tamanho do lado curto','Linha resistente'],
+pecas:[],calc:'colchonete',
+obs:'A capa é feita com 2 retângulos iguais com cantos recortados: ao costurar os cantos, forma-se a lateral (a espessura da espuma), sem precisar de faixa lateral.',
+passos:[['Meça a espuma','Comprimento, largura e espessura.'],
+['Calcule','Use a calculadora acima.'],
+['Corte','Corte dois retângulos iguais e recorte nos 4 cantos de cada um o quadrado indicado.'],
+['Zíper','Em um dos lados curtos, prenda o zíper entre as duas peças, pelo método sanduíche, com o calcador de zíper.'],
+['Abra o zíper','Deixe-o aberto até a metade.'],
+['Feche em volta','Direito com direito, costure os outros três lados a 1 cm.'],
+['Cantos','Abra cada canto recortado, casando as costuras, e costure reto. Os 8 cantos formam a caixa.'],
+['Vire e coloque a espuma','Vire pelo zíper, empurre os cantos e coloque a espuma dobrando ao meio para passar.']],
+dica:'Para cão que gosta de cavar, use lona e costure tudo duas vezes.'},
+
+{id:'gravata-pet',nome:'Gravatinha borboleta para coleira',emoji:'🎀',cat:'Pet',nivel:'Iniciante',desc:'Laço que passa pela coleira. Ótimo para usar retalhos.',tam:'Pequeno, médio e grande',
+mat:['Retalhos de tricoline','Linha','Velcro de 2 cm (opcional)'],
+pecas:[{n:'Laço',q:1,w:14,h:16,lab:'P 10×12 • M 14×16 • G 18×20'},{n:'Miolo',q:1,w:4,h:8},{n:'Passante',q:1,w:4,h:12,lab:'largura da coleira + 4'}],
+obs:'Margem de 1 cm incluída. Escolha o tamanho pela largura da coleira: P até 1,5 cm, M até 2,5 cm, G até 3,5 cm.',
+passos:[['Laço','Dobre o retângulo do laço ao meio, direito com direito, e costure deixando 3 cm abertos. Corte os cantos, vire e passe.'],
+['Feche a abertura','Feche com ponto invisível ou pesponto.'],
+['Miolo','Dobre as bordas compridas do miolo para dentro e passe, formando uma tira estreita.'],
+['Franza o centro','Aperte o meio do laço com os dedos, formando o formato de borboleta, e dê alguns pontos à mão para segurar.'],
+['Envolva','Passe o miolo em volta do centro e prenda por trás com pontos.'],
+['Passante','Faça uma tira dobrada e costure atrás do laço, formando um túnel para a coleira passar. Ou use velcro para abrir e fechar.']],
+dica:'Prenda bem: o animal pode tentar morder. Não use botões, pedrinhas ou miçangas.'},
+
+{id:'brinquedo-pet',nome:'Brinquedo de pano com barulhinho',emoji:'🐟',cat:'Pet',nivel:'Iniciante',desc:'Peixinho de tecido com papel crocante dentro.',tam:'Cerca de 20 × 10 cm',
+mat:['Retalhos firmes de algodão, brim ou feltro grosso','Fibra siliconada','Papel celofane ou plástico crocante limpo (opcional)','Linha resistente','Erva-de-gato seca (opcional, para gatos)'],
+pecas:[{n:'Peixe',q:2,w:22,h:12,s:'oval',lab:'oval com cauda'}],
+obs:'Desenhe um oval de 16 × 10 cm e acrescente um triângulo de 6 cm para a cauda. Margem de 1 cm.',
+passos:[['Desenhe e corte','Desenhe o peixe em papel, recorte e corte duas peças de tecido.'],
+['Costure em volta','Direito com direito, costure com ponto curto (2 mm), deixando 4 cm abertos na barriga. Passe duas vezes.'],
+['Piques e vire','Faça piques nas curvas e no encontro da cauda, sem cortar a costura, e vire.'],
+['Encha','Coloque o papel crocante enrolado no meio e encha em volta com fibra. Para gatos, um pouquinho de erva-de-gato.'],
+['Feche bem','Feche a abertura com ponto invisível com linha dupla, dando pontos bem juntos.'],
+['Teste','Puxe com força as costuras. Se abrir, reforce.']],
+dica:'Brinque sempre junto e guarde depois. Se o animal rasgar, jogue fora: enchimento e papel não podem ser engolidos.'},
+
+{id:'tapete-pet',nome:'Tapete de comedouro',emoji:'🥣',cat:'Pet',nivel:'Iniciante',desc:'Tapete impermeável para colocar debaixo da tigela.',tam:'Pronto com 50 × 35 cm',
+mat:['Tecido impermeável (nylon emborrachado ou lona impermeável) para o verso','Tecido estampado ou toalha para a frente','Viés de 2,5 cm (cerca de 1,8 m)','Linha'],
+pecas:[{n:'Frente',q:1,w:50,h:35},{n:'Verso impermeável',q:1,w:50,h:35},{n:'Viés',q:1,w:180,h:2,lab:'cerca de 1,80 m'}],
+obs:'Sem margem: as bordas são fechadas com viés. Arredonde os cantos com um copo para o viés contornar fácil.',
+passos:[['Corte','Corte frente e verso e arredonde os quatro cantos.'],
+['Monte','Coloque avesso com avesso, verso impermeável por baixo, e prenda com clipes (alfinetes furam o impermeável).'],
+['Alinhave','Costure em volta a 0,5 cm da borda.'],
+['Viés','Aplique o viés em toda a volta, contornando os cantos devagar.'],
+['Pesponto','Se quiser, faça um pesponto a 3 cm da borda: ajuda a segurar a água no centro.']],
+dica:'Use agulha nova e ponto mais longo no impermeável: furos pequenos não deixam passar água.'},
+
+{id:'porta-saquinho',nome:'Porta-saquinho de passeio',emoji:'🦮',cat:'Pet',nivel:'Iniciante',desc:'Estojinho para levar sacos na guia.',tam:'Pronto com cerca de 8 × 12 cm',
+mat:['Retalho de tecido firme','Elástico de 1 cm','Fita ou tira de tecido de 2 cm (15 cm)','Botão de pressão ou mosquetão pequeno'],
+pecas:[{n:'Corpo',q:1,w:18,h:16},{n:'Alça',q:1,w:4,h:15}],
+obs:'O corpo vira um tubo. Uma ponta fica com elástico para o saco sair por ela, e a outra fica fechada com a alça.',
+passos:[['Faça a alça','Dobre a tira, costure e vire. Dobre ao meio formando um laço.'],
+['Canaleta da ponta','Em um dos lados de 18 cm, dobre 0,5 cm e mais 1,5 cm e costure, formando uma canaleta.'],
+['Elástico','Passe 10 cm de elástico pela canaleta e prenda as duas pontas nas bordas.'],
+['Feche o tubo','Dobre o corpo ao meio, direito com direito, e costure a lateral a 1 cm.'],
+['Feche a outra ponta','Coloque a alça dentro, com o laço para dentro, e costure a ponta de cima fechada, prendendo a alça.'],
+['Vire e prenda','Vire, coloque o rolo de saquinhos e prenda na guia pela alça com o botão de pressão ou o mosquetão.']],
+dica:'Faça com retalho que combine com a coleira e a gravatinha: vira um kit.'},
+
+{id:'toca-gato',nome:'Toca iglu para gato',emoji:'🐈',cat:'Pet',nivel:'Intermediário',desc:'Casinha fechada e fofinha, com almofada removível.',tam:'Pronta com cerca de 40 cm de base e 35 cm de altura',
+mat:['1 m de tecido de fora (suede, sarja ou veludo cotelê)','1 m de tecido de dentro (soft ou plush)','1 m de manta acrílica grossa','Espuma ou manta para a almofada da base','Viés para a entrada (cerca de 1 m)'],
+pecas:[{n:'Gomo de fora',q:4,s:'tri',w:34,h:45,lab:'gomo 34 × 45'},{n:'Gomo de dentro',q:4,s:'tri',w:34,h:45,lab:'gomo 34 × 45'},{n:'Gomo de manta',q:4,s:'tri',w:34,h:45,lab:'sem margem'},{n:'Base',q:2,w:42,h:42,s:'circle',lab:'Ø 42 cm'}],
+obs:'Cada gomo é um triângulo com laterais curvas (como gomo de guarda-chuva): base de 34 cm, altura de 45 cm, as laterais abauladas 3 cm para fora. Os 4 gomos juntos formam a cúpula. Margem de 1 cm.',
+passos:[['Molde do gomo','Desenhe em papel uma base de 34 cm. Do meio dela, suba 45 cm e marque a ponta. Ligue a ponta aos cantos da base com curvas que se afastam 3 cm da reta no meio.'],
+['Corte','Corte 4 gomos de fora, 4 de dentro, 4 de manta (sem margem) e 2 círculos de base.'],
+['Acolchoe os gomos','Alinhave cada gomo de manta no avesso de um gomo de fora, a 0,5 cm da borda.'],
+['Monte a cúpula de fora','Una os 4 gomos de fora lado a lado, costurando de baixo até a ponta. Na ponta, una as 4 costuras com cuidado.'],
+['Monte a cúpula de dentro','Faça o mesmo com os gomos de dentro.'],
+['Marque a entrada','Em um gomo, desenhe um arco de 20 cm de largura por 22 cm de altura a partir da base.'],
+['Una as duas cúpulas','Coloque a de dentro dentro da de fora, avesso com avesso. Costure em volta da entrada desenhada, corte o tecido da entrada e aplique viés.'],
+['Base','Monte a almofada redonda da base com a espuma entre os dois círculos e costure a borda da cúpula em volta dela. Se preferir, faça a almofada solta.'],
+['Firmeza','Se a cúpula cair, passe uma vareta flexível (tipo vareta de barraca) em cruz por dentro, presa por fitas.']],
+dica:'Gatos adoram lugares fechados: coloque um paninho com o cheiro deles dentro para estrear.'}
+);
+Object.assign(calcs,{
+ roupaPet:{fields:[{id:'pescoco',l:'Pescoço do animal (cm)',ph:'28'},{id:'peito',l:'Peito — parte mais larga (cm)',ph:'45'},{id:'costas',l:'Costas — da coleira à base do rabo (cm)',ph:'35'}],
+  run(v){
+   const lc=v.peito*0.6+4,lb=v.peito*0.4+4,cc=v.costas+2,cb=Math.round(v.costas*0.6)+2,gola=Math.round(v.pescoco*0.85)+2,pun=Math.max(Math.round(v.peito*0.3),12)+2;
+   let porte=v.peito<35?'pequeno':v.peito<55?'médio':'grande';
+   const f1=x=>x.toFixed(1).replace('.',',');
+   return `<p><b>Porte:</b> ${porte}<br><b>Costas</b> (1 na dobra): ${f1(lc/2)} cm de meia largura × ${cc.toFixed(0)} cm<br><span class="small">Aberta: ${f1(lc)} cm de largura</span><br><b>Barriga</b> (1 na dobra): ${f1(lb/2)} cm de meia largura × ${cb} cm<br><span class="small">Aberta: ${f1(lb)} cm de largura</span><br><b>Gola de ribana:</b> ${gola} × 10 cm<br><b>Punhos de ribana:</b> 2 de ${pun} × 8 cm<br><b>Tecido:</b> cerca de ${Math.round(Math.max(cc,cb)+10)} cm de moletom e 20 cm de ribana</p><div class="tip">💡 Já inclui 4 cm de folga no peito e 1 cm de margem. Para cachorro macho, confira se a barriga não cobre a região do xixi.</div>`;
+  }},
+ camaPet:{fields:[{id:'animal',l:'Animal enrolado: do focinho à base do rabo (cm)',ph:'40'}],
+  run(v){
+   const d=Math.round(v.animal*0.8+10),dc=d+2,lt=Math.round(Math.PI*d)+4,fibra=Math.round(d*12/50)*50;
+   return `<p><b>Diâmetro da base (pronta):</b> ${d} cm<br><b>Raio para o barbante:</b> ${(dc/2).toFixed(1).replace('.',',')} cm (com margem)<br><b>Borda:</b> 2 retângulos de ${lt} × 32 cm (tecido de fora e tecido macio)<br><b>Diâmetro total com a borda:</b> cerca de ${d+24} cm<br><b>Fibra para a borda:</b> cerca de ${fibra} g</p><div class="tip">💡 Se o animal gosta de dormir esticado, aumente o diâmetro em 10 cm.</div>`;
+  }},
+ colchonete:{fields:[{id:'comp',l:'Comprimento da espuma (cm)',ph:'70'},{id:'larg',l:'Largura da espuma (cm)',ph:'50'},{id:'esp',l:'Espessura da espuma (cm)',ph:'5'}],
+  run(v){
+   const c=v.comp+v.esp+2,l=v.larg+v.esp+2,q=v.esp/2;
+   return `<p><b>Corte 2 peças de:</b> ${c.toFixed(0)} × ${l.toFixed(0)} cm<br><b>Recorte em cada canto:</b> quadrado de ${q.toFixed(1).replace('.',',')} × ${q.toFixed(1).replace('.',',')} cm<br><b>Zíper:</b> cerca de ${Math.round(v.larg)} cm, no lado curto<br><b>Tecido:</b> cerca de ${(c*2+10).toFixed(0)} cm de comprimento</p><div class="tip">💡 A capa fica justinha: se a espuma for muito firme, acrescente 1 cm em cada medida.</div>`;
+  }}
+});
+
+/* ===== Moldes Pet: gatos ===== */
+moldes.push(
+{id:'arranhador-porta',nome:'Arranhador de pendurar na porta',emoji:'🐾',cat:'Pet',nivel:'Iniciante',desc:'Painel de sisal com alça para a maçaneta. Salva o sofá.',tam:'Pronto com cerca de 30 × 55 cm',
+mat:['Lona ou brim grosso (2 peças)','Tapete ou manta de sisal (28 × 45 cm) ou 15 m de corda de sisal de 6 mm','Placa de papelão grosso ou EVA de 5 mm (28 × 53 cm)','Viés grosso de 3 cm (cerca de 1,7 m)','Agulha de jeans nº 16 e agulha de mão grossa','Linha resistente e cola de tecido (para a opção com corda)'],
+pecas:[{n:'Base (frente e verso)',q:2,w:30,h:55},{n:'Sisal',q:1,w:28,h:45},{n:'Alça da maçaneta',q:1,w:6,h:40},{n:'Placa interna',q:1,w:28,h:53,lab:'sem margem'}],
+obs:'Sem margem: as bordas são fechadas com viés. A placa de papelão ou EVA vai dentro para o arranhador não enrugar quando o gato puxar.',
+passos:[['Corte','Corte as duas bases de lona, o sisal e a placa interna.'],
+['Prenda o sisal','Centralize o sisal na base da frente, deixando 5 cm livres em cima. Com a agulha de jeans e ponto longo, costure em volta a 1 cm da borda do sisal. Vá devagar: sisal é grosso.'],
+['Opção com corda','Sem tapete de sisal, enrole a corda em zigue-zague sobre a base, bem juntinha, passando cola de tecido. Depois de seco, prenda cada volta nas pontas com pontos à mão.'],
+['Faça a alça','Dobre a tira em 4, pesponte e forme um laço. Alinhave as pontas no meio da borda de cima da base de trás.'],
+['Monte o sanduíche','Base de trás, placa interna e base da frente com o sisal. Prenda com clipes.'],
+['Feche com viés','Aplique o viés em volta, prendendo tudo. Na borda com a placa, use o calcador de zíper para chegar perto.'],
+['Teste','Pendure na maçaneta e puxe com força para baixo. Se dobrar, troque a placa por uma mais firme.']],
+dica:'Passe um pouco de erva-de-gato no sisal para o gato descobrir o arranhador. Coloque perto de onde ele já costuma arranhar.'},
+
+{id:'ratinhos-gato',nome:'Ratinhos de feltro com erva-de-gato',emoji:'🐭',cat:'Pet',nivel:'Iniciante',desc:'Brinquedo pequeno costurado à mão. Dá para fazer vários de retalhos.',tam:'Cerca de 8 cm sem o rabo',
+mat:['Feltro grosso (1,5 mm ou mais)','Linha de bordar','Fibra siliconada','Erva-de-gato seca','Cordão de algodão grosso para o rabo (10 cm)'],
+pecas:[{n:'Lateral do corpo',q:2,s:'tri',w:9,h:5,lab:'gota 9 × 5'},{n:'Barriga',q:1,s:'oval',w:9,h:5,lab:'oval 9 × 5'},{n:'Orelha',q:2,s:'circle',w:2.5,h:2.5,lab:'Ø 2,5 cm'}],
+obs:'Feltro não desfia, então não precisa de margem nem de virar a peça: a costura fica aparente, com ponto caseado (aula 6 do Nível 5).',
+passos:[['Corte','Corte as duas laterais em forma de gota, a barriga oval e as orelhas.'],
+['Una as laterais','Junte as duas laterais pela borda curva de cima e costure com ponto caseado, da ponta do focinho até o fim.'],
+['Orelhas','Dobre cada círculo ao meio, dê um ponto na dobra e prenda as orelhas na costura de cima, a 2 cm do focinho, com pontos firmes.'],
+['Rabo','Dê um nó grosso na ponta do cordão e prenda pelo lado de dentro, na parte de trás.'],
+['Barriga','Costure a barriga em volta das laterais com caseado, deixando 3 cm abertos.'],
+['Encha','Misture fibra com uma colher de chá de erva-de-gato e encha bem firme.'],
+['Feche','Feche a abertura e dê vários nós por dentro. Puxe o rabo e as orelhas com força para testar.']],
+dica:'Não use olhinhos de plástico, miçangas ou botões: o gato pode arrancar e engolir. Se quiser olhos, borde.'},
+
+{id:'varinha-gato',nome:'Varinha de brincar com fitas',emoji:'🪄',cat:'Pet',nivel:'Iniciante',desc:'Brinquedo de caça para brincar junto com o gato.',tam:'Vareta de 50 cm e cordão de 60 cm',
+mat:['Vareta de bambu ou madeira lisa de 50 cm','60 cm de cordão de algodão','Retalhos de tecido colorido e fitas de cetim','Retalho de feltro','Linha resistente'],
+pecas:[{n:'Tiras de tecido',q:6,w:2,h:25},{n:'Fitas',q:4,w:1,h:30},{n:'Peixinho de feltro',q:2,s:'oval',w:8,h:4}],
+obs:'A ponta do cordão leva um pompom de tiras e fitas, ou um peixinho de feltro cheio. Tudo bem costurado, sem nada pequeno que solte.',
+passos:[['Prepare a vareta','Lixe as pontas da vareta para não ter farpa.'],
+['Prenda o cordão','Faça um nó firme na ponta da vareta e enrole a linha resistente por cima, dando várias voltas. Passe cola de tecido se quiser.'],
+['Faça o pompom','Junte as tiras e as fitas pelo meio, amarre bem apertado com linha e dobre ao meio, formando um tufo.'],
+['Costure o tufo','Dê vários pontos atravessando o meio do tufo, para nenhuma tira soltar.'],
+['Ou faça o peixinho','Costure as duas peças de feltro com caseado, encha com fibra e prenda na ponta do cordão.'],
+['Prenda na ponta','Passe o cordão pelo tufo ou pelo peixinho, dê um nó grosso e costure por cima.']],
+dica:'Brinque sempre junto e guarde a varinha em um armário depois. Cordões e fitas não podem ficar soltos com o gato sozinho, porque ele pode engolir ou se enrolar.'},
+
+{id:'rede-gato',nome:'Rede de cadeira para gato',emoji:'🪢',cat:'Pet',nivel:'Intermediário',desc:'Caminha suspensa entre os pés de uma cadeira ou mesa.',tam:'Para cadeira com pés afastados de 35 a 45 cm',
+mat:['Lona ou brim grosso (2 peças)','Manta acrílica ou soft para o lado de cima','4 tiras de fita de nylon de 2,5 cm (35 cm cada)','4 fivelas de engate rápido ou velcro de 5 cm','Linha resistente e agulha de jeans'],
+pecas:[{n:'Rede',q:2,w:42,h:42},{n:'Manta',q:1,w:40,h:40,lab:'sem margem'},{n:'Alça de canto',q:4,w:3,h:35,lab:'fita de nylon'}],
+obs:'Margem de 1 cm. Meça a distância entre os pés da cadeira por dentro e ajuste a rede para ficar 3 a 5 cm menor, assim ela fica esticada.',
+passos:[['Meça a cadeira','Meça a distância entre os pés, por dentro, de frente e de lado. Desconte 4 cm de cada medida para a rede ficar esticada.'],
+['Corte','Corte as duas peças da rede com a medida encontrada mais 2 cm, e a manta sem margem.'],
+['Alças','Queime de leve as pontas da fita de nylon com isqueiro para não desfiar (cuidado com os dedos). Passe cada fita por uma fivela.'],
+['Posicione as alças','Alinhave uma alça em cada canto da peça de baixo, na diagonal, viradas para dentro.'],
+['Monte','Manta embaixo, depois a peça de baixo com as alças e a de cima, direito com direito. Costure em volta deixando 12 cm abertos.'],
+['Reforce os cantos','Passe a costura duas vezes nos cantos, por cima das alças.'],
+['Vire e pesponte','Vire, empurre os cantos, feche a abertura e pesponte a 1,5 cm da borda.'],
+['Prenda na cadeira','Prenda cada alça em um pé da cadeira, perto do chão, e aperte até a rede ficar firme. Teste apertando com a mão antes do gato usar.']],
+dica:'Use só em cadeira firme e baixa, e confira as fivelas toda semana. Para gatos acima de 6 kg, prefira a caminha de chão.'}
 );
 
 /* ===== Moldes-prêmio da Alta Costura ===== */
